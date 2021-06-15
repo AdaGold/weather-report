@@ -18,13 +18,40 @@ const increaseTemp = () => {
     const tempElement = document.querySelector("#temperature")
     state.temperature += 1
     tempElement.textContent = state.temperature 
+    pickSeason(state.temperature)
 };
+
 
 const decreaseTemp = () => {
     const tempElement = document.querySelector("#temperature")
     state.temperature -= 1
-    tempElement.textContent = state.temperature 
+    tempElement.textContent = state.temperature
+    pickSeason(state.temperature) 
 };
+
+const pickSeason = (temp) => {
+    if (temp <= 35) {    
+        populateGardenTemp("❄️⛸️☃️☃️")
+    }
+    else if (temp > 35 && temp < 65) {    
+        populateGardenTemp("🌱🌻🐝🍁🍃")
+    } 
+    else if (temp >= 65 && temp < 85) {    
+        populateGardenTemp("☀️🏖️🍦🍉")
+    } 
+    else if (temp >= 85) {    
+        populateGardenTemp("🥵🌵")
+    };
+};
+
+
+const populateGardenTemp = (temp) => {
+    const gardenTemp = document.createElement("span");
+    const gardenTempContainer = document.querySelector("#gardenTempContainer");
+    gardenTempContainer.replaceChildren()
+    gardenTemp.textContent = temp;
+    gardenTempContainer.appendChild(gardenTemp);
+}
 
 const registerEventHandlers = (event) => {
     const upButton = document.querySelector("#increaseTempButton");
