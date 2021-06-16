@@ -8,10 +8,10 @@
     <body>
         <main>
         <h1>Weather Report </h1>
-        <p>blah blah blahblah blah blahblah blah blahblah blah blahblah blah blah </p>
+        <div id="cityName"></div>
 
         <section>
-            <h2>Temperature</h2>
+            <h2>Temperature</h2> 
             <button id="increaseTempButton">⬆️</button>
             <button id="decreaseTempButton">⬇️ </button>
             <!-- <section></section> -->
@@ -35,16 +35,17 @@
 
         <section>
             <h2>City Name</h2>
-            <form id ="form-group">
-                <label for = "city">
-                <input type = "text"  id = "city" class = "form-control">
-                </label>
-                <button type ="Submit" class="btn">Reset</button>
+            <!-- <form id ="form-group">
+                <label for = "city"> -->
+            <form id ="cityInput">
+                <input type = "text" id = "city">
+                <button type ="submit" class="btn">Enter</button>
             </form>
-            <section id="cityContainer"></section>
+            
         </section>
 
         <section id="weatherGarden">
+            <div id="cityContainer"></div>
             <div id="gardenSkyContainer"></div>
             <div id="gardenTempContainer"></div>
         </section>

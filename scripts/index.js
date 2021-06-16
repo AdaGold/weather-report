@@ -52,24 +52,15 @@ const populateGardenTemp = (temp) => {
     gardenTempContainer.appendChild(gardenTemp);
 }
 
-///////////// SKY FUNCTION ////////////
-const sky = document.querySelector("#skyType").selectedIndex
-
-
-// document.querySelector(".quantityDropdown select").selectedIndex
-// quantity = document.querySelector(".quantityDropdown select").value;
-// var quantity = document.querySelector(".quantityDropdown select option:checked");
-// var quantity = document.querySelector(".quantityDropdown select")[document.querySelector(".quantityDropdown select").selectedIndex].innerHTML;
-
-
+///////////// SKY FUNCTIONS ////////////
 const populateSkyTemp = () => {
     const gardenSky = document.createElement("span");
     const gardenSkyContainer = document.querySelector("#gardenSkyContainer");
     gardenSkyContainer.replaceChildren()
+    const selection = document.querySelector("#skyType").value;
     // const selection = document.querySelector(".skyType select option:checked");
     // const selection = document.querySelector(".skyType select").selectIndex;
-    const selection = document.querySelector("#skyType").value;
-
+    
     if (selection === "Sunny") {    
         gardenSky.textContent = "☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️🌞🌞🌞🌞☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️"
     }
@@ -86,6 +77,21 @@ const populateSkyTemp = () => {
     gardenSkyContainer.appendChild(gardenSky);
 };
 
+
+///////////// CITY FUNCTIONS ////////////
+const displayCity = (event) => {
+    event.preventDefault();
+    console.log("Inside DisplayCity")
+    const cityDisplay = document.createElement("div");
+    const cityContainer = document.querySelector("#cityContainer");
+    cityContainer.replaceChildren()
+    const enteredCity = document.querySelector("#city").value;
+    cityDisplay.textContent = enteredCity;
+    cityContainer.appendChild(cityDisplay);
+    
+}
+
+
 const registerEventHandlers = (event) => {
     const upButton = document.querySelector("#increaseTempButton");
     upButton.addEventListener("click", increaseTemp);
@@ -95,6 +101,9 @@ const registerEventHandlers = (event) => {
 
     const skySelect = document.querySelector("#skyType");
     skySelect.addEventListener("change", populateSkyTemp);
+
+    const showCity = document.querySelector("#cityInput");
+    showCity.addEventListener("submit", displayCity); 
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
