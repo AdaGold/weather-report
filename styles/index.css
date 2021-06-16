@@ -39,7 +39,17 @@ button {
     background: #7c7c7c2b;
     color: white;
     cursor: pointer;
-    transition: 0.2s ease-in-out
+    transition: 0.2s ease-in-out;
+    font-family: 'Shadows Into Light', cursive; /* change this w font */
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
 }
 
 input.search-bar {
@@ -59,4 +69,9 @@ button:hover {
 
 h1.temp {
     margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.weather.loading { /*loading bits*/
+    visibility: hidden;
 }
