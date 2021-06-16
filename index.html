@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -6,50 +7,45 @@
         <link href="styles/style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <main>
-        <h1>Weather Report </h1>
-        <div id="cityName"></div>
+        <header>
+            <h1>Weather Report </h1>
+        </header>    
+        <main id="container">
+            <section id="controlPanel">
+                <section class="panel">
+                    <h2>*****City Name*****</h2>
+                    <form id ="cityInput">
+                        <input type = "text" id = "city">
+                        <button type ="submit" class="btn">Enter</button>
+                    </form>
+                </section>
 
-        <section>
-            <h2>Temperature</h2> 
-            <button id="increaseTempButton">⬆️</button>
-            <button id="decreaseTempButton">⬇️ </button>
-            <!-- <section></section> -->
-            <section id="tempContainer">
-                <h3 id="temperature">60</h3>
-            </section>    
-        </section>
+                <section class="panel">
+                    <h2>****Sky Condition****</h2>
+                    <select id="skyType">
+                        <option value="">Select One...</option>
+                        <option value="Sunny">Sunny</option>
+                        <option value="Cloudy">Cloudy</option>
+                        <option value="Rainy">Rainy</option>
+                        <option value="Snowy">Snowy</option>
+                    </select>
+                </section>
 
-        <section>
-            <h2>Sky</h2>
-            <select id="skyType">
-                <option value="">Select One...</option>
-                <option value="Sunny">Sunny</option>
-                <option value="Cloudy">Cloudy</option>
-                <option value="Rainy">Rainy</option>
-                <option value="Snowy">Snowy</option>
-            </select>
+                <section class="panel">
+                    <h2>*****Temperature*****</h2> 
+                    <button id="increaseTempButton">⬆️</button>
+                    <button id="decreaseTempButton">⬇️ </button>
+                    <section id="tempContainer">
+                        <h2 id="temperature">60</h2>
+                    </section>  
+                </section>      
+            </section>
 
-            <section id="skyContainer"></section>
-        </section>
-
-        <section>
-            <h2>City Name</h2>
-            <!-- <form id ="form-group">
-                <label for = "city"> -->
-            <form id ="cityInput">
-                <input type = "text" id = "city">
-                <button type ="submit" class="btn">Enter</button>
-            </form>
-            
-        </section>
-
-        <section id="weatherGarden">
-            <div id="cityContainer"></div>
-            <div id="gardenSkyContainer"></div>
-            <div id="gardenTempContainer"></div>
-        </section>
-
+            <section id="weatherGarden">
+                <div id="cityContainer"></div>
+                <div id="gardenSkyContainer"></div>
+                <div id="gardenTempContainer"></div>
+            </section>
         </main>
         <script src="scripts/index.js"></script>
     </body>

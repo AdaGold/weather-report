@@ -2,18 +2,6 @@ const state = {
     temperature: parseFloat(document.querySelector("#temperature").textContent)
 };
 
-//   const addCrab = (event) => {
-//     const newCrab = document.createElement("span");
-//     const crabContainer = document.querySelector("#crabContainer");
-//     newCrab.textContent = "🦀";
-//     crabContainer.appendChild(newCrab);
-
-//     // Crab Count Behavior
-//     state.crabCount += 1;
-//     const crabCountContainer = document.querySelector("#crabCount")
-//     crabCountContainer.textContent = `Crab Count: ${state.crabCount}`;
-//   };
-
 /////////// TEMP FUNCTIONS /////////////
 const increaseTemp = () => {
     const tempElement = document.querySelector("#temperature")
@@ -30,17 +18,22 @@ const decreaseTemp = () => {
 };
 
 const pickSeason = (temp) => {
+    text = document.querySelector("#temperature")
     if (temp <= 45) {    
         populateGardenTemp("❄️⛸️☃️☃️❄️⛸️⛸️☃️☃️❄️⛸️⛸️☃️☃️⛸️❄️")
+        text.style.color = "#69a4ed"
     }
     else if (temp > 45 && temp < 70) {    
         populateGardenTemp("🌱🌻🐝🍁🍃🍃🌻🌱🌻🐝🍁🍃🍃🌻")
+        text.style.color = "#ebcf12"
     } 
     else if (temp >= 70 && temp < 85) {    
         populateGardenTemp("☀️🏖️🍦🍉☀️🏖️🍦🍉☀️🏖️🍦🍉☀️🏖️🍦🍉")
+        text.style.color = "orange"
     } 
     else if (temp >= 85) {    
         populateGardenTemp("🥵🌵🌵🌵🌵🥵🥵🌵🌵🌵🌵🥵🥵🌵🌵🌵")
+        text.style.color = "red"
     };
 };
 
@@ -62,16 +55,16 @@ const populateSkyTemp = () => {
     // const selection = document.querySelector(".skyType select").selectIndex;
     
     if (selection === "Sunny") {    
-        gardenSky.textContent = "☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️🌞🌞🌞🌞☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️"
+        gardenSky.textContent = "☀️☀️☀️☀️☀️☀️☀️🌞🌞🌞🌞☀️☀️☀️☀️☀️☀️☀️"
     }
     else if (selection === "Cloudy") {    
-        gardenSky.textContent = "☁️☁️☁️☁️☁️⛅⛅☁️☁️☁️☁️☁️☁️⛅⛅☁️☁️☁️☁️☁️☁️☁️⛅⛅☁️☁️☁️☁️☁️☁️"
+        gardenSky.textContent = "☁️⛅⛅☁️☁️☁️☁️☁️☁️⛅⛅☁️☁️☁️☁️☁️⛅⛅☁️"
     }
     else if (selection === "Rainy") {    
-        gardenSky.textContent = "🌧️🌧️🌧️🌧️🌧️🌧️🌧️☔☔🌧️🌧️🌧️🌧️🌧️🌧️🌧️☔☔🌧️🌧️🌧️🌧️🌧️🌧️🌧️☔☔🌧️🌧️🌧️🌧️🌧️🌧️🌧️🌧️"
+        gardenSky.textContent = "🌧️🌧️☔☔🌧️🌧️🌧️🌧️☔☔🌧️🌧️🌧️🌧️☔☔🌧️🌧️🌧"
     }
     else if (selection === "Snowy") {    
-        gardenSky.textContent = "❄️❄️❄️❄️❄️❄️❄️☃️☃️❄️❄️❄️❄️❄️❄️❄️☃️☃️❄️❄️❄️❄️❄️❄️❄️❄️☃️☃️❄️❄️❄️❄️❄️❄️❄️❄️❄❄️"
+        gardenSky.textContent = "❄️❄️❄️☃️☃️❄️❄️❄️☃️❄️❄️❄️☃️☃️❄️❄️❄️"
     };
     // gardenSky.textContent = "WEATHER!";
     gardenSkyContainer.appendChild(gardenSky);
@@ -81,7 +74,6 @@ const populateSkyTemp = () => {
 ///////////// CITY FUNCTIONS ////////////
 const displayCity = (event) => {
     event.preventDefault();
-    console.log("Inside DisplayCity")
     const cityDisplay = document.createElement("div");
     const cityContainer = document.querySelector("#cityContainer");
     cityContainer.replaceChildren()
