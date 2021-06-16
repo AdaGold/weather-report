@@ -41,3 +41,4 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
 
 weather.fetchWeather("Chicago"); // for default text when page comes up
 // arbit commit 4
+// arbit commit 5
