@@ -58,5 +58,6 @@ header {
 
 #cityContainer {
     grid-row: 1;
-    background-color: teal;
+    background-color: rgb(79, 160, 160);
+    border-radius: 10px;
 } 
