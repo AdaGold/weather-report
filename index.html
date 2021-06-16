@@ -3,25 +3,25 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--??-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>weather application</title>
         <link rel="stylesheet" href="styles/index.css">
         <script src="scripts/index.js" defer></script> <!--dont run js on html bits that dont exist yet-->
-        <link rel="preconnect" href="https://fonts.gstatic.com"> <!--change font w internet-->
-        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> <!--""-->
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
     </head>
     <body>
         <div class="card">
             <div class="search">
-                <input type="text" class="search-bar" placeholder="Search"> <!--should be 'Enter a city' or smthg...-->
-                <button type="button" onclick="alert('You pressed the button..')">Go</button> <!--??-->
+                <input type="text" class="search-bar" placeholder="Search"> 
+                <button type="button" onclick="alert('You pressed the button..')">Go</button> <!--just get rid of onclick bit?-->
             </div>
             <div class="weather loading"> <!--default pg bits-->
-                <h2 class="city">Weather in Denver</h2> <!--change content?-->
+                <h2 class="city">Weather in Denver</h2> <!--change content or rely on no-show styling?-->
                 <h1 class="temp">51 degrees Fahrenheit</h1>
                 <div class="flex">
                     <img src="" alt="" class="icon" />
-                    <div class="description">Cloudy with a chance of rain</div> <!--"sunny" or "cloudy" or whatever; can you link smthg here that plugs in user input-->
+                    <div class="description">Cloudy with a chance of rain</div> <!--likely place for linking smthg here that plugs in user input-->
                 </div>
                 <div class="humidity">Humidity: 60%</div> <!--""-->
                 <div class="wind">Wind speed: 3mph out of the west</div> <!--""-->

@@ -1,4 +1,4 @@
-let weather = { // key from https://home.openweathermap.org/api_keys 
+let weather = { // API key from https://home.openweathermap.org/api_keys 
     "apiKey": "9bb3584c5eef1f79d575c1399cfa5c14",
     fetchWeather: function(city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
@@ -22,6 +22,7 @@ let weather = { // key from https://home.openweathermap.org/api_keys
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + speed + " m/s"; // check units..
         document.querySelector(".weather").classList.remove("loading");
+        //document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=778&q=80')" >> how to generate random photo?
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);

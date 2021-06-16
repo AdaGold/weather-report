@@ -1,4 +1,3 @@
-/* change line 2 with fonts in index.html and internet */
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); 
 
 body {
@@ -7,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Shadows Into Light', cursive; /* change this w font */
+    font-family: 'Shadows Into Light', cursive; 
     background: #222;
     background-image: url('https://images.unsplash.com/photo-1454789476662-53eb23ba5907?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=778&q=80');
     font-size: 120%;
@@ -40,7 +39,7 @@ button {
     color: white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    font-family: 'Shadows Into Light', cursive; /* change this w font */
+    font-family: 'Shadows Into Light', cursive;
 }
 
 .flex {
@@ -74,4 +73,15 @@ h1.temp {
 
 .weather.loading { /*loading bits*/
     visibility: hidden;
+    max-height: 20px;
+    position:relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0; 
+    left: 20px;
 }
