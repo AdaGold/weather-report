@@ -72,15 +72,32 @@ const populateSkyTemp = () => {
 
 
 ///////////// CITY FUNCTIONS ////////////
-const displayCity = (event) => {
-    event.preventDefault();
-    const cityDisplay = document.createElement("div");
+
+//////to disply the city name in one go ////////
+// const displayCity = (event) => {
+//     event.preventDefault();
+//     const cityDisplay = document.createElement("div");
+//     const cityContainer = document.querySelector("#cityContainer");
+//     cityContainer.replaceChildren()
+//     const enteredCity = document.querySelector("#city").value;
+//     cityDisplay.textContent = enteredCity;
+//     cityContainer.appendChild(cityDisplay);
+// }
+
+//////to display the city one letter at a time///////
+const displayCity = () => {
+    const cityDisplay = document.createElement("span");
     const cityContainer = document.querySelector("#cityContainer");
     cityContainer.replaceChildren()
-    const enteredCity = document.querySelector("#city").value;
-    cityDisplay.textContent = enteredCity;
+    const enteredLetter = document.querySelector("#city").value;
+    cityDisplay.textContent = enteredLetter;
     cityContainer.appendChild(cityDisplay);
-    
+}
+
+const resetCity = (event) => {
+    event.preventDefault();
+    const cityContainer = document.querySelector("#cityContainer");
+    cityContainer.replaceChildren()
 }
 
 
@@ -94,8 +111,16 @@ const registerEventHandlers = (event) => {
     const skySelect = document.querySelector("#skyType");
     skySelect.addEventListener("change", populateSkyTemp);
 
+    //////to disply the city name in one go ////////
+    // const showCity = document.querySelector("#cityInput");
+    // showCity.addEventListener("submit", displayCity);     
+    
+    //////to display the city one letter at a time///////
     const showCity = document.querySelector("#cityInput");
-    showCity.addEventListener("submit", displayCity); 
+    showCity.addEventListener("keyup", displayCity); 
+
+    const clearCity = document.querySelector("#cityInput");
+    clearCity.addEventListener("submit", resetCity); 
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
