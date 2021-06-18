@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link href="styles/index.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <img src="assets/cloud.jpg" alt="cloud">
+        <h1>Local Weather Report!</h1>
+        <img src="assets/cloud.jpg" alt="cloud">
+    </header>
+    <main>
+        <h2>For the city of <span id=city-name>Lavander</span></h2>
+        <div id=grid-container>
+            <section id=temperature-section>
+                <h2>Temperature</h2>
+                <div id=temp-content>
+                    <div id="up-down-arrows">
+                        <p id="increase-temp">⬆️</p>
+                        <p id="decrease-temp">⬇️</p>
+                    </div>
+                    <div id="temp-convert-container">
+                        <span id="temp-integer"></span>
+                    </div>
+                </div>
+            </section>
+            <section id="sky-section">
+                <h2>Sky</h2>
+                <div>
+                    <select id="sky-dropdown">
+                        <option value="Rainy">Rainy</option>
+                        <option value="Sunny">Sunny</option>
+                        <option value="Cloudy">Cloudy</option>
+                        <option value="Snowy">Snowy</option>
+                    </select>
+                </div>
+            </section>
+            <section id="city-section">
+                <h2>City</h2>
+                <div>
+                    <input type="text" id="city" value="Lavender">
+                    <button id="reset-button">Reset</button>
+                </div>
+            </section>
+            <section id="weather-section">
+                <h2>Weather Garden</h2>
+                <div id="weather-content">
+                    <div id="landscape"></div>
+                    <div id="sky"></div>
+                </div>
+            </section>
+    </main>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
