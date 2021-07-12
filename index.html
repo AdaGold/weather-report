@@ -1,31 +1,38 @@
-<!--followed a video for guidance; calls an API, does not take user input-->
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>weather application</title>
-        <link rel="stylesheet" href="styles/index.css">
-        <script src="scripts/index.js" defer></script> <!--dont run js on html bits that dont exist yet-->
-        <link rel="preconnect" href="https://fonts.gstatic.com"> 
-        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>weather report</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
     </head>
+    
     <body>
-        <div class="card">
-            <div class="search">
-                <input type="text" class="search-bar" placeholder="Search"> 
-                <button type="button" onclick="alert('You pressed the button..')">Go</button> <!--just get rid of onclick bit?-->
-            </div>
-            <div class="weather loading"> <!--default pg bits-->
-                <h2 class="city">Weather in Denver</h2> <!--change content or rely on no-show styling?-->
-                <h1 class="temp">51 degrees Fahrenheit</h1>
-                <div class="flex">
-                    <img src="" alt="" class="icon" />
-                    <div class="description">Cloudy with a chance of rain</div> <!--likely place for linking smthg here that plugs in user input-->
-                </div>
-                <div class="humidity">Humidity: 60%</div> <!--""-->
-                <div class="wind">Wind speed: 3mph out of the west</div> <!--""-->
-            </div>
-        </div>
+        <main>
+        <h1>WEATHER REPORT</h1>
+        <p>For the lovely city of WhereEver.</p> <!--how to pass city name as param? -->
+
+        <section>
+            <button id="raiseTempButton">Raise the Temp</button> <!--UP BUTTON ID -->
+        </section>
+
+        <section>
+            <button id="lowerTempButton">Lower the Temp</button> <!--DOWN BUTTON ID -->
+        </section>
+
+        <section id="tempContainer"> <!--ID 1-->
+            <h2 id="tempCount">Temperature (degrees Fahrenheit): 50</h2> <!--ID 2-->
+        </section>
+
+        <h2>Weather Garden</h2>
+
+        <section id="landscape-box">
+            <div id="sky">☁️ ☁️ ☁️ ☀️ ☁️ ☁️</div>
+            <div id="ground">🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲</div>
+        </section>
+
+        </main>
+
+        <script src="scripts/index.js"></script>
     </body>
 </html>

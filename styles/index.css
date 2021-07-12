@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); 
+body {
+    color: rgb(228, 70, 30);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(255, 237, 189), rgb(240, 234, 190), rgb(224, 231, 192), rgb(209, 228, 193), rgb(194, 225, 194), rgb(178, 222, 196), rgb(163, 219, 197), rgb(147, 216, 199), rgb(132, 213, 200), rgb(117, 210, 201), rgb(101, 207, 203), rgb(86, 204, 204));
+}
+
+body h1 {
+    font-family: 'Gill Sans';
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap'); 
 
 body {
     display: flex;
@@ -71,7 +82,7 @@ h1.temp {
     margin-bottom: 0.4em;
 }
 
-.weather.loading { /*loading bits*/
+.weather.loading { /*loading bits*/ /*
     visibility: hidden;
     max-height: 20px;
     position:relative;
@@ -84,4 +95,4 @@ h1.temp {
     position: absolute;
     top: 0; 
     left: 20px;
-}
+} */
