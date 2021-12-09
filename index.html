@@ -5,8 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link href="styles/index.css" rel="stylesheet">
 </head>
+
 <body>
-    
+        
+    <header class="header">
+        <h1>Weather Report</h1>
+        <h2>The weather for...
+            <span id="headerCityName" class="header__city-name"></span>
+        </h2>
+    </header>
+    <section class="content">
+
+        <div class="wrapper">
+        <div class="box1">
+            <h1>Temperature:</h1>
+            <h1><span id="temp"></span></h1>
+            <div class="temperature__content">
+                <div class="temperature__controls">
+                    <span id="incTemp">⬆️</span>
+                    <span id="decTemp">⬇️</span>
+                    <div>Use the arrows to adjust the temperature.</div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="box2">
+            <h1>Today's Horoscope</h1>
+            <li><a href= "https://www.horoscope.com/us/horoscopes/general/index-horoscope-general-daily.aspx">My horoscope</a></li>
+        </div>
+            
+        <div class="box3">
+            <section class="weather_garden">
+                <h1>Weather Garden</h1>
+                <div id="gardenContent" class="garden__content">
+                    <div id="sky"></div>
+                    <div id="landscape"></div>
+                </div>
+            </section>
+        </div>
+        <div class="box4">
+            <select id="sky_change">
+                <option>Sunny</option>
+                <option>Cloudy</option>
+                <option>Rainbow</option>
+                <option>Snowy</option>
+            
+            </select>
+        </div>
+            <div class="box5">
+                <section class="city-name__section">
+                    <h1>Location</h1>
+                    <input type="text" id="cityInput" value="Atlanta" />
+                    <button id="cityReset" class="city-name__reset-btn">Reset</button>
+                    <div>Type a new city name.</div>
+                    <div>Then click enter.</div>
+                </section>
+            </div>
+    </section>
+    <script src="src/index.js"></script>
 </body>
 </html>
