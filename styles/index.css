@@ -46,6 +46,37 @@ header {
 .arrows {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    font-style: bold;
+}
+
+.button {
+    display: block;
+    margin: auto auto;
+    /* background-color: red; */
+    color: blue;
+    background-color: white;
+    border: none;
+    font-size: 4vw;
+    /* width: 90%;
+    height: 70%; */
+    /* border: solid 1px blue; */
+
+}
+
+.button:hover {
+    background-color: blue;
+    color: white;
+}
+
+#up {
+    text-align: center;
+    transform: rotate(-90deg);
+
+}
+
+#down {
+    text-align: center;
+    transform: rotate(90deg);
 }
 
