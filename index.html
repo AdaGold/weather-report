@@ -5,8 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link href="styles/index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    
+
+<div name="content" id="content" onmouseleave="focusContent()">
+    <script src ="src/index.js" onload="pageLoad()"></script>
+    <!-- <section class="halfPage"> -->
+<header>
+    <input id="skyScape" value="">
+    </header></br>
+    <main>
+      <button id="upButton" onclick="increaseTemp()">Raise Temperature</button></br>
+  <div id="tempBox">60</div>
+  <button id="downButton" onclick="decreaseTemp()">Lower Temperature</button></br></br>
+<!--   <section class="dropdown">
+  <dropdown id="skyDropbtn">Sky</dropdown>
+    <a href="#" value="8" onclick="skyChange()">Sky 1</a>
+    <a href="#" onclick="skyChange(2)">Sky 2</a>
+    <a href="#" onclick="skyChange(3)">Sky 3</a>
+    <a href="#" onclick="skyChange(4)">Sky 4</a>
+    <a href="#" onclick="skyChange(5)">Sky 5</a>
+  <dropdown id="landDropbtn">Land</dropdown>
+ <div class="landContent"> -->
+<!--     <a href="#">Land 1</a>
+    <a href="#">Land 2</a>
+    <a href="#">Land 3</a>
+    <a href="#">Land 4</a>
+    <a href="#">Land 5</a>
+</section></br></br> --> 
+ <label for="headers">Choose a skyscape:</label>
+  <select name="headerChoice" id="headers" onchange="skyScapeGoat()">
+    <option value="🐮">One</option>
+    <option value="🐲">Two</option>
+    <option value="🐟">Three</option>
+    <option value="🦡">Four</option>
+    <option value="🐢🦆">Five</option>
+  </select>
+  <br><br>
+
+<label for="footers">Choose a landscape:</label>
+    <select name="footerChoice" id="footers" onchange="landScapeGoat()">
+    <option value="🎂">One</option>
+    <option value="🌩️">Two</option>
+    <option value="🩸">Three</option>
+    <option value="🧲">Four</option>
+    <option value="🏜️">Five</option>
+  </select>
+  </section>
+  <br><br>
+
+        <label for="cityName">City</label>
+          <input type='text' id='cityName'>
+        <button id="changeName" onclick="checkCityName()">Go</button>
+  </main></br>
+<input id="cityBox" value="Republic City"></input>
+<button id="resetName" onclick="resetName()">Reset</button></br>
+</br><footer><input id="landScape" value=""></footer>
+</section>
+</div>
+</main>
 </body>
+</html>
 </html>
