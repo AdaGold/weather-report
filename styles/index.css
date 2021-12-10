@@ -55,6 +55,16 @@ p {
     color: red;
 }
 
+#garden {
+    display: flex;
+    margin: auto auto;
+    width: 30vw;
+    height: 30vw;
+    justify-content: center;
+    /* background-color: red; */
+    padding: 10px;
+}
+
 .controls {
     display: flex;
     flex-direction: column;
