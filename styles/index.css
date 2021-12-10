@@ -12,6 +12,10 @@ header {
     line-height: 175%;
 }
 
+header:hover {
+    color: red;
+}
+
 #container {
     display: flex;
     justify-content:space-evenly;
@@ -31,15 +35,14 @@ header {
     font-size: 2vw;
 }
 
-#num {
+#temp {
     font-weight: bold;
     /* color: red; */
 }
+/* #city-name {
 
-#city-name {
-    /* font-style: italic; */
-}
-#city-name:hover, #num:hover {
+} */
+#city-name:hover, #temp:hover {
     font-style: italic;
     color: red;
 }
