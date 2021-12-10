@@ -16,6 +16,11 @@ header:hover {
     color: red;
 }
 
+p {
+    margin: 5px;
+    border: solid 1px blue;
+    padding: 5px;
+}
 #container {
     display: flex;
     justify-content:space-evenly;
@@ -53,6 +58,7 @@ header:hover {
 }
 
 #controls {
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -76,6 +82,7 @@ header:hover {
     flex-direction: column;
     justify-content: space-evenly;
     font-style: bold;
+    /* background-color: red; */
 }
 
 .button {
@@ -84,7 +91,7 @@ header:hover {
     color: blue;
     background-color: white;
     border: none;
-    font-size: 4vw;
+    font-size: 3em;
 }
 
 .button:hover {
@@ -103,3 +110,6 @@ header:hover {
     transform: rotate(90deg);
 }
 
+input[type=text] {
+    border: none;
+}
