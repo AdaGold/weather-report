@@ -138,43 +138,18 @@ input[type=text]:hover {
     border: solid 1px blue;
     color: white;
     padding: 10px;
-    text-align: center;
     min-width: 180px;
     font-size: inherit;
     border: none;
     cursor: pointer;
 }
 
-.sky-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.sky-options {
-    display: none;
-    position: absolute;
-    background-color: white;
+select {
+    background-color: blue;
+    color: white;
+    padding: 10px;
     min-width: 180px;
-    box-shadow: 0px 9px 18px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    font-size: inherit;
+    cursor: pointer;
 }
 
-.sky-options a {
-    color: blue;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.sky-options a:hover {
-    background-color: yellow;
-    color: blue;
-}
-
-.sky-dropdown:hover .sky-options {
-    display: block;
-}
-
-.dropdown:hover .dropbutton {
-    background-color: white;
-}
