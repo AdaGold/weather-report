@@ -151,7 +151,7 @@ input[type=text] {
     display: block;
 }
 
-.sky-options a:hover, .dropbutton:hover {
+.sky-options a:hover {
     background-color: yellow;
     color: blue;
 }
