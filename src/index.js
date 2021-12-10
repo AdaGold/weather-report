@@ -4,16 +4,20 @@ const updateTemp = temp => {
     const tempContainer = document.getElementById("temp");
     tempContainer.textContent = temp;
 }
-
 const increaseTemp = () => {
     temp += 1;
     updateTemp(temp);
 }
-
 const decreaseTemp = () => {
     temp -= 1;
     updateTemp(temp);
 }
+
+const updateCityName = () => {
+    const inputName = document.getElementById("city-input").value;
+    const cityName = document.getElementById("city-name");
+    cityName.textContent = inputName;
+};
 
 const registerEventHandlers = () => {
     updateTemp(temp);
@@ -23,6 +27,10 @@ const registerEventHandlers = () => {
     
     const decreaseTempControl = document.getElementById("down");
     decreaseTempControl.addEventListener("click", decreaseTemp);
+
+    updateCityName();
+    const cityNameInput = document.getElementById("city-input");
+    cityNameInput.addEventListener("input", updateCityName)
 
 };
 
