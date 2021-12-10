@@ -1,18 +1,18 @@
 body {
-    background-color: rgb(241, 162, 133);
+    background-color: rgb(241, 225, 133);
 }
 
 h1,h2 {
     text-align: center;
-    font-family: sans-serif;
-    color: rgb(241, 162, 133) ;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(69, 189, 173) ;
     background-color: beige;
 }
 
 div {
     text-align: center;
-    font-family: sans-serif;
-    color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(224, 140, 168);
 
 }
 
@@ -56,4 +56,30 @@ div {
     
 }
 
+.red {
+    color: red;
+}
 
+.orange {
+    color: orange;
+}
+
+.yellow {
+    color: gold;
+}
+
+.green {
+    color: green;
+}
+
+.teal {
+    color: teal;
+}
+
+#sky {
+    font-size: x-large;
+}
+
+#landscape {
+    font-size: x-large;
+}

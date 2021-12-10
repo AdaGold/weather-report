@@ -39,24 +39,29 @@
         <div class="box3">
             <section class="weather_garden">
                 <h1>Weather Garden</h1>
-                <div id="gardenContent" class="garden__content">
-                    <div id="sky"></div>
-                    <div id="landscape"></div>
+                <div id="gardenStuff" class="garden__stuff">
+                    <div id="sky"></div><br><br><br><br>
+                    <div id="landscape"></div><br><br>
+                    <head> What time is it in EST?</head>
+                    <body>
+                    <p>Current Date and Time: <span id='date-time'></span>.</p>
+                    </body>
                 </div>
             </section>
         </div>
         <div class="box4">
+            <h1>Change the sky</h1>
             <select id="sky_change">
                 <option>Sunny</option>
                 <option>Cloudy</option>
-                <option>Rainbow</option>
+                <option>Rainy</option>
                 <option>Snowy</option>
             
             </select>
         </div>
             <div class="box5">
+                <h1>Location</h1>
                 <section class="city-name__section">
-                    <h1>Location</h1>
                     <input type="text" id="cityInput" value="Atlanta" />
                     <button id="cityReset" class="city-name__reset-btn">Reset</button>
                     <div>Type a new city name.</div>
