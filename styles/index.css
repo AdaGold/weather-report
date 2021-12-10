@@ -15,10 +15,30 @@ header {
 
 #container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     margin: auto auto; 
     padding: 20px;
 }
+
+/* #weather-display {
+    background-color: yellow;
+} */
+
+#adjustable {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* #num {
+    background-color: red;
+} */
+
+/* img {
+    width: 80%;
+    height: 90%;
+} */
 
 #controls {
     display: flex;
@@ -35,8 +55,6 @@ header {
     text-align: center;
 
 }
-
-
 
 #temp {
     display: flex;
