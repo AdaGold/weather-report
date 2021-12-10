@@ -10,7 +10,6 @@ header {
     width: 20%;
     height: 30%;
     line-height: 175%;
-    /* background-color: yellow; */
 }
 
 #container {
@@ -29,23 +28,26 @@ header {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 5px;
+    font-size: 2vw;
 }
 
-/* #num {
-    background-color: red;
-} */
+#num {
+    font-weight: bold;
+    /* color: red; */
+}
 
-/* img {
-    width: 80%;
-    height: 90%;
-} */
+#city-name {
+    /* font-style: italic; */
+}
+#city-name:hover, #num:hover {
+    font-style: italic;
+    color: red;
+}
 
 #controls {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* background-color: yellow; */
-
 }
 
 #controls > div {
@@ -71,15 +73,10 @@ header {
 .button {
     display: block;
     margin: auto auto;
-    /* background-color: red; */
     color: blue;
     background-color: white;
     border: none;
     font-size: 4vw;
-    /* width: 90%;
-    height: 70%; */
-    /* border: solid 1px blue; */
-
 }
 
 .button:hover {
