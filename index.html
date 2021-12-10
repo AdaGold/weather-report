@@ -25,13 +25,15 @@
             <div id="city">
                 <input type="text" id="city-input" value="enter city name">
             </div>
-            <div class="sky-dropdown">
-                <select>
-                    <option value="" class="dropbutton">choose sky</option>
-                    <option value="" class="sky-options">sunny</option>
-                    <option value="" class="sky-options">thunderstorm</option>
-                    <option value="" class="sky-options">snow</option>
-                </select>
+            <div>
+                <form method="" action="" name="myForm">
+                    <select id="sky-dropdown" name="switch" onchange="switchImage();">
+                        <option value="choose" rel="assets/question.png" class="dropbutton">choose sky</option>
+                        <option value="sunny" rel="assets/sunny.png" class="sky-options">sunny</option>
+                        <option value="thunderstorm" rel="assets/thunderstorm.png" class="sky-options">thunderstorm</option>
+                        <option value="snow" rel="assets/snow.png" class="sky-options">snow</option>
+                    </select>
+                </form>
             </div>
             <!-- <div class="sky-dropdown">
                 <button class="dropbutton">choose sky</button>
@@ -48,7 +50,7 @@
                 <div id="degrees"><span id="temp">55</span>°</div>
             </div>
             <div id="garden">
-                <img src="assets/snow.png">
+                <img name="display" src="assets/choose.png">
             </div>
         </div>
     </section>

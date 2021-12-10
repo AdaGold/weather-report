@@ -19,6 +19,22 @@ const updateCityName = () => {
     cityName.textContent = inputName;
 };
 
+const switchImage = ()=> {
+    let selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
+    document.display.src = "assets/" + selectedImage + ".png";
+}
+
+
+// const chooseSkySelect = document.getElementById("#sky-dropdown");
+
+// chooseSkySelect.addEventListener("change", function (e) {
+//     let sky = e.target.options[e.target.selectedIndex].getAttribute("rel");
+//     const skyImg = document.getElementById("display");
+
+//     skyImg.src = skyImg;
+// });
+
+
 const registerEventHandlers = () => {
     updateTemp(temp);
 
@@ -30,7 +46,7 @@ const registerEventHandlers = () => {
 
     updateCityName();
     const cityNameInput = document.getElementById("city-input");
-    cityNameInput.addEventListener("input", updateCityName)
+    cityNameInput.addEventListener("input", updateCityName);
 
 };
 
