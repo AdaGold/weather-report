@@ -15,22 +15,37 @@ header {
 
 #container {
     display: flex;
+    justify-content: space-evenly;
+    margin: auto auto; 
+    padding: 20px;
 }
 
 #controls {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: yellow;
+    /* background-color: yellow; */
 
 }
 
 #controls > div {
-    border: solid 3px red;
+    border: solid 1px blue;
+    font-size: 1em;
+    padding: 10px;
+    text-align: center;
+
 }
 
-#arrows {
+
+
+#temp {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
 }
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
