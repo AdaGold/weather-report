@@ -26,6 +26,7 @@ p {
     justify-content:space-evenly;
     margin: auto auto; 
     padding: 20px;
+    /* background-color: red; */
 }
 
 /* #weather-display {
@@ -47,27 +48,23 @@ p {
 
 #temp {
     font-weight: bold;
-    /* color: red; */
 }
-/* #city-name {
 
-} */
 #city-name:hover, #temp:hover {
     font-style: italic;
     color: red;
 }
 
-#controls {
-    /* background-color: red; */
+.controls {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    text-align: center;
 }
 
 #controls > div {
-    /* border: solid 1px blue; */
     font-size: 1em;
-    padding: 10px;
     text-align: center;
 
 }
@@ -81,8 +78,10 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-style: bold;
-    /* background-color: red; */
+}
+
+#up, #down {
+    font-size: 4em;
 }
 
 .button {
@@ -121,9 +120,46 @@ input[type=text] {
 }
 
 .dropbutton {
-    background-color: white;
-    color: blue;
-    padding: 5px;
-    font-size: inherit;
+    background-color: blue;
     border: solid 1px blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    min-width: 180px;
+    font-size: inherit;
+    border: none;
+}
+
+.sky-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.sky-options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sky-options a {
+    color: blue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.sky-options a:hover, .dropbutton:hover {
+    background-color: yellow;
+    color: blue;
+}
+
+.sky-dropdown:hover .sky-options {
+    display: block;
+}
+
+.dropdown:hover .dropbutton {
+    background-color: white;
 }
