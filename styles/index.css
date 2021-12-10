@@ -12,3 +12,25 @@ header {
     line-height: 175%;
     /* background-color: yellow; */
 }
+
+#container {
+    display: flex;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: yellow;
+
+}
+
+#controls > div {
+    border: solid 3px red;
+}
+
+#arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
