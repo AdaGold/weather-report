@@ -65,7 +65,7 @@ p {
 }
 
 #controls > div {
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     font-size: 1em;
     padding: 10px;
     text-align: center;
@@ -111,5 +111,19 @@ p {
 }
 
 input[type=text] {
+    color: blue;
+    font-size: inherit;
     border: none;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px blue;
+}
+
+.dropbutton {
+    background-color: white;
+    color: blue;
+    padding: 5px;
+    font-size: inherit;
+    border: solid 1px blue;
 }
