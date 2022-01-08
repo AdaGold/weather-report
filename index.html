@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Report</title>
+    <link rel="stylesheet" href="styles/index.css">
+
 </head>
 <body>
+    <header class = "header_header">
+        <link href="styles/index.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+      <div class="main-container">
+        <header>
+          <h1 class="logo">Weather Report</h1>
+          <h3 class="sub">Welcome To</h3>
+          <h2 id="default-city">City Name</h2>
+        </header>
+        <main>
+          <div id="widget-container">
+            <section class="temperature-section">
+              <h3>Temperature</h3>
+              <button id="up-arrow">⬆</button>
+              <button id="down-arrow">⬇</button>
+              <div id="temperature">70</div>
+            </section>
+            <section class="sky-section"> 
+              <h3>Sky</h3>   
+              <select name="sky" id="sky">
+                <option value="sunny">Sunny</option>
+                <option value="cloudy">Cloudy</option>
+                <option value="rainy">Rainy</option>
+                <option value="snowy">Snowy</option>
+              </select>
+            </section> 
+            <section class="city-section"> 
+              <h3>City Name</h3> 
+              <input type="text" id="city-name" placeholder="City name"/>
+              <input type="reset" id ="reset-button" value="Reset">    
+            </section> 
+          </div>
+          <section class="weather-garden">
+            <h2>Weather Garden</h2>
+            <div class="weather-box">
+            <div id="sky-emojis">☁️ ☁️ ☁️ ☀️ ☁️ ☁️</div>
+            <div id="ground-emojis">🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷</div>
+            </div>
+          </section>
+        </main>
+      </div>
+      
+      <script src="src/index.js"></script>
+    </body>
+    </html>
     
-</body>
-</html>
+         
+    
