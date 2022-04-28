@@ -93,163 +93,18 @@ Wave 6:
 
 1. A clickable element to reset the city name
 
-## Detailed Requirements
+## Detailed Content Requirements
 
-## Wave 1: Create Wireframes
+[Wave 1: Create Wireframes](./ada-project-docs/wave-01.md)
 
-Before writing code, create a set of diagrams, sketches, or low-fidelity wireframes to visualize your project's layout.
+[Wave 2: Increase and Decrease Temperature](./ada-project-docs/wave-02.md)
 
-These wireframes should include all the required HTML elements.
+[Wave 3: Naming the City](./ada-project-docs/wave-03.md)
 
-If possible, share and talk through ideas with someone else!
+[Wave 4: Calling APIs]((./ada-project-docs/wave-04.md))
 
-Use these wireframes to guide the rest of your project.
+[Wave 5: Selecting the Sky](./ada-project-docs/wave-05.md)
 
-### Tips
+[Wave 6: Resetting the City Name](./ada-project-docs/wave-06.md))
 
-- This project will require you to select _a lot_ of elements. Creating logical, well-organized HTML structures in the beginning will help you later on.
-- Create as many `id`s as you need. Sometimes, it's more effective to select by ID, compared to selecting by class, element, or relationship.
-
-## Wave 2: Increase and Decrease Temperature
-
-### Requirements
-
-A numeric temperature must be displayed. This temperature can be in either Fahrenheit or Celsius degrees.
-
-There must be two clickable elements:
-
-1. An element that increases the temperature by one degree on click
-1. An element that decreases the temperature by one degree on click
-
-#### Temperature Ranges Change Text Color
-
-Depending on what temperature it is, either:
-
-- the temperature number changes color
-- the background of the temperature changes color
-
-There must be at least five categories of distinguishable colors.
-
-Our solution uses the following ranges, which you may use if desired:
-
-| Temperature (F) | Color  |
-| --------------- | ------ |
-| 80+             | Red    |
-| 70-79           | Orange |
-| 60-69           | Yellow |
-| 50-59           | Green  |
-| 49 or below     | Teal   |
-
-#### Temperature Ranges Change Landscape
-
-Depending on what temperature it is, a different landscape should appear on the page.
-
-These landscapes can be anything, as long as they are visual and noticeable to any instructors. For example, the landscapes can be:
-
-- A single image that appears
-- ASCII art
-- Text
-
-Changing landscapes should _replace_ the existing landscape. There should only be one visible landscape at a time.
-
-There must be at least five landscapes.
-
-Our solution uses the following ranges, which you may use if desired:
-
-| Temperature (F) | Landscape                         |
-| --------------- | --------------------------------- |
-| 80+             | `"🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂"`       |
-| 70-79           | `"🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷"`      |
-| 60-69           | `"🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃"`        |
-| 59 or below     | `"🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲"` |
-
-
-## Wave 3: Naming the City
-
-As mentioned before, there are two required elements:
-
-- An element that displays a city name
-- A [text input element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text) that allows the user to change the city name
-
-### Requirements
-
-The city name must update every time there's a change to the text input element.
-
-For example, if the text input element has the characters `Seatt` in it, then the displayed city name should be "Seatt."
-
-### Hints
-
-- This feature requires you to grab the _value_ of the text input element.
-
-## Wave 4: Calling APIs
-
-In this wave, we will add a feature that gets the weather of the current displayed city name. In order to get the weather of the city, first we will need to get the latitude and longitude of the city using the [`LocationIQ`](https://locationiq.com/docs) API. We can then use the latitude and longitude with the [`OpenWeather`](https://openweathermap.org/api/one-call-api) API to get current weather data.
-
-### Proxy Servers
-
-Both `LocationIQ` and `OpenWeather` require API keys. When we are building client side web applications, we don't want to include these API keys in our code as they will be available for anyone to see. To manage our API keys we will use a proxy server.
-
-"A proxy server is a server (or computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers" [resource](https://medium.com/system-design-blog/what-is-proxy-server-a05b99bf686a#:~:text=A%20proxy%20server%20is%20a,seeking%20resources%20from%20other%20servers). 
-
-### Weather Report Proxy Server
-
-For Weather Report, we provide a [weather report proxy server](https://github.com/adaGold/weather-report-proxy-server) built with Flask. As such, the *Weather Report web app* we are building, should make `axios` calls to our *Weather Report proxy server*, which manages our API keys and forwards our requests along to the appropriate 3rd party API. 
-
-For details on how to run the Weather Report proxy server, see the [Weather Report Proxy Server README](https://github.com/adaGold/weather-report-proxy-server).
-
-
-### 3rd Party APIs
-
-<details>
-  <summary>Expand the details tag for guidance on creating accounts and logging into to LocationIQ and OpenWeather, navigating the site to find our API keys, and reading the docs to learn how to make the correct `GET` request and parse the response.</summary>
-
-  ### LocationIQ
-
-  ### OpenWeather
-
-</details>
-
-## Wave 5: Selecting the Sky
-
-There must be a [`<select> element`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) that lets users to determine what sky to display.
-
-### Selection Changes Sky
-
-When a user selects an option from the dropdown element, the appropriate sky should appear on the page.
-
-Like the landscapes, the skies can be anything, as long as they are visual and noticeable to any instructors. They can be images, ASCII art, text, or anything else.
-
-Like the landscapes, changing the sky should _replace_ the existing sky. There should only be one visible sky at a time.
-
-There must be at least four skies.
-
-Our solution uses the following sky options, which you may use if desired:
-
-| Option | Sky                           |
-| ------ | ----------------------------- |
-| Sunny  | `"☁️ ☁️ ☁️ ☀️ ☁️ ☁️"`         |
-| Cloudy | `"☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️"` |
-| Rainy  | `"🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧"`          |
-| Snowy  | `"🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨"`       |
-
-### Hints
-
-- The event for changing a `<select>` element is not called `"click"`! You'll need to find the correct name for this event.
-  - "html select change event" is a reasonable Internet search to start.
-- This feature requires you to research how do you get the _value_ of the `<select>` element.
-
-## Wave 6: Resetting the City Name
-
-Include a button that resets the city name.
-
-When a user clicks on this button, the city name will be set to a default name.
-
-### Hints
-
-For best results, this reset button should also affect the city name text input element.
-
-For the best user experience, the text input element's value should be set to the default city name, or become blank.
-
-## Optional Enhancements
-
-[Click here to visit a page of optional enhancements to inspire you.](ada-project-docs/optional-enhancements.md)
+[Optional Enhancements to inspire you](./ada-project-docs/optional-enhancements.md)
