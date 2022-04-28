@@ -11,6 +11,9 @@
 - Handling events
 - Using Git
 - Designing an intentional user experience
+- Using Axios to call 3rd party APIs
+- Using a proxy server to manage API keys
+- Handling asynchronous calls
 
 ## Goal
 
@@ -26,7 +29,7 @@ _Fig. DuckDuckGo's weather modal, which features city name, temperature reading,
 
 Our goal is to create a fun, small weather app that focuses on displaying the weather.
 
-Instead of getting weather data from a data source, we will set the weather using user interaction.
+Our weather app will set the weather using user interaction and get the weather from a 3rd party API, OpenWeather.
 
 ![Example weather app: The temperature reads 71, in orange text. The selected dropdown for "Sky" is "Cloudy." There is a depiction of cloudy weather. The city name is "My Hometown." The header reads "My Hometown."](ada-project-docs/assets/example-71.png)  
 _Fig. Example weather app: The temperature reads 71, in orange text. The selected dropdown for "Sky" is "Cloudy." There is a depiction of cloudy weather. The city name is "My Hometown." The header reads "My Hometown."_
@@ -50,7 +53,7 @@ At submission time, no matter where you are, submit the project via Learn.
 
 You are required to use vanilla JavaScript for all parts of this project, including the optional enhancements.
 
-Do not load or use any extra JavaScript libraries.
+The only extra JavaScript libraries we should load is `Axios`.
 
 ## Workflow Requirements
 
