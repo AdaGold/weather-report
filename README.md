@@ -77,15 +77,19 @@ Wave 2:
 
 Wave 3:
 
-1. A `<select>` dropdown element to set the sky type
-1. An element that displays a sky
-
-Wave 4:
-
 1. An element that displays the city name
 1. An element that contains a `<input type="text">` element, used to rename the city
 
+Wave 4:
+
+1. A clickable element to get the current temperature of the displayed city name
+
 Wave 5:
+
+1. A `<select>` dropdown element to set the sky type
+1. An element that displays a sky
+
+Wave 6:
 
 1. A clickable element to reset the city name
 
@@ -157,7 +161,35 @@ Our solution uses the following ranges, which you may use if desired:
 | 60-69           | `"🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃"`        |
 | 59 or below     | `"🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲"` |
 
-## Wave 3: Selecting the Sky
+
+## Wave 3: Naming the City
+
+As mentioned before, there are two required elements:
+
+- An element that displays a city name
+- A [text input element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text) that allows the user to change the city name
+
+### Requirements
+
+The city name must update every time there's a change to the text input element.
+
+For example, if the text input element has the characters `Seatt` in it, then the displayed city name should be "Seatt."
+
+### Hints
+
+- This feature requires you to grab the _value_ of the text input element.
+
+## Wave 4: Calling APIs
+
+In this wave we will add a feature that gets the weather of the current displayed city name. In order to get the weather of the city, first we will need to get the latitude and longitude of the city using the `LocationIQ` API. We can then use the latitude and longitude with the `OpenWeather` API to get current weather data.
+
+### LocationIQ: Get the latitude and longitude
+
+### OpenWeather: Get the current temperature
+
+### Proxy Server
+
+## Wave 5: Selecting the Sky
 
 There must be a [`<select> element`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) that lets users to determine what sky to display.
 
@@ -186,24 +218,7 @@ Our solution uses the following sky options, which you may use if desired:
   - "html select change event" is a reasonable Internet search to start.
 - This feature requires you to research how do you get the _value_ of the `<select>` element.
 
-## Wave 4: Naming the City
-
-As mentioned before, there are two required elements:
-
-- An element that displays a city name
-- A [text input element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text) that allows the user to change the city name
-
-### Requirements
-
-The city name must update every time there's a change to the text input element.
-
-For example, if the text input element has the characters `Seatt` in it, then the displayed city name should be "Seatt."
-
-### Hints
-
-- This feature requires you to grab the _value_ of the text input element.
-
-## Wave 5: Resetting the City Name
+## Wave 6: Resetting the City Name
 
 Include a button that resets the city name.
 
