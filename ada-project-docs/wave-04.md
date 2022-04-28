@@ -12,8 +12,7 @@ Both `LocationIQ` and `OpenWeather` require API keys. When we are building clien
 
 For Weather Report, we provide a [weather report proxy server](https://github.com/adaGold/weather-report-proxy-server) built with Flask. As such, the *Weather Report web app* we are building, should make `axios` calls to our *Weather Report proxy server*, which manages our API keys and forwards our requests along to the appropriate 3rd party API. 
 
-For details on how to run the Weather Report proxy server, see the [Weather Report Proxy Server README](https://github.com/adaGold/weather-report-proxy-server).
-
+For details on how to run the Weather Report proxy server, see the [Weather Report Proxy Server README](https://github.com/adaGold/weather-report-proxy-server). No changes need to made to the source code of the proxy server. The only work that needs to be done is adding a `.env` file with your API keys.
 
 ### 3rd Party APIs
 
