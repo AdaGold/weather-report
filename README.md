@@ -53,14 +53,20 @@ At submission time, no matter where you are, submit the project via Learn.
 
 You are required to use vanilla JavaScript for all parts of this project, including the optional enhancements.
 
+## Axios
 The only extra JavaScript libraries we should load is `Axios`.
+
+To download the `axios` node module, run `npm install`
+
+To include axios in your project, include the following script tag below the script tag linking `index.js`:
+- <script src="./node_modules/axios/dist/axios.min.js"></script>
 
 ## Workflow Requirements
 
 - Create at least five git commits throughout this project
 - Use the following files and folders:
   - `index.html`
-  - `scripts/index.js`
+  - `src/index.js`
   - `styles/index.css`
   - `assets` folder, potentially for holding images
 - Create and add more folders and files as needed
@@ -98,7 +104,7 @@ Wave 6:
 
 ## Detailed Content Requirements
 
-[Wave 1: Create Wireframes](./ada-project-docs/wave-01.md)
+[Wave 1: Create Wireframes and HTML](./ada-project-docs/wave-01.md)
 
 [Wave 2: Increase and Decrease Temperature](./ada-project-docs/wave-02.md)
 

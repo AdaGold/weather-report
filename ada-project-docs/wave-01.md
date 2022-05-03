@@ -1,4 +1,6 @@
-## Wave 1: Create Wireframes
+## Wave 1: Create Wireframes and HTML
+
+### Wireframes
 
 Before writing code, create a set of diagrams, sketches, or low-fidelity wireframes to visualize your project's layout.
 
@@ -7,6 +9,15 @@ These wireframes should include all the required HTML elements.
 If possible, share and talk through ideas with someone else!
 
 Use these wireframes to guide the rest of your project.
+
+### HTML
+
+We recommend you get started by writing the HTML in `index.html`.
+
+You will need to link:
+- `index.css` 
+- `index.js`   
+- `./node_modules/axios/dist/axios.min.js` 
 
 ### Tips
 
