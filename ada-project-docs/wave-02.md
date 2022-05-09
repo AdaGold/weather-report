@@ -40,7 +40,7 @@ These landscapes can be anything, as long as they are visual and noticeable to a
 
 Changing landscapes should _replace_ the existing landscape. There should only be one visible landscape at a time.
 
-There must be at least five landscapes.
+There must be at least four landscapes.
 
 Our solution uses the following ranges, which you may use if desired:
 
