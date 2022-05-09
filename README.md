@@ -54,12 +54,12 @@ At submission time, no matter where you are, submit the project via Learn.
 You are required to use vanilla JavaScript for all parts of this project, including the optional enhancements.
 
 ## Axios
-The only extra JavaScript libraries we should load is `Axios`.
+The only extra JavaScript library we should load is `Axios`.
 
 To download the `axios` node module, run `npm install`
 
 To include axios in your project, include the following script tag below the script tag linking `index.js`:
-- <script src="./node_modules/axios/dist/axios.min.js"></script>
+- `<script src="./node_modules/axios/dist/axios.min.js"></script>`
 
 ## Workflow Requirements
 
