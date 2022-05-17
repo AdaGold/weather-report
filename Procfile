@@ -1,1 +1,1 @@
-echo "web: node app.js" > Procfile
+build: npm install
