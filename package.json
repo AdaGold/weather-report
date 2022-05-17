@@ -2,7 +2,10 @@
   "dependencies": {
     "axios": "^0.27.2"
   },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  },
   "scripts": {
-    "start": ""
+    "deploy": "npm run build && gh-pages -d dist"
   }
 }
