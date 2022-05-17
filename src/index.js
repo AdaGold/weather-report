@@ -14,7 +14,7 @@ const convertKtoF = (temp) => {
 const findLatAndLong = () => {
   //let lat, long;
   axios
-    .get('http://localhost:5000/location', {
+    .get('https://weather-report-proxy-server.herokuapp.com/location', {
       params: {
         q: state.city,
       },
@@ -32,7 +32,7 @@ const findLatAndLong = () => {
 
 const getWeather = () => {
   axios
-    .get('http://localhost:5000/weather', {
+    .get('https://weather-report-proxy-server.herokuapp.com/weather', {
       params: {
         lat: state.lat,
         lon: state.long,
