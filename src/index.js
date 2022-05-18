@@ -1,4 +1,6 @@
 // Solution adapted from Simon de Sal
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
 
 const state = {
   city: 'Seattle',
@@ -39,12 +41,12 @@ const getWeather = () => {
       },
     })
     .then((response) => {
-      weather = response.data;
+      const weather = response.data;
       state.temp = Math.round(convertKtoF(weather.current.temp));
       formatTempAndGarden();
     })
     .catch((error) => {
-      console.log('Error getting the weather:', error.response);
+      console.log('Error getting the weather:', error);
     });
 };
 

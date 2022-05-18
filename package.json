@@ -3,9 +3,14 @@
     "axios": "^0.27.2"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "parcel-bundler": "^1.12.5"
   },
   "scripts": {
-    "deploy": "npm run build && gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   }
 }
