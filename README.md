@@ -110,10 +110,10 @@ Wave 6:
 
 [Wave 3: Naming the City](./ada-project-docs/wave-03.md)
 
-[Wave 4: Calling APIs]((./ada-project-docs/wave-04.md))
+[Wave 4: Calling APIs](./ada-project-docs/wave-04.md)
 
 [Wave 5: Selecting the Sky](./ada-project-docs/wave-05.md)
 
-[Wave 6: Resetting the City Name](./ada-project-docs/wave-06.md))
+[Wave 6: Resetting the City Name](./ada-project-docs/wave-06.md)
 
 [Optional Enhancements to inspire you](./ada-project-docs/optional-enhancements.md)
