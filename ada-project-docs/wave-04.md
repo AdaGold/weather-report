@@ -15,3 +15,30 @@ When we are building client side web applications, we don't want to include our 
 For Weather Report, we provide a [weather report proxy server](https://github.com/adaGold/weather-report-proxy-server) built with Flask. As such, the *Weather Report web app* we are building should make `axios` calls to our *Weather Report proxy server*, which manages our API keys and forwards our requests along to the appropriate 3rd party API. 
 
 For details on how to run the Weather Report proxy server, see the [Weather Report Proxy Server README](https://github.com/adaGold/weather-report-proxy-server). No changes need to be made to the source code of the proxy server. The only work that needs to be done is adding a `.env` file with your API keys.
+
+### Cross-Origin Resource Sharing (CORS)
+
+The Weather Report Proxy server uses the package [`flask-cors`](https://flask-cors.readthedocs.io/en/latest/) to handle Cross Origin Resource Sharing.
+
+<details>
+    <summary>Expand to see the `__init__.py` file for the proxy server</summary>
+
+```python
+from flask import Flask
+from flask_cors import CORS
+
+
+def create_app(test_config=None):
+    app = Flask(__name__)
+    CORS(app)
+    app.config['CORS_HEADERS'] = 'Content-Type'
+
+    from .routes import proxy_bp
+    app.register_blueprint(proxy_bp)
+
+    return 
+```
+
+</details>
+
+CORS will continue to come up as we move into learning Full Stack development. To learn more about CORS, a great place to start is the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). Follow your curiosity!
