@@ -31,17 +31,17 @@ Our goal is to create a fun, small weather app that focuses on displaying the we
 
 Our weather app will set the weather using user interaction and get the weather from a 3rd party API, OpenWeather.
 
-![Example weather app: The temperature reads 71, in orange text. The selected dropdown for "Sky" is "Cloudy." There is a depiction of cloudy weather. The city name is "My Hometown." The header reads "My Hometown."](ada-project-docs/assets/example-71.png)  
-_Fig. Example weather app: The temperature reads 71, in orange text. The selected dropdown for "Sky" is "Cloudy." There is a depiction of cloudy weather. The city name is "My Hometown." The header reads "My Hometown."_
+![Example weather app: The temperature reads 62, in yellow text. The selected dropdown for "Sky" is "Cloudy." There is a depiction of cloudy weather. The city name is "Hoboken." The header reads "Hoboken."](ada-project-docs/assets/cloudy-62.png)  
+_Fig. Example weather app: The temperature reads 62, in yellow text. The selected dropdown for "Sky" is "Cloudy." There is a depiction of cloudy weather. The city name is "Hoboken." The header reads "Hoboken."_
 
-![Example weather app: The temperature reads 98, in red text. The selected dropdown for "Sky" is "Sunny." There is a depiction of sunny weather. The city name is "it's hot outside." The header reads "it's hot outside."](ada-project-docs/assets/example-98.png)  
-_Fig. Example weather app: The temperature reads 98, in red text. The selected dropdown for "Sky" is "Sunny." There is a depiction of sunny weather. The city name is "it's hot outside." The header reads "it's hot outside."_
+![Example weather app: The temperature reads 85, in red text. The selected dropdown for "Sky" is "Sunny." There is a depiction of sunny weather. The city name is "Santo Domingo" The header reads "Santo Domingo."](ada-project-docs/assets/santo-domingo-85.png)  
+_Fig. Example weather app: The temperature reads 85, in red text. The selected dropdown for "Sky" is "Sunny." There is a depiction of sunny weather. The city name is "Santo Domingo" The header reads "Santo Domingo."_
 
-![Example weather app: The temperature reads 32, in teal text. The selected dropdown for "Sky" is "Snowy." There is a depiction of snowy weather. The city name is "Happyville." The header reads "Happyville."](ada-project-docs/assets/example-32.png)  
-_Fig. Example weather app: The temperature reads 32, in teal text. The selected dropdown for "Sky" is "Snowy." There is a depiction of snowy weather. The city name is "Happyville." The header reads "Happyville."_
+![Example weather app: The temperature reads 38, in teal text. The selected dropdown for "Sky" is "Snowy." There is a depiction of snowy weather. The city name is "Bozeman." The header reads "Bozeman."](ada-project-docs/assets/snow-38.png)  
+_Fig. Example weather app: The temperature reads 38, in teal text. The selected dropdown for "Sky" is "Snowy." There is a depiction of snowy weather. The city name is "Bozeman." The header reads "Bozeman."_
 
-![Example weather app: The temperature reads 64, in yellow text. The selected dropdown for "Sky" is "Rainy." There is a depiction of rainy weather. The city name is "Seattle." The header reads "Seattle."](ada-project-docs/assets/example-64.png)  
-_Fig. Example weather app: The temperature reads 64, in yellow text. The selected dropdown for "Sky" is "Rainy." There is a depiction of rainy weather. The city name is "Seattle." The header reads "Seattle."_
+![Example weather app: The temperature reads 49, in teal text. The selected dropdown for "Sky" is "Rainy." There is a depiction of rainy weather. The city name is "Seattle." The header reads "Seattle."](ada-project-docs/assets/rainy-49.png)  
+_Fig. Example weather app: The temperature reads 49, in teal text. The selected dropdown for "Sky" is "Rainy." There is a depiction of rainy weather. The city name is "Seattle." The header reads "Seattle."_
 
 ## How to Complete and Submit
 
