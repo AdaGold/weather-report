@@ -87,7 +87,7 @@ Wave 2:
 Wave 3:
 
 1. An element that displays the city name
-1. An element that contains a `<input type="text">` element, used to rename the city
+1. An element that contains an `<input type="text">` element, used to rename the city
 
 Wave 4:
 
