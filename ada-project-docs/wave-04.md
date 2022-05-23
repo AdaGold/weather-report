@@ -2,6 +2,10 @@
 
 For this wave, we will add a feature that gets the weather of the currently displayed city name. 
 
+We should add a `<button>` element that when clicked updates and displays the realtime temperature of the currently displayed city name.
+
+## LocationIQ and OpenWeather
+
 In order to get the weather of the city, we will need to get the latitude and longitude of the city using the [`LocationIQ`](https://locationiq.com/docs) API. We can then use the latitude and longitude with the [`OpenWeather`](https://openweathermap.org/api/one-call-api) API to get current weather data. 
 
 To get started and generate API tokens, create accounts and log into `LocationIQ` and `OpenWeather`.
@@ -27,7 +31,7 @@ When we are building client side web applications, we don't want to include our 
 The Weather Report Proxy server uses the package [`flask-cors`](https://flask-cors.readthedocs.io/en/latest/) to handle Cross Origin Resource Sharing.
 
 <details>
-    <summary>Expand to see the `__init__.py` file for the proxy server</summary>
+    <summary>Expand to see the <code>__init__.py</code> file for the proxy server</summary>
 
 ```python
 from flask import Flask
