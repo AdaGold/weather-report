@@ -1,8 +1,8 @@
-## Wave 5: Selecting the Sky
+# Wave 5: Selecting the Sky
 
 There must be a [`<select> element`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) that lets users to determine what sky to display.
 
-### Selection Changes Sky
+## Selection Changes Sky
 
 When a user selects an option from the dropdown element, the appropriate sky should appear on the page.
 
@@ -21,7 +21,7 @@ Our solution uses the following sky options, which you may use if desired:
 | Rainy  | `"🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧"`          |
 | Snowy  | `"🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨"`       |
 
-### Hints
+## Hints
 
 - The event for changing a `<select>` element is not called `"click"`! You'll need to find the correct name for this event.
   - "html select change event" is a reasonable Internet search to start.

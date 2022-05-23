@@ -1,6 +1,6 @@
-## Wave 2: Increase and Decrease Temperature
+# Wave 2: Increase and Decrease Temperature
 
-### Requirements
+## Requirements
 
 A numeric temperature must be displayed. This temperature can be in either Fahrenheit or Celsius degrees.
 
@@ -9,7 +9,7 @@ There must be two clickable elements:
 1. An element that increases the temperature by one degree on click
 1. An element that decreases the temperature by one degree on click
 
-#### Temperature Ranges Change Text Color
+### Temperature Ranges Change Text Color
 
 Depending on what temperature it is, either:
 
@@ -28,7 +28,7 @@ Our solution uses the following ranges, which you may use if desired:
 | 50-59           | Green  |
 | 49 or below     | Teal   |
 
-#### Temperature Ranges Change Landscape
+### Temperature Ranges Change Landscape
 
 Depending on what temperature it is, a different landscape should appear on the page.
 
