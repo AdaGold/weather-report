@@ -75,7 +75,7 @@ To include axios in your project, include the following script tag below the scr
 
 For this project, there are no requirements around color schemes, font choices, or layouts. 
 
-Note that applying styles with CSS is one of the many learning goals of this project -- it is not the central learning goal. You may enjoy being creative with styles, but we encourage you to not concern yourself with getting the styles perfect.
+Note that applying styles with CSS is one of many learning goals of this project -- it is not the central learning goal. You may enjoy being creative with styles, but we encourage you to not concern yourself with getting the styles perfect. Remember, you can always choose to continue working on styling after you've completed all functional requirements. 
 
 However, _at a minimum_, your project must contain these elements:
 
