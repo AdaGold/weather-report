@@ -5,21 +5,21 @@ Follow the steps below to deploy to GitHub Pages using `parcel-bundler`
 1. Create a new branch called `deployed-solution`
 1. Install `parcel-bundler`
     ```bash
-    npm install parcel-bundler@1.12.5 --save-dev
+    yarn add --dev parcel-bundler@1.12.5
     ```
 1. Install `gh-pages`
     ```bash
-    npm install gh-pages --save-dev
+    yarn add --dev gh-pages
 1. Remove `script` tag with `"./node_modules/axios/dist/axios.min.js"` from `index.html`
 1. Add `import` statements to `index.js` 
     ```js
     import 'regenerator-runtime/runtime';
     import axios from 'axios';
     ```
-1. Update the `"scripts"` in `package.json`:
+1. Add a `"scripts"` section to your `package.json`:
     ```json
     "scripts": {
-        "predeploy": "rm -rf dist && npm run build",
+        "predeploy": "rm -rf dist && yarn run build",
         "deploy": "gh-pages -d dist",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "parcel index.html ",
@@ -39,7 +39,7 @@ Follow the steps below to deploy to GitHub Pages using `parcel-bundler`
             "parcel-bundler": "^1.12.5"
         },
         "scripts": {
-            "predeploy": "rm -rf dist && npm run build",
+            "predeploy": "rm -rf dist && yarn run build",
             "deploy": "gh-pages -d dist",
             "test": "echo \"Error: no test specified\" && exit 1",
             "dev": "parcel index.html ",
@@ -49,7 +49,7 @@ Follow the steps below to deploy to GitHub Pages using `parcel-bundler`
     ```
 
     </details>
-1. Run `npm run deploy`
+1. Run `yarn run deploy`
 1. Confirm that the GitHub Pages branch is set to `gh-pages` in the GitHub UI by going to **Settings** --> **Pages** --> **Source**
 1. Navigate to `https://{your-user-name}.github.io/weather-report/` to see your deployed site.
 
