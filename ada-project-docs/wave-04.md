@@ -20,6 +20,8 @@ For details on how to run the Weather Report proxy server, see the [Weather Repo
 
 While the `GET` requests to `LocationIQ` and `OpenWeather` are already implemented in the proxy server, we should still read the [`LocationIQ`](https://locationiq.com/docs) and [`OpenWeather`](https://openweathermap.org/api/one-call-api) docs to learn how to build the request and parse the response.
 
+*Note: VSCode may try to be "helpful" and add a `require` call: `const { default: axios } = require("axios");` This will cause an error and should be removed.*
+
 ### Proxy Servers
 
 When we are building client side web applications, we don't want to include our API keys in our code as they will be available for anyone to see. To manage our API keys we will use a proxy server.
