@@ -61,6 +61,8 @@ To download the `axios` node module, run `yarn install`
 To include axios in your project, include the following script tag below the script tag linking `index.js`:
 - `<script src="./node_modules/axios/dist/axios.min.js"></script>`
 
+This should be done during the Wave 1 initial setup of your `index.html` page.
+
 ## Workflow Requirements
 
 - Create at least five git commits throughout this project
