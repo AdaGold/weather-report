@@ -23,3 +23,4 @@ You will need to link:
 
 - This project will require you to select _a lot_ of elements. Creating logical, well-organized HTML structures in the beginning will help you later on.
 - Create as many `id`s as you need. Sometimes, it's more effective to select by ID, compared to selecting by class, element, or relationship.
+- To get a little more error reporting help from the browser, we can request [strict behavior](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode). To turn this behavior on, add the literal string `"use strict";` to the top of your `index.js` file.

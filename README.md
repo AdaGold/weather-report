@@ -56,10 +56,12 @@ You are required to use vanilla JavaScript for all parts of this project, includ
 ## Axios
 The only extra JavaScript library we should load is [`Axios`](https://axios-http.com/docs/intro).
 
-To download the `axios` node module, run `npm install`
+To download the `axios` node module, run `yarn install`
 
 To include axios in your project, include the following script tag below the script tag linking `index.js`:
 - `<script src="./node_modules/axios/dist/axios.min.js"></script>`
+
+This should be done during the Wave 1 initial setup of your `index.html` page.
 
 ## Workflow Requirements
 
@@ -73,7 +75,9 @@ To include axios in your project, include the following script tag below the scr
 
 ## Content Requirements
 
-For this project, there are no requirements around color schemes, font choices, or layouts.
+For this project, there are no requirements around color schemes, font choices, or layouts. 
+
+Note that applying styles with CSS is one of many learning goals of this project -- it is not the central learning goal. You may enjoy being creative with styles, but we encourage you to not concern yourself with getting the styles perfect. Remember, you can always choose to continue working on styling after you've completed all functional requirements. 
 
 However, _at a minimum_, your project must contain these elements:
 
