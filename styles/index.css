@@ -1,0 +1,101 @@
+body{
+    display: grid;
+    grid-template: 20% 1fr 1fr 10%/ 1fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: blue;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 30vh;
+    grid-area: 1/1/2/4;
+    align-items: center;
+
+}
+
+main{
+    grid-area: 2/1/4/5;
+    background-color: blueviolet;
+    padding: 10% 0 5%;
+}
+
+
+footer{
+    grid-area: 4/1/5/5;
+    height: 100%;
+    /* background-color: peru; */
+}
+
+/* -----Search Bar */
+.search-box{
+    width: 100px; height: 200px
+}
+
+/* Temp Area */
+.h1-temp{
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+.search{
+    /* align-items: center; */
+    /* background-color: red; */
+    size: 1.5rem;
+    align-content: flex-end;
+}
+
+.temp-box-container{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* margin-top: 10vh; */
+    padding: 5% 0 5%;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+}
+
+.temp-box-header{
+    text-align: center;
+    /* background-color: brown; */
+    width: 100%;
+
+}
+
+.temp-and-arrows{
+    text-align: center;
+}
+
+.div-temp{
+    justify-items: center;
+}
+
+.temp-arrows{
+    margin: 0, .5rem;
+}
+#city-state{
+    margin: 0;
+    font-size: 3rem;
+}
+
+#temp{
+    font-size: 3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/*----- sky ------*/
+.sky-container{
+    background-color: palevioletred;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.sky{
+    height: 50%;
+
+}
