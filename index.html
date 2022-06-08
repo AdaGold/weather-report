@@ -5,8 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <!------------- Font Awesome ------------>
+    <script src="https://kit.fontawesome.com/dff1440c2f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <!------------- Header/ Search Box ------------>
+    <header>
+        <h1 class="logo">Weather App</h1>
+        <section class="search">
+        <input id="search-box" type="text" placeholder="Enter A City">
+        <button id="search-reset-btn">Reset</button>
+    </section>
+    </header>
+    <main>
+        <!------------- Temp Box ------------>
+        <section class="temp-box-container">
+            <!-- <div class="tempDiv"> -->
+            <h1 class="h1-temp">Temperature in</h1>
+
+            <div class="temp-box-header">
+                <p id="city-state">Dallas, TX</p>
+                <button>Get Current Temp</button>
+            </div>
+
+            <div class="temp-and-arrows">
+            <h1 id="temp">00</h1>
+
+            <div class="temp-arrows">
+                <i class="fa-solid fa-arrow-up" id="arrow-up"></i>
+                <i class="fa-solid fa-arrow-down" id="arrow-down"></i>
+            </div>
+        </div>
+        <!-- </div> -->
+        </section>
+        
+    </main>
+    <script src="src/index.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
+<!------------- Sky Section ------------>
+<footer class="sky-container">
+<section >
+    <label for="sky">Sky:</label>
+
+    <select name="sky" id="cars">
+    <option value="sunny">Sunny</option>
+    <option value="cloudy">Cloudy</option>
+    <option value="rainy">Rainy</option>
+    <option value="snowy">Snowy</option>
+    </select>
+    <button id="sky-reset-btn">Reset</button>
+</section>
+</footer>
 </html>
