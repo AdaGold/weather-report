@@ -1,0 +1,119 @@
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+body{
+	background:url(/ada-project-docs/assets/spring_landscape.png) no-repeat bottom fixed,url(/ada-project-docs/assets/thunderstorm_sky.jpg) no-repeat top fixed;
+	background-size: 100% 80%, 100% 80%;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+}
+
+
+.main-box {
+	margin: auto;
+	width: 35%;
+	height: auto;
+	align-self: center;
+	min-width: 300px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 3px;
+	border: 2px solid #009688;
+	box-shadow: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12), 0 5px 5px -3px rgba(0,0,0,.2);
+  }
+
+.location-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	margin-top: 2%;
+}
+
+.dropdown-location{
+	align-self: center;
+}
+
+.dropdown-item{
+	margin:5%;
+}
+.bi-caret-down-fill{
+	margin: 5%;
+	bottom: 50%;
+	font-size: 1.2em;
+}
+
+.bi-globe{
+	font-size: 2em;
+}
+
+.temperature-box{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#temp {
+	font-size: 10em;
+}
+
+.toptempbox{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.tempbox{
+	align-self: center;
+}
+
+.change-temp-buttons{
+	margin-right: 3%;
+}
+
+.change-temp-buttons, .change-sky-buttons{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+
+.temp-button, .sky-button{
+	align-self:center;
+	height: 10%;
+	width: 10%;
+	background-color: rgba(0,0,0,.0);
+}
+
+.custom-switch{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
+	border-radius: 20rem; 
+}
+
+.toggle.ios .toggle-handle { 
+	border-radius: 20rem; 
+}
+
+.wconditionsbox{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.weather-icon{
+	font-size: 2em;
+	margin: 0;
+}
+
+#wdescription{
+	font-size: 1em;
+	margin: 0;
+}
