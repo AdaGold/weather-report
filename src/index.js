@@ -4,6 +4,14 @@
 const registerEventHandlers = () => {
   document.getElementById("up-temp").addEventListener('click', increaseTemp);
   document.getElementById("down-temp").addEventListener('click', decreaseTemp);
+  document.getElementById("city-search-input").addEventListener("search", changeCity)
+  //for Drop Down Menu Search
+  // let links = document.getElementsByClassName("dropdown-item")
+  // for (let i = 0; i<links.length; i++){
+  //   links[i].addEventListener("click", () => {
+  //     document.getElementById("city-name").innerHTML = document.getElementsByClassName("dropdown-item")[i].innerHTML;
+  //   })
+  // }
 }
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);
@@ -51,3 +59,29 @@ const checkTextColorChange = () => {
     document.getElementById("temp").style.color = "red";
   }
 };
+
+const changeCity = () => {
+  document.getElementById("city-name").innerHTML = document.getElementById("city-search-input").value;
+};
+
+const toggleFunction = () => {
+  document.getElementById("city-search-button").classList.toggle("show");
+}
+
+//For Drop Down Menu Search
+// const filterFunction = () => {
+//   let input, filter, button, div, divs, i;
+//   input = document.getElementById("city-search-input");
+//   filter = input.value.toUpperCase();
+//   button = document.getElementById("city-search-button");
+//   div = document.getElementsByClassName("dropdown-menu");
+//   divs = document.getElementsByClassName("dropdown-item");
+//   for (i = 0; i < divs.length; i++) {
+//     let txtValue = divs[i].innerHTML;
+//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//       divs[i].style.display = "";
+//     } else {
+//       divs[i].style.display = "none";
+//     }
+//   }
+// }
