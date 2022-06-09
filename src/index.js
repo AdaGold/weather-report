@@ -5,6 +5,7 @@ const registerEventHandlers = () => {
   document.getElementById("up-temp").addEventListener('click', increaseTemp);
   document.getElementById("down-temp").addEventListener('click', decreaseTemp);
   document.getElementById("city-search-input").addEventListener("search", changeCity)
+  document.getElementById("city-searh-button").addEventListener("click", toggleFunction)
   //for Drop Down Menu Search
   // let links = document.getElementsByClassName("dropdown-item")
   // for (let i = 0; i<links.length; i++){
@@ -21,14 +22,14 @@ const state = {
 }
 
 const increaseTemp = () => {
-  state.temperature += 1
+  state.temperature++
   document.getElementById("temp").innerHTML = `${state.temperature}&deg;`
   checkTextColorChange()
   checkSeasonChange()
 };
 
 const decreaseTemp = () => {
-  state.temperature -= 1
+  state.temperature--
   document.getElementById("temp").innerHTML = `${state.temperature}&deg;`
   checkTextColorChange()
   checkSeasonChange()
@@ -37,9 +38,9 @@ const decreaseTemp = () => {
 const checkSeasonChange = () => {
   if (state.temperature <= 32){
     document.getElementById("temp-img").src = "/ada-project-docs/assets/winter_landscape.png";
-  } else if (32 < state.temperature && state.temperature < 60){
+  } else if (32 < state.temperature && state.temperature < 56){
     document.getElementById("temp-img").src = "/ada-project-docs/assets/fall_landscape.png";
-  } else if (60 <= state.temperature  && state.temperature < 80){
+  } else if (56 <= state.temperature  && state.temperature < 80){
     document.getElementById("temp-img").src = "/ada-project-docs/assets/spring_landscape.png";
   } else {
     document.getElementById("temp-img").src = "/ada-project-docs/assets/summer_landscape.png";

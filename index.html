@@ -14,7 +14,7 @@
 <body>
     <main>
         <div class = "container-fluid main-box">
-            <div class="location-box">
+            <section class="location-box">
                 <div class="location-info-box">
                     <div class="city-area">
                         <h2 id="city-name">Tokyo</h2>
@@ -25,10 +25,10 @@
                 </div>
                 <div class="dropdown-location">
                     <div class="btn-group">
-                        <button onclick = "toggleFunction()" type="button" class="btn btn-outline-secondary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="city-search-button"><span class="bi-globe"></span><span class="bi-caret-down-fill"></span>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="city-search-button"><span class="bi-globe"></span><span class="bi-caret-down-fill"></span>
                         </button>
                         <div class="dropdown-menu">
-                            <input type="search" placeholder="Search.." id="city-search-input">
+                            <input type="search" placeholder="Input any city..." id="city-search-input">
                         </div>
                         <!--For drop down menu search-->
                         <!-- <div class="dropdown-menu">
@@ -52,13 +52,13 @@
                         </div> -->
                       </div>
                 </div>
-            </div>
+            </section>
             <div class="divider"><hr></div>
             <section class="temperature-box">
                 <div class="toptempbox">
                     <div class="change-temp-buttons">
                         <button type="button" class="btn btn-light temp-button" id="up-temp"><i class="bi-caret-up-fill" ></i></button>
-                        <button type="button" class="btn btn-light bi-caret-down-fill temp-button" id="down-temp"></button>
+                        <button type="button" class="btn btn-light temp-button" id="down-temp"><i class="bi-caret-down-fill" ></i></button>
                     </div>
                     <div class="tempbox">
                         <h1 id="temp">60&deg;</h1>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="change-sky-buttons">
                         <button type="button" class="btn btn-light sky-button"><i class="bi-caret-up-fill" ></i></button>
-                        <button type="button" class="btn btn-light bi-caret-down-fill sky-button"></button>
+                        <button type="button" class="btn btn-light sky-button"><i class="bi-caret-down-fill" ></i></button>
                     </div>
                 </div>
                 <div class="custom-control custom-switch">
