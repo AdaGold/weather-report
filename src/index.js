@@ -4,15 +4,19 @@ const state = {
   temp: 80,
   tempColor: 'red',
   tempBackground: 'url(../src/images/sunny.png)',
+  cityName: 'Dallas',
 };
 
+// Default Values
 const temp = document.getElementById('temp');
 temp.textContent = state.temp + '°';
 temp.style.color = state.tempColor;
+temp.style.color = state.cityName;
 
 const backColor = document.getElementsByTagName('main')[0];
 backColor.style.backgroundImage = state.tempBackground;
 
+// Change the color of the temp
 const changetempColor = () => {
   if (state.temp >= 80) {
     state.tempColor = 'red';
@@ -32,6 +36,7 @@ const changetempColor = () => {
   }
 };
 
+// Change the background image by temp
 const changeBackImg = () => {
   if (state.temp >= 80) {
     state.tempBackground = 'url(../src/images/sunny.png)';
@@ -52,6 +57,7 @@ const changeBackImg = () => {
   }
 };
 
+// Increase & Decrease the temp
 const increaseTemp = () => {
   state.temp++;
   temp.textContent = `${state.temp}°`;
@@ -66,12 +72,30 @@ const decreaseTemp = () => {
   changeBackImg();
 };
 
+// Change city name by input box
+const changeCity = (e) => {
+  const searchCity = document.getElementById('search-box');
+  const cityState = document.getElementById('city-state');
+  state.cityName = e.target.value;
+  cityState.textContent = state.cityName;
+};
+
+// Reset city name by button
+const resetCity = () => {};
+
+// Event Handlers
 const registerEventHandlers = () => {
   const upArrow = document.getElementById('arrow-up');
   upArrow.addEventListener('click', increaseTemp);
 
   const downArrow = document.getElementById('arrow-down');
   downArrow.addEventListener('click', decreaseTemp);
+
+  const searchCity = document.getElementById('search-box');
+  searchCity.addEventListener('input', changeCity);
+
+  const searchResetBtn = document.getElementById('search-reset-btn');
+  searchResetBtn.addEventListener('click', resetCity);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);
