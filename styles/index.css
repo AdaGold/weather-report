@@ -17,10 +17,12 @@ header{
 
 main{
     grid-area: 2/1/4/5;
-    background-color: blueviolet;
-    padding: 10% 0 5%;
+    padding: 10% 0;
+    background-color: grey;
+    /* background-image: url('../src/images/snow.jpeg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
 
 footer{
     grid-area: 4/1/5/5;
@@ -38,6 +40,7 @@ footer{
     margin-bottom: 0;
     margin-top: 0;
     text-align: center;
+    opacity: 100%;
 }
 
 .search{
@@ -66,6 +69,7 @@ footer{
 
 .temp-and-arrows{
     text-align: center;
+    margin-top: 2rem;
 }
 
 .div-temp{
@@ -74,14 +78,32 @@ footer{
 
 .temp-arrows{
     margin: 0, .5rem;
+    /* color: black; */
 }
+
+.fa-solid{
+    padding: 1rem;
+}
+
+#arrow-up{
+    padding-right: 3rem;
+}
+
+#arrow-down:hover{
+    color: darkgray;
+}
+
+#arrow-up:hover{
+    color: darkgray;
+}
+
 #city-state{
     margin: 0;
     font-size: 3rem;
 }
 
 #temp{
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
 }
@@ -97,5 +119,9 @@ footer{
 
 .sky{
     height: 50%;
+}
 
+
+.red{
+    color: red;
 }
