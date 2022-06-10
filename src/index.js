@@ -1,41 +1,94 @@
 'use strict';
 
 const registerEventHandlers = () => {
+  document.addEventListener('DOMContentLoaded', displayWeatherAtLocation);
   document.getElementById("down-temp").addEventListener('click', () => changeTemp(-1));
   document.getElementById("up-temp").addEventListener('click', () => changeTemp(1));
   document.getElementById("city-search-input").addEventListener("search", changeCity)
-  document.getElementById("city-search-input").addEventListener("search", changeWeatherAsync)
-  document.getElementById("city-search-button").addEventListener("click", changeWeatherAsync)
+  document.getElementById("city-search-input").addEventListener("search", changeWeatherAsync);
+  document.getElementById("selected-location").addEventListener("click", changeWeatherAsync);
+  document.getElementById("current-location").addEventListener("click", displayWeatherAtLocation);
   document.getElementById("city-search-button").addEventListener("click", toggleFunction)
   const skyConditions = document.getElementsByClassName("weather-dropdown-item");
   for (const condition of skyConditions){
     condition.addEventListener("click", () => toggleSky(condition.textContent))
-  }
-  //for Drop Down Menu Search
-  // let links = document.getElementsByClassName("dropdown-item")
-  // for (let i = 0; i<links.length; i++){
-  //   links[i].addEventListener("click", () => {
-  //     document.getElementById("city-name").innerHTML = document.getElementsByClassName("dropdown-item")[i].innerHTML;
-  //   })
-  // }
-}
+  };
+};
 
-document.addEventListener('DOMContentLoaded', registerEventHandlers);
+document.addEventListener('DOMContentLoaded', () => {registerEventHandlers(); displayWeatherAtLocation();});
+
 
 const state = {
   temperature: 60,
   cityName: 'Tokyo',
   weatherDescription: "scattered clouds",
   weatherIconName: "bi-cloud-lightning-rain",
-  oldIconName: "hello",
-  skyImgUrl: null  
+  oldIconName: null,
+  skyImgUrl: null,
+  currentLat: null,
+  currentLon: null 
 }
+
+const weatherMainToIcon = {"THUNDERSTORM": ["bi-cloud-lightning-rain", "/ada-project-docs/assets/thunderstorm_sky.jpg"], "DRIZZLE": ["bi-cloud-drizzle", "/ada-project-docs/assets/rain_sky.jpg"], "RAIN": ["bi-cloud-rain", "/ada-project-docs/assets/rain_sky.jpg"], "SNOW": ["bi-cloud-snow", "/ada-project-docs/assets/snow_sky.jpg"], "MIST": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "SMOKE": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "HAZE": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "DUST": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "FOG": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "SAND": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "DUST": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "ASH": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "SQUALL": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "TORNADO": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "CLEAR": ["bi-sun", "/ada-project-docs/assets/clear_sky.jpg"], "CLOUDS": ['bi-clouds', "/ada-project-docs/assets/broken_clouds_sky.jpg"]}
+
+const displayWeatherAtLocation = () => {
+  navigator.geolocation.getCurrentPosition((position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    state.currentLat = latitude;
+    state.currentLon = longitude;
+    console.log("got geolocation", position)
+    axios.get("http://localhost:5000/weather", {
+        params: {
+          lat: state.currentLat,
+          lon: state.currentLon
+        },
+      })
+      .then((weatherResponse) => {
+        //Store response data
+        console.log(weatherResponse.data)
+        state.temperature = Math.round(weatherResponse.data.current.temp)
+        state.weatherDescription = weatherResponse.data.current.weather[0].description;
+        state.oldIconName = state.weatherIconName;
+        state.weatherIconName = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][0];
+        state.skyImgUrl = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][1];
+        console.log('successfully stored response data!', weatherResponse.data);
+        axios.get("http://localhost:5000/city", {
+          params: {
+            lat: state.currentLat,
+            lon: state.currentLon
+          },
+        })
+        .then((cityResponse) => {
+          console.log("got the city name", cityResponse.data)
+
+          state.cityName = cityResponse.data.address.city || cityResponse.data.address.region || cityResponse.data.address.county
+                  //Update UI
+          document.getElementById("temp").innerHTML = `${state.temperature}&deg;`;
+          checkTextColorChange();
+          checkSeasonChange();
+          setWeatherIcon()
+          setSky();
+          setWeatherDescription();
+          document.getElementById("city-name").textContent = state.cityName
+          console.log('successfully updated UI!');
+
+        })
+        .catch((error) => {
+          console.log("error with getting city", error)
+        });
+      })
+      .catch((error) => {
+        console.log('error!', error)
+      });
+  });
+};
 
 const changeTemp = (change) => {
   state.temperature += change
-  document.getElementById("temp").innerHTML = `${state.temperature}&deg;`
-  checkTextColorChange()
-  checkSeasonChange()
+  document.getElementById("temp").innerHTML = `${state.temperature}&deg;`;
+  checkTextColorChange();
+  checkSeasonChange();
 };
 
 const checkSeasonChange = () => {
@@ -75,9 +128,6 @@ const toggleFunction = () => {
   document.getElementById("city-search-button").classList.toggle("show");
 }
 
-
-const weatherMainToIcon = {"THUNDERSTORM": ["bi-cloud-lightning-rain", "/ada-project-docs/assets/thunderstorm_sky.jpg"], "DRIZZLE": ["bi-cloud-drizzle", "/ada-project-docs/assets/rain_sky.jpg"], "RAIN": ["bi-cloud-rain", "/ada-project-docs/assets/rain_sky.jpg"], "SNOW": ["bi-cloud-snow", "/ada-project-docs/assets/snow_sky.jpg"], "MIST": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "SMOKE": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "HAZE": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "DUST": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "FOG": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "SAND": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "DUST": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "ASH": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "SQUALL": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "TORNADO": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "CLEAR": ["bi-sun", "/ada-project-docs/assets/clear_sky.jpg"], "CLOUDS": ['bi-clouds', "/ada-project-docs/assets/broken_clouds_sky.jpg"]}
-
 const changeWeatherAsync = async () => {
   const q = state.cityName;
   try{
@@ -105,51 +155,6 @@ const changeWeatherAsync = async () => {
     console.log('location error', error)
   };
 };
-// const changeWeather = () => {
-//   const q = state.cityName;
-
-  // axios.get("http://localhost:5000/location", {
-  //   params: {
-  //     q
-  //   }
-  // })
-  // .then((response) => {
-  //   const lat = response.data[0].lat;
-  //   const lon = response.data[0].lon;
-  //   console.log('success!', response.data);
-  //   axios.get("http://localhost:5000/weather", {
-  //     params: {
-  //       lat,
-  //       lon
-  //     }
-  //   })
-    // .then((response) => {
-    //   //Store response data
-    //   state.temperature = Math.round(response.data.current.temp)
-    //   state.weatherDescription = response.data.current.weather[0].description;
-    //   state.oldIconName = state.weatherIconName;
-    //   state.weatherIconName = weatherMainToIcon[response.data.current.weather[0].main][0];
-    //   state.skyImgUrl = weatherMainToIcon[response.data.current.weather[0].main][1];
-    //   console.log('successfully stored response data!', response.data);
-    // })
-    // .then(() => {
-    //   //Update UI
-    //   document.getElementById("temp").innerHTML = `${state.temperature}&deg;`;
-    //   checkTextColorChange();
-    //   checkSeasonChange();
-    //   setWeatherIcon()
-    //   setSky();
-    //   setWeatherDescription();
-    //   console.log('successfully updated UI!');
-    // })
-//     .catch((error) => {
-//       console.log('error!', error)
-//     });
-//   })
-//   .catch((error) => {
-//     console.log('error!', error)
-//   });
-// }
 
 const updateState = (weatherResponse) => {
   state.temperature = Math.round(weatherResponse.data.current.temp);
@@ -179,7 +184,7 @@ const setWeatherIcon = () => {
 }
 
 const setWeatherDescription = () => {
-  document.getElementById("wdescription").innerHTML = state.weatherDescription;
+  document.getElementById("wdescription").textContent = state.weatherDescription;
 }
 
 const toggleSky = (condition) => {
@@ -190,22 +195,51 @@ const toggleSky = (condition) => {
   state.oldIconName = state.weatherIconName;
   state.weatherIconName = weatherMainToIcon[condition.toUpperCase()][0];
   setWeatherIcon();
-}
+};
 
-//For Drop Down Menu Search
-// const filterFunction = () => {
-//   let input, filter, button, div, divs, i;
-//   input = document.getElementById("city-search-input");
-//   filter = input.value.toUpperCase();
-//   button = document.getElementById("city-search-button");
-//   div = document.getElementsByClassName("dropdown-menu");
-//   divs = document.getElementsByClassName("dropdown-item");
-//   for (i = 0; i < divs.length; i++) {
-//     let txtValue = divs[i].innerHTML;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//       divs[i].style.display = "";
-//     } else {
-//       divs[i].style.display = "none";
-//     }
-//   }
+
+// const changeWeather = () => {
+//   const q = state.cityName;
+
+  // axios.get("http://localhost:5000/location", {
+  //   params: {
+  //     q
+  //   }
+  // })
+  // .then((response) => {
+  //   const lat = response.data[0].lat;
+  //   const lon = response.data[0].lon;
+  //   console.log('success!', response.data);
+  //   axios.get("http://localhost:5000/weather", {
+  //     params: {
+  //       lat,
+  //       lon
+  //     }
+  //   })
+    // .then((response) => {
+    //   //Store response data
+    //   state.temperature = Math.round(response.data.current.temp)
+    //   state.weatherDescription = response.data.current.weather[0].description;
+    //   state.oldIconName = state.weatherIconName;
+    //   state.weatherIconName = weatherMainToIcon[response.data.current.weather[0].main][0];
+    //   state.skyImgUrl = weatherMainToIcon[response.data.current.weather[0].main][1];
+    //   console.log('successfully stored response data!', response.data);
+    // })
+    // .then(() => {
+    //   //Update UI
+    //   document.getElementById("temp").textContent = `${state.temperature}&deg;`;
+    //   checkTextColorChange();
+    //   checkSeasonChange();
+    //   setWeatherIcon()
+    //   setSky();
+    //   setWeatherDescription();
+    //   console.log('successfully updated UI!');
+    // })
+    // .catch((error) => {
+    //   console.log('error!', error)
+    // });
+//   })
+//   .catch((error) => {
+//     console.log('error!', error)
+//   });
 // }

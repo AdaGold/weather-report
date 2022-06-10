@@ -28,10 +28,13 @@
                         <button type="button" class="btn btn-outline-secondary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="city-search-button"><span class="bi-globe"></span><span class="bi-caret-down-fill"></span>
                         </button>
                         <div id="location-dropdown"class="dropdown-menu">
+                            <input type="search" placeholder="Search any location..." id="city-search-input" class="form-control form-control-warning">
+                            <div id="selected-location-container">
+                                <button id="selected-location" class="dropdown-item" href="#">Update Selected Location</button>
+                            </div>
                             <div id="current-location-container">
                                 <button id="current-location" class="dropdown-item" href="#">Update Current Location</button>
                             </div>
-                            <input type="search" placeholder="Input any city..." id="city-search-input" class="form-control form-control-warning">
                         </div>
                         <!--For drop down menu search-->
                         <!-- <div class="dropdown-menu">
