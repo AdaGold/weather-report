@@ -1,0 +1,147 @@
+body{
+    display: grid;
+    grid-template: 20% 1fr 1fr 10%/ 1fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+    font-family: 'Monserrat', sans-serif;
+}
+
+header{
+    background-color: blue;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 30vh;
+    grid-area: 1/1/2/4;
+    align-items: center;
+
+}
+
+main{
+    grid-area: 2/1/4/5;
+    padding: 10% 0;
+    background-color: grey;
+    /* background-image: url('../src/images/snow.jpeg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer{
+    grid-area: 4/1/5/5;
+    height: 100%;
+    /* background-color: peru; */
+}
+
+/* -----Search Bar */
+.search-box{
+    width: 100px; height: 200px
+}
+
+/* Temp Area */
+.h1-temp{
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    opacity: 100%;
+}
+
+.search{
+    /* align-items: center; */
+    /* background-color: red; */
+    size: 1.5rem;
+    align-content: flex-end;
+}
+
+.temp-box-container{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 0 auto;
+    padding: 5% 0 5%;
+    width:40%;
+    justify-items: center;
+    background-color: rgba(191, 191, 191, .4);
+    border-radius: 25%;
+}
+
+.temp-box-header{
+    text-align: center;
+    /* background-color: brown; */
+    width: 100%;
+
+}
+
+.temp-and-arrows{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.div-temp{
+    justify-items: center;
+}
+
+.temp-arrows{
+    margin: 0, .5rem;
+    /* color: black; */
+}
+
+.fa-solid{
+    padding: 1rem;
+}
+
+.tempToggle {
+    padding: 15px 10px;
+}
+
+.fc {
+    font-size: 1.5rem;
+}
+
+#toggle:hover {
+    color: grey;
+}
+
+#arrow-up{
+    padding-right: 3rem;
+}
+
+#arrow-down:hover{
+    color: darkgray;
+}
+
+#arrow-up:hover{
+    color: darkgray;
+}
+
+#city-state{
+    margin: 0;
+    font-size: 3rem;
+}
+
+#temp{
+    font-size: 3.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/*----- sky ------*/
+#sky-container{
+    background-color: palevioletred;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.sky{
+    height: 50%;
+}
+
+
+.red{
+    color: red;
+}
+
+.logo {
+    color: white;
+}

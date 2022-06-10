@@ -5,8 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <!------------- Font Awesome ------------>
+    <script src="https://kit.fontawesome.com/dff1440c2f.js" crossorigin="anonymous"></script>
+
+    <!------------- Fonts ------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!------------- Header/ Search Box ------------>
+    <header>
+        <h1 class="logo">Weather App</h1>
+        <section class="search">
+        <input id="search-box" type="text" placeholder="Enter A City">
+        <button id="search-reset-btn">Reset</button>
+    </section>
+    </header>
+    <main>
+        <!------------- Temp Box ------------>
+        <section class="temp-box-container">
+            <!-- <div class="tempDiv"> -->
+            <h1 class="h1-temp">Temperature in</h1>
+
+            <div class="temp-box-header">
+                <p id="city-state">Dallas</p>
+                <button id="currentTempBtn">Get Current Temp</button>
+            </div>
+
+            <div class="temp-and-arrows">
+            <h1 id="temp">70°</h1>
+
+            <div class="temp-arrows">
+                <i class="fa-solid fa-arrow-up fa-xl" id="arrow-up" ></i>
+                <i class="fa-solid fa-arrow-down fa-xl" id="arrow-down"></i>
+            </div>
+            <div class="fc">°F<span id='tempToggle'><i id="toggle" class="fa-solid fa-xl fa-toggle-off"></i></span>°C</div>
+        </div>
+        <!-- </div> -->
+        </section>
+        
+    </main>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="src/index.js"></script>
 </body>
+<!------------- Sky Section ------------>
+<footer id="sky-container">
+<section>
+    <label for="sky">Sky:</label>
+
+    <select name="sky" id="sky-select">
+    <option value="sunny">Sunny</option>
+    <option value="cloudy">Cloudy</option>
+    <option value="rainy">Rainy</option>
+    <option value="snowy">Snowy</option>
+    </select>
+</section>
+</footer>
 </html>
