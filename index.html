@@ -27,8 +27,11 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-outline-secondary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="city-search-button"><span class="bi-globe"></span><span class="bi-caret-down-fill"></span>
                         </button>
-                        <div class="dropdown-menu">
-                            <input type="search" placeholder="Input any city..." id="city-search-input">
+                        <div id="location-dropdown"class="dropdown-menu">
+                            <div id="current-location-container">
+                                <button id="current-location" class="dropdown-item" href="#">Current Location</button>
+                            </div>
+                            <input type="search" placeholder="Input any city..." id="city-search-input" class="form-control form-control-warning">
                         </div>
                         <!--For drop down menu search-->
                         <!-- <div class="dropdown-menu">
@@ -64,7 +67,7 @@
                         <h1 id="temp">60&deg;</h1>
                     </div>
                     <div class="wconditionsbox">
-                        <h1 class="weather-icon"><i class="bi-cloud-haze weather-icon"></i> </h1>
+                        <h1 class="weather-icon"><i class="bi-cloud-lightning-rain weather-icon"></i> </h1>
                         <h3 id="wdescription">broken <br>clouds</h3>
                     </div>
                     <div class="change-sky-buttons">
@@ -83,7 +86,7 @@
     <footer>
         <img id = "temp-img" src="/ada-project-docs/assets/spring_landscape.png" alt="">
     </footer>
-<script src = "src/index.js" type = "text/javascript"> </script>   
+<script src = "src/index.js" type = "text/javascript"> </script> 
 <script src = "./node_modules/axios/dist/axios.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
