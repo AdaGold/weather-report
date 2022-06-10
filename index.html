@@ -26,7 +26,7 @@
 
             <div class="temp-box-header">
                 <p id="city-state">Dallas</p>
-                <button>Get Current Temp</button>
+                <button id="currentTempBtn">Get Current Temp</button>
             </div>
 
             <div class="temp-and-arrows">
@@ -36,13 +36,14 @@
                 <i class="fa-solid fa-arrow-up fa-xl" id="arrow-up" ></i>
                 <i class="fa-solid fa-arrow-down fa-xl" id="arrow-down"></i>
             </div>
+            <div class="fc">F<span id='tempToggle'><i id="toggle" class="fa-solid fa-xl fa-toggle-off"></i></span>C</div>
         </div>
         <!-- </div> -->
         </section>
         
     </main>
-    <script src="src/index.js"></script>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="src/index.js"></script>
 </body>
 <!------------- Sky Section ------------>
 <footer class="sky-container">

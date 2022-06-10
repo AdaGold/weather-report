@@ -51,13 +51,14 @@ footer{
 }
 
 .temp-box-container{
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-column-end: 3;
-    /* margin-top: 10vh; */
+    margin: 0 auto;
     padding: 5% 0 5%;
-    width: 100%;
-    height: 100%;
+    width:40%;
     justify-items: center;
+    background-color: rgba(191, 191, 191, .4);
+    border-radius: 25%;
 }
 
 .temp-box-header{
@@ -83,6 +84,20 @@ footer{
 
 .fa-solid{
     padding: 1rem;
+}
+
+.tempToggle {
+    padding: 15px 10px;
+}
+
+
+
+.fc {
+    font-size: 1.5rem;
+}
+
+#toggle:hover {
+    color: grey;
 }
 
 #arrow-up{
