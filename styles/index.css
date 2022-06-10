@@ -3,6 +3,7 @@ body{
     grid-template: 20% 1fr 1fr 10%/ 1fr 1fr 1fr;
     margin: 0;
     padding: 0;
+    font-family: 'Monserrat', sans-serif;
 }
 
 header{
@@ -90,8 +91,6 @@ footer{
     padding: 15px 10px;
 }
 
-
-
 .fc {
     font-size: 1.5rem;
 }
@@ -124,12 +123,14 @@ footer{
 }
 
 /*----- sky ------*/
-.sky-container{
+#sky-container{
     background-color: palevioletred;
     padding-top: 5%;
     display: flex;
     justify-content: center;
     font-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .sky{
@@ -139,4 +140,8 @@ footer{
 
 .red{
     color: red;
+}
+
+.logo {
+    color: white;
 }
