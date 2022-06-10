@@ -29,7 +29,7 @@
                         </button>
                         <div id="location-dropdown"class="dropdown-menu">
                             <div id="current-location-container">
-                                <button id="current-location" class="dropdown-item" href="#">Current Location</button>
+                                <button id="current-location" class="dropdown-item" href="#">Update Current Location</button>
                             </div>
                             <input type="search" placeholder="Input any city..." id="city-search-input" class="form-control form-control-warning">
                         </div>
@@ -68,12 +68,30 @@
                     </div>
                     <div class="wconditionsbox">
                         <h1 class="weather-icon"><i class="bi-cloud-lightning-rain weather-icon"></i> </h1>
-                        <h3 id="wdescription">broken <br>clouds</h3>
+                        <div id="wdes" class="btn-group">
+                            <button id = "wdescription" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              broken clouds
+                            </button>
+                            <div class="dropdown-menu" id="weather-dropdown-menu">
+                                <button class="dropdown-item weather-dropdown-item">clear</button>
+                                <br>
+                                <button class="dropdown-item weather-dropdown-item">clouds</button>
+                                <br>
+                                <button class="dropdown-item weather-dropdown-item">rain</button>
+                                <br>
+                                <button class="dropdown-item weather-dropdown-item">thunderstorm</button>
+                                <br>
+                                <button class="dropdown-item weather-dropdown-item">snow</button>
+                                <br>
+                                <button class="dropdown-item weather-dropdown-item">fog</button>
+                            </div>
+                          </div>
+                        <!-- <h3 id="wdescription">broken <br>clouds</h3> -->
                     </div>
-                    <div class="change-sky-buttons">
+                    <!-- <div class="change-sky-buttons">
                         <button type="button" class="btn btn-light sky-button"><i class="bi-caret-up-fill" ></i></button>
                         <button type="button" class="btn btn-light sky-button"><i class="bi-caret-down-fill" ></i></button>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="custom-control custom-switch">
                    

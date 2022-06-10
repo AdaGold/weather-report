@@ -7,6 +7,10 @@ const registerEventHandlers = () => {
   document.getElementById("city-search-input").addEventListener("search", changeWeatherAsync)
   document.getElementById("city-search-button").addEventListener("click", changeWeatherAsync)
   document.getElementById("city-search-button").addEventListener("click", toggleFunction)
+  const skyConditions = document.getElementsByClassName("weather-dropdown-item");
+  for (const condition of skyConditions){
+    condition.addEventListener("click", () => toggleSky(condition.textContent))
+  }
   //for Drop Down Menu Search
   // let links = document.getElementsByClassName("dropdown-item")
   // for (let i = 0; i<links.length; i++){
@@ -72,7 +76,7 @@ const toggleFunction = () => {
 }
 
 
-const weatherMainToIcon = {"Thunderstorm": ["bi-cloud-lightning-rain", "/ada-project-docs/assets/thunderstorm_sky.jpg"], "Drizzle": ["bi-cloud-drizzle", "/ada-project-docs/assets/rain_sky.jpg"], "Rain": ["bi-cloud-rain", "/ada-project-docs/assets/rain_sky.jpg"], "Snow": ["bi-cloud-snow", "/ada-project-docs/assets/snow_sky.jpg"], "Mist": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "Smoke": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Haze": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "Dust": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Fog": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "Sand": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Dust": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Ash": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Squall": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Tornado": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "Clear": ["bi-sun", "/ada-project-docs/assets/clear_sky.jpg"], "Clouds": ['bi-clouds', "/ada-project-docs/assets/broken_clouds_sky.jpg"]}
+const weatherMainToIcon = {"THUNDERSTORM": ["bi-cloud-lightning-rain", "/ada-project-docs/assets/thunderstorm_sky.jpg"], "DRIZZLE": ["bi-cloud-drizzle", "/ada-project-docs/assets/rain_sky.jpg"], "RAIN": ["bi-cloud-rain", "/ada-project-docs/assets/rain_sky.jpg"], "SNOW": ["bi-cloud-snow", "/ada-project-docs/assets/snow_sky.jpg"], "MIST": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "SMOKE": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "HAZE": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "DUST": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "FOG": ["bi-cloud-haze", "/ada-project-docs/assets/mist_sky.jpg"], "SAND": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "DUST": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "ASH": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "SQUALL": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "TORNADO": ["bi-cloud-fog", "/ada-project-docs/assets/mist_sky.jpg"], "CLEAR": ["bi-sun", "/ada-project-docs/assets/clear_sky.jpg"], "CLOUDS": ['bi-clouds', "/ada-project-docs/assets/broken_clouds_sky.jpg"]}
 
 const changeWeatherAsync = async () => {
   const q = state.cityName;
@@ -151,8 +155,8 @@ const updateState = (weatherResponse) => {
   state.temperature = Math.round(weatherResponse.data.current.temp);
   state.weatherDescription = weatherResponse.data.current.weather[0].description;
   state.oldIconName = state.weatherIconName;
-  state.weatherIconName = weatherMainToIcon[weatherResponse.data.current.weather[0].main][0];
-  state.skyImgUrl = weatherMainToIcon[weatherResponse.data.current.weather[0].main][1];
+  state.weatherIconName = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][0];
+  state.skyImgUrl = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][1];
   console.log('successfully stored response data!', weatherResponse.data);
 }
 
@@ -176,6 +180,16 @@ const setWeatherIcon = () => {
 
 const setWeatherDescription = () => {
   document.getElementById("wdescription").innerHTML = state.weatherDescription;
+}
+
+const toggleSky = (condition) => {
+  state.weatherDescription = condition; 
+  setWeatherDescription();
+  state.skyImgUrl = weatherMainToIcon[condition.toUpperCase()][1];
+  setSky();
+  state.oldIconName = state.weatherIconName;
+  state.weatherIconName = weatherMainToIcon[condition.toUpperCase()][0];
+  setWeatherIcon();
 }
 
 //For Drop Down Menu Search
