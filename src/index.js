@@ -1,6 +1,6 @@
 'use strict';
-import 'regenerator-runtime/runtime';
-import axios from 'axios';
+// import 'regenerator-runtime/runtime';
+// import axios from 'axios';
 
 const registerEventHandlers = () => {
   document.addEventListener('DOMContentLoaded', displayWeatherAtLocation);
@@ -61,7 +61,7 @@ const displayWeatherAtLocation = () => {
     state.currentLat = latitude;
     state.currentLon = longitude;
     console.log("got geolocation", position)
-    axios.get("https://weather-report-server.herokuapp.com/weather", {
+    axios.get("http://localhost:5000/weather", {
         params: {
           lat: state.currentLat,
           lon: state.currentLon
@@ -77,7 +77,7 @@ const displayWeatherAtLocation = () => {
         state.weatherIconName = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][0];
         state.skyImgUrl = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][1];
         console.log('successfully stored response data!', weatherResponse.data);
-        axios.get("https://weather-report-server.herokuapp.com/city", {
+        axios.get("http://localhost:5000/city", {
           params: {
             lat: state.currentLat,
             lon: state.currentLon
@@ -155,7 +155,7 @@ const toggleFunction = () => {
 const changeWeatherAsync = async () => {
   const q = state.cityName;
   try{
-    let response = await axios.get("https://weather-report-server.herokuapp.com/location", {
+    let response = await axios.get("http://localhost:5000/location", {
       params: {
         q
       }
@@ -164,7 +164,7 @@ const changeWeatherAsync = async () => {
     const lon = response.data[0].lon;
     console.log('success!', response.data);
     try{
-      let weatherResponse = await axios.get("https://weather-report-server.herokuapp.com/weather", {
+      let weatherResponse = await axios.get("http://localhost:5000/weather", {
         params: {
           lat,
           lon
@@ -225,7 +225,7 @@ const toggleSky = (condition) => {
 // const changeWeather = () => {
 //   const q = state.cityName;
 
-  // axios.get("https://weather-report-server.herokuapp.com/location", {
+  // axios.get("http://localhost:5000/location", {
   //   params: {
   //     q
   //   }
@@ -234,7 +234,7 @@ const toggleSky = (condition) => {
   //   const lat = response.data[0].lat;
   //   const lon = response.data[0].lon;
   //   console.log('success!', response.data);
-  //   axios.get("https://weather-report-server.herokuapp.com/weather", {
+  //   axios.get("http://localhost:5000/weather", {
   //     params: {
   //       lat,
   //       lon
