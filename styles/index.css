@@ -1,5 +1,4 @@
-@import "custom";
-@import "~bootstrap/scss/bootstrap";
+
 
 :root {
     --boxBackground: rgb(255,255,255,.5);
