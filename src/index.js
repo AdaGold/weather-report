@@ -13,13 +13,34 @@ const registerEventHandlers = () => {
   for (const condition of skyConditions){
     condition.addEventListener("click", () => toggleSky(condition.textContent))
   };
+  document.getElementById("toggle-f-c").addEventListener('click', switchFAndC);
 };
+
+const FToC = (F) => {
+  return (F - 32) * .5556
+} 
+
+const CToF = (C) => {
+  return (C * 1.8) + 32
+} 
+
+const switchFAndC = () => {
+  if (state.tempMetric === "F"){
+    state.tempMetric = "C"
+    state.temperatureC = Math.round(FToC(state.temperatureF))
+    document.getElementById("temp").innerHTML = `${state.temperatureC}&deg;`;
+  }else{
+    state.tempMetric = "F"
+    document.getElementById("temp").innerHTML = `${state.temperatureF}&deg;`;
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {registerEventHandlers(); displayWeatherAtLocation();});
 
-
 const state = {
-  temperature: 60,
+  tempMetric: "F",
+  temperatureF: 60,
+  temperatureC: 15.5568,
   cityName: 'Tokyo',
   weatherDescription: "scattered clouds",
   weatherIconName: "bi-cloud-lightning-rain",
@@ -47,7 +68,8 @@ const displayWeatherAtLocation = () => {
       .then((weatherResponse) => {
         //Store response data
         console.log(weatherResponse.data)
-        state.temperature = Math.round(weatherResponse.data.current.temp)
+        state.temperatureF = Math.round(weatherResponse.data.current.temp)
+        state.temperatureC = FToC(state.temperatureF)
         state.weatherDescription = weatherResponse.data.current.weather[0].description;
         state.oldIconName = state.weatherIconName;
         state.weatherIconName = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][0];
@@ -64,7 +86,7 @@ const displayWeatherAtLocation = () => {
 
           state.cityName = cityResponse.data.address.city || cityResponse.data.address.region || cityResponse.data.address.county
                   //Update UI
-          document.getElementById("temp").innerHTML = `${state.temperature}&deg;`;
+          document.getElementById("temp").innerHTML = `${state.temperatureF}&deg;`;
           checkTextColorChange();
           checkSeasonChange();
           setWeatherIcon()
@@ -85,20 +107,20 @@ const displayWeatherAtLocation = () => {
 };
 
 const changeTemp = (change) => {
-  state.temperature += change
-  document.getElementById("temp").innerHTML = `${state.temperature}&deg;`;
+  state.temperatureF += change
+  document.getElementById("temp").innerHTML = `${state.temperatureF}&deg;`;
   checkTextColorChange();
   checkSeasonChange();
 };
 
 const checkSeasonChange = () => {
-  if (state.temperature <= 32){
+  if (state.temperatureF <= 32){
     document.getElementById("temp-img").src = "/ada-project-docs/assets/winter_landscape.png";
-  } else if (32 < state.temperature && state.temperature < 56){
+  } else if (32 < state.temperatureF && state.temperatureF < 56){
     document.getElementById("temp-img").src = "/ada-project-docs/assets/fall_landscape.png";
-  } else if (56 <= state.temperature  && state.temperature < 75){
+  } else if (56 <= state.temperatureF  && state.temperatureF < 75){
     document.getElementById("temp-img").src = "/ada-project-docs/assets/spring_landscape.png";
-  } else if (75 <= state.temperature  && state.temperature < 95) {
+  } else if (75 <= state.temperatureF  && state.temperatureF < 95) {
     document.getElementById("temp-img").src = "/ada-project-docs/assets/summer_landscape.png";
   }else {
     document.getElementById("temp-img").src = "/ada-project-docs/assets/hottest_landscape.png";
@@ -106,13 +128,13 @@ const checkSeasonChange = () => {
 };
 
 const checkTextColorChange = () => {
-  if (state.temperature <= 49){
+  if (state.temperatureF <= 49){
     document.getElementById("temp").style.color = "teal";
-  }else if (state.temperature >= 50 && state.temperature < 60){
+  }else if (state.temperatureF >= 50 && state.temperatureF < 60){
     document.getElementById("temp").style.color = "green";
-  }else if (state.temperature >= 60 && state.temperature < 70){
+  }else if (state.temperatureF >= 60 && state.temperatureF < 70){
     document.getElementById("temp").style.color = "yellow";
-  } else if (state.temperature >= 70 && state.temperature < 80){
+  } else if (state.temperatureF >= 70 && state.temperatureF < 80){
     document.getElementById("temp").style.color = "orange";
   } else{
     document.getElementById("temp").style.color = "red";
@@ -157,7 +179,7 @@ const changeWeatherAsync = async () => {
 };
 
 const updateState = (weatherResponse) => {
-  state.temperature = Math.round(weatherResponse.data.current.temp);
+  state.temperatureF = Math.round(weatherResponse.data.current.temp);
   state.weatherDescription = weatherResponse.data.current.weather[0].description;
   state.oldIconName = state.weatherIconName;
   state.weatherIconName = weatherMainToIcon[weatherResponse.data.current.weather[0].main.toUpperCase()][0];
@@ -166,7 +188,7 @@ const updateState = (weatherResponse) => {
 }
 
 const updateUI = () => {
-  document.getElementById("temp").innerHTML = `${state.temperature}&deg;`;
+  document.getElementById("temp").innerHTML = `${state.temperatureF}&deg;`;
   checkTextColorChange();
   checkSeasonChange();
   setWeatherIcon();
@@ -218,7 +240,7 @@ const toggleSky = (condition) => {
   //   })
     // .then((response) => {
     //   //Store response data
-    //   state.temperature = Math.round(response.data.current.temp)
+    //   state.temperatureF = Math.round(response.data.current.temp)
     //   state.weatherDescription = response.data.current.weather[0].description;
     //   state.oldIconName = state.weatherIconName;
     //   state.weatherIconName = weatherMainToIcon[response.data.current.weather[0].main][0];
@@ -227,7 +249,7 @@ const toggleSky = (condition) => {
     // })
     // .then(() => {
     //   //Update UI
-    //   document.getElementById("temp").textContent = `${state.temperature}&deg;`;
+    //   document.getElementById("temp").textContent = `${state.temperatureF}&deg;`;
     //   checkTextColorChange();
     //   checkSeasonChange();
     //   setWeatherIcon()
