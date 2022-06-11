@@ -1,6 +1,6 @@
 'use strict';
-// import 'regenerator-runtime/runtime';
-// import axios from 'axios';
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
 
 const registerEventHandlers = () => {
   document.addEventListener('DOMContentLoaded', displayWeatherAtLocation);
