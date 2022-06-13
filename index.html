@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Weather Report</title>
+    <link href="./styles/index.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
+    <header>
+        <h1>Weather Report</h1>
+    </header>
+  
+    <main>
+        <section>
+          <h2> Temperature </h2>
+          <!-- temp acts like a counter? need to connect to openweater api to get current temp through the json object temp key 
+            and then increment/decrement the 'counter' if you click the button -->
+          <h3 id="currentTemp">20</h3>
+          <button id="increaseTempButton">⬆️</button>
+          <button id="decreaseTempButton">⬇️</button>
+        </section>
+
+        <div>
+          <button id="realtimeTempButton">Get Realtime Temperature</button>
+        </div>
+
+        <section>
+          <div id="seasonalEmoji">🌸</div>
+        </section>
+
+        <section>
+          <h2> Location </h2>
+          <form>
+            <div>
+              <label for="uname">Location: </label>
+              <input type="text" id="name" name="name"
+                     placeholder="Enter a location">
+            </div>
+            <div>
+              <button id="resetButton">Reset</button>
+            </div>
+          </form>
+        </section>
+
+        <section>
+          <h2> Sky </h2>
+          <label for="sky-select">Choose a sky:</label>
+          <select id="sky" name="choice">
+            <option value="Sunny" id = "sunny">Sunny</option>
+            <option value="Cloudy" id= "cloudy">Cloudy</option>
+            <option value="Rainy" id = "rainy">Rainy</option>
+            <option value="Snowy" id = "snowy">Snowy</option>
+          </select>
+
+          <div id="skyColor"></div>
+        </section>
+      
+    </main>
+
+    <script src="./node_modules/axios/dist/axios.min.js" type="text/javascript"></script>
+    <script src="./src/index.js" type="text/javascript"></script>
+
     
 </body>
+
 </html>
