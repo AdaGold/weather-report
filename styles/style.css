@@ -37,11 +37,13 @@ figure {
     radial-gradient(rgba(100, 110, 10, 0.5), rgba(0, 0, 0, 0));
 }
 
-#landscape {
+.ascii_art {
     font-family: monospace;
     font-size: 0.5rem;
     line-height: 0.5rem;
     text-align: center;
+    max-width: 32ch;
+    text-overflow: clip;
 }
 
 #location_text {

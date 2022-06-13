@@ -7,6 +7,7 @@ const state = {
   city: 'Denver',
   lat: 39.7392,
   lon: -104.985,
+  sky: 'sunny',
 };
 
 const landscapes = {
@@ -30,6 +31,29 @@ const landscapes = {
   ********************************',
   warm: '^^^^^^warm^^^^^^',
   hot: '<<<<<hot>>>>>',
+};
+
+const skies = {
+  sunny:
+    '\
+  |   :   :   :     :     :      │\
+  |  :   :   :     :     :       │\
+  |   :   :   :     :     :      │',
+  cloudy:
+    '\
+|   : = : = :  =  :  =  :      │\
+|  : = : = :  =  :  =  :   =   │\
+| = : = : = :  =  :  =  :      │',
+  rainy:
+    '\
+|   :  :: : : : : : :   : :    │\
+|  : : : : :   : :   : :   :   │\
+|   : : :  ::  :  :: : ::   :  │',
+  snowy:
+    '\
+|   *    *    * *   *  *  *    │\
+| *  *    *  * *   * *  *  *  *│\
+|   * * * *   *   *   ** *     │',
 };
 
 const convertFtoC = (temp) => {
@@ -108,6 +132,7 @@ const increaseTemp = () => {
 
 const reset = () => {
   state.temp = 25;
+  state.tempUnits = '°C';
   changeLandscapeTemp();
   resetLocation();
 };
@@ -166,6 +191,16 @@ const resetLocation = () => {
   changeCity();
 };
 
+const changeSky = () => {
+  // const currentSky = state.sky;
+  const skyInput = document.getElementById('sky_selector');
+  const skyValue = skyInput.options[skyInput.selectedIndex].value;
+  console.log('sky_selector' + skyValue);
+  state.sky = skyValue;
+  const skyReturn = document.getElementById('sky_display');
+  skyReturn.textContent = skies[state.sky];
+};
+
 const registerEventHandlers = () => {
   changeCity();
   const changeLocationOnInput = document.querySelector('#location_text');
@@ -186,6 +221,9 @@ const registerEventHandlers = () => {
 
   const decreaseTempButton = document.querySelector('#decrease');
   decreaseTempButton.addEventListener('click', decreaseTemp);
+
+  const skySelector = document.querySelector('#sky_selector');
+  skySelector.addEventListener('change', changeSky);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);

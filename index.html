@@ -29,7 +29,23 @@
             <button id="reset"alt="Reset Temperature">⃔&nbsp;&nbsp;</button>
             <button id="increase"alt="Increase Temperature">&nbsp;+&nbsp;</button>
         </figure>
-        <div id="landscape">
+        <div id="sky">
+            <select name="sky_selector" id="sky_selector">
+                <option value=""> --- sky --- </option>
+                <option value="sunny">sunny</option>
+                <option value="cloudy">cloudy</option>
+                <option value="rainy">rainy</option>
+                <option value="snowy">snowy</option>
+            </select>
+        </div>
+        <div id="sky_display" class="ascii_art">
+            <pre>
+|   :   :   :     :     :      │
+|  :   :   :     :     :       │
+|   :   :   :     :     :      │
+            </pre>
+        </div>
+        <div id="landscape" class="ascii_art">
             <pre>
 ┼┼┼│                      │  ┼┼│
 ┼┼┼┼┐                       ┼┼┼│
