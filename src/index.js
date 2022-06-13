@@ -102,14 +102,28 @@ const increaseTemp = () => {
   changeLandscapeTemp();
 };
 
-const resetTemp = () => {
+const reset = () => {
   state.temp = 25;
   changeLandscapeTemp();
+  resetLocation();
 };
 
 const decreaseTemp = () => {
   state.temp -= 1;
   changeLandscapeTemp();
+};
+
+const changeCity = () => {
+  const newCity = document.getElementById('location_text').value;
+  const cityDisplay = document.getElementById('location_text');
+  state.city = newCity;
+  cityDisplay.textContent = state.city;
+};
+
+const resetLocation = () => {
+  const locationInput = document.getElementById('location_text');
+  locationInput.value = 'Denver';
+  changeCity();
 };
 
 const registerEventHandlers = () => {
@@ -119,8 +133,8 @@ const registerEventHandlers = () => {
   const increaseTempButton = document.querySelector('#increase');
   increaseTempButton.addEventListener('click', increaseTemp);
 
-  const resetTempButton = document.querySelector('#reset');
-  resetTempButton.addEventListener('click', resetTemp);
+  const resetButton = document.querySelector('#reset');
+  resetButton.addEventListener('click', reset);
 
   const decreaseTempButton = document.querySelector('#decrease');
   decreaseTempButton.addEventListener('click', decreaseTemp);
