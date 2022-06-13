@@ -9,38 +9,39 @@
 	<link href="styles/style.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
-            <div><button id="search_location" alt="Search or Enter Location">⌖</button></div>
-            <a id="site_title" href="index.html">
-                <input type="text" id="location_text" value="Denver"></input>
-            </a>
-            <div><button id="refresh_weather" alt="Refresh">⇢</button></div>
-        </nav>
-    </header>
-    <figure id="weather_display">
-        <h1 id="numeric_temperature">25</h1>
-        <div><button id="temperature_units">°C</button></div>
-    </figure>
-    <figure id="change_temperature">
-        <button id="decrease"alt="Decrease Temperature">&nbsp;－&nbsp;</button>
-        <button id="reset"alt="Reset Temperature">⃔&nbsp;&nbsp;</button>
-        <button id="increase"alt="Increase Temperature">&nbsp;+&nbsp;</button>
-    </figure>
-    <div id="landscape">
-        <pre>
-            
-                        ┼┼┼│  │    ││ │
-            ┼┼┼┼┐ ├────┼┼─┼──
-            ┼┼┼┼│ ├────┼┼─┼──┼┼┼│ 
-            ┼┼┼┼┘ │    ││ │┼┼┼│  │    ││ │
-            ┼     ├────┼┼─┼──
-            ┼┼┼┼│ ├────┼┼─┼──
-            ┼┼┼┼┘ │    ││ │       ┼┼┼┼┼┼****
-            ********************************
-            ********************************
-            ********************************
-        </pre>
+    <div id="weather_body">
+        <header>
+            <nav>
+                <div><button id="search_location" alt="Search or Enter Location">⌖</button></div>
+                <a id="site_title" href="index.html">
+                    <input type="text" id="location_text" value="Denver"></input>
+                </a>
+                <div><button id="refresh_weather" alt="Refresh">⇢</button></div>
+            </nav>
+        </header>
+        <figure id="weather_display">
+            <text id="numeric_temperature">25</text>
+            <div id="units_div"><button id="temperature_units">°C</button></div>
+        </figure>
+        <figure id="change_temperature">
+            <button id="decrease"alt="Decrease Temperature">&nbsp;－&nbsp;</button>
+            <button id="reset"alt="Reset Temperature">⃔&nbsp;&nbsp;</button>
+            <button id="increase"alt="Increase Temperature">&nbsp;+&nbsp;</button>
+        </figure>
+        <div id="landscape">
+            <pre>
+┼┼┼│                      │  ┼┼│
+┼┼┼┼┐                       ┼┼┼│
+┼┼┼┼│           *         │┼┼┼┼│
+┼┼┼┼┘          *          │ ┼┼┼│
+┼  ├────┼          ───────│ ┼┼┼│
+┼┼┼┼│┐┐┐┐┐┐┐┐ ├├├├├├├├├──│┼ ┼┼┼│
+┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+********************************
+********************************
+********************************
+            </pre>
+        </div>
     </div>
 <script src="src/index.js"></script>
 <script src="./node_modules/axios/dist/axios.min.js"></script>
