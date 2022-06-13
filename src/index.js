@@ -9,6 +9,7 @@ const currentTemp = document.getElementById('currentTemp');
 // buttons
 const incrementButton = document.getElementById('increaseTempButton');
 const decrementButton = document.getElementById('decreaseTempButton');
+const resetButton = document.getElementById('resetButton');
 
 //emoji
 const seasonalEmoji = document.getElementById('seasonalEmoji');
@@ -30,6 +31,7 @@ const decrementTemp = () => {
     alterTextColor()
 }
 
+// Wave 5
 let skyColor = document.getElementById('skyColor')
 let select = document.getElementById('sky')
 
@@ -47,12 +49,14 @@ const alterSky = () => {
     console.log("background color did not change")
 }
 
+
 const registerEventHandlers = () => {
     incrementButton.addEventListener('click', incrementTemp);
     decrementButton.addEventListener('click', decrementTemp);
     // realtimeTempButton.addEventListener('click',)
     select.addEventListener('change', alterSky);
     input.addEventListener('change', getLatLon);
+    resetButton.addEventListener('click', defaultDisplayName)
 }
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
@@ -124,9 +128,21 @@ const getTemp = (locationData) => {
 //get input by query selector
 const input = document.querySelector('input');
 
+let locationDisplay = document.getElementById('location')
+
+// WAVE 6
+// need to work on this..... buggy
+const defaultDisplayName = () => {
+    locationDisplay.textContent = "New York City"
+}
+
 const getLatLon = () => {
     let locationName = input.value
     console.log(locationName);
+
+    // changing display text to the input text
+    locationDisplay.textContent = locationName
+
     let lat, lon, locationData;
     console.log(lat, lon, locationData);
     axios 
@@ -148,3 +164,4 @@ const getLatLon = () => {
             )
         })
 }
+
