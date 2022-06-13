@@ -1,15 +1,16 @@
 // import axios from 'axios';
+// const axios = require('axios');
 
 const state = {
   temp: 25,
   tempUnits: '°C',
   city: 'Denver',
   lat: 39.7392,
-  long: -104.985,
+  lon: -104.985,
 };
 
 const landscapes = {
-  cold: '\
+  cold: '-----cold-----\
   I X I  I  I  I  I  I  I  I  I  I\
   ┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼\
   ********************************',
@@ -32,15 +33,15 @@ const landscapes = {
 };
 
 const convertFtoC = (temp) => {
-  return Math.round((((temp - 32) * 5) / 9) * 10) / 10;
+  return Math.round(((temp - 32) * 5) / 9);
 };
 
 const convertKtoC = (temp) => {
-  return temp - 273.15;
+  return Math.round(temp - 273.15);
 };
 
 const convertCtoF = (temp) => {
-  return Math.round((temp * (9 / 5) + 32) * 10) / 10;
+  return Math.round(temp * (9 / 5) + 32);
 };
 
 const changeLandscapeTemp = () => {
@@ -74,10 +75,13 @@ const changeLandscapeTemp = () => {
 
   const backgroundColor = document.getElementById('weather_body');
   backgroundColor.style.backgroundImage = backgroundColors;
+
   const landscapeReturn = document.getElementById('landscape');
   landscapeReturn.textContent = landscape;
+
   const tempContainer = document.querySelector('#numeric_temperature');
   tempContainer.textContent = `${state.temp}`;
+
   const unitsContainer = document.querySelector('#temperature_units');
   unitsContainer.textContent = `${state.tempUnits}`;
 };
@@ -113,6 +117,42 @@ const decreaseTemp = () => {
   changeLandscapeTemp();
 };
 
+const searchLocation = () => {
+  axios
+    .get('http://localhost:5000/location', {
+      params: {
+        q: state.city,
+      },
+    })
+    .then((response) => {
+      console.log('success!' + JSON.stringify(response.data[0]));
+      state.lat = response.data[0].lat;
+      state.lon = response.data[0].lon;
+      searchTemperature();
+    })
+    .catch((error) => {
+      console.log('searchLocation error: ' + error.response);
+    });
+};
+
+const searchTemperature = () => {
+  axios
+    .get('http://localhost:5000/weather', {
+      params: {
+        lat: state.lat,
+        lon: state.lon,
+      },
+    })
+    .then((response) => {
+      console.log('success!' + JSON.stringify(response.data.current.temp));
+      state.temp = convertKtoC(response.data.current.temp);
+      changeLandscapeTemp();
+    })
+    .catch((error) => {
+      console.log('searchTemperature error: ' + error.response);
+    });
+};
+
 const changeCity = () => {
   const newCity = document.getElementById('location_text').value;
   const cityDisplay = document.getElementById('location_text');
@@ -127,6 +167,14 @@ const resetLocation = () => {
 };
 
 const registerEventHandlers = () => {
+  changeCity();
+  const changeLocationOnInput = document.querySelector('#location_text');
+  changeLocationOnInput.addEventListener('change', searchLocation);
+
+  changeCity();
+  const changeLocation = document.querySelector('#refresh_weather');
+  changeLocation.addEventListener('click', searchLocation);
+
   const changeUnitsButton = document.querySelector('#temperature_units');
   changeUnitsButton.addEventListener('click', changeUnits);
 
