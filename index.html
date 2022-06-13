@@ -5,8 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    
+    <link rel="stylesheet" href="/Users/bahareh/Developer/weather-report/styles/index.css">
 </head>
 <body>
-    
+
+<div class="container">
+   
+    <section class="box" id="tempreture">
+        <button id="decrement">❄️</button>
+        <div id="tempContainer"></div>
+        <button id="increment">🔥</button>
+        <button id="real-time-temp">Get current tempreture</button>
+      
+   </section> 
+   
+   <section class="box" id="sky" >
+       
+       <label  for="sky-names" class="header">Sky:</label>
+       <select id="skys" name="sky-names" >
+        <option value="sunny">Sunny</option>
+        <option value="cloudy">Cloudy<option>
+        <option value="rainy">Rainy</option>
+        <option value="snowy">Snowy</option>
+       </select>
+ 
+
+   </section>
+
+   
+   <section class="box" id="city">
+       <h2 class="header" id="citynam"></h2>
+       <label for="input" class="header">City Name:</label>
+       <input type="text" id="input"  >
+       <button id="reset">reset</button>
+    </section> 
+   
+    <section class="box" id="garden-sky">
+        <header class="header">Garden's sky</header>
+       <div id="upSky">🌈☀☀☀☀🌝🌝🌝🌝☀☀☀☀☀🌈</div>
+       
+     </section> 
+  
+
+    <section class="box" id="garden-landscape">
+        <header class="header">Garden's landscape</header>
+        <div id="ground">✨✨✨✨✨🌏🌏🌏🌏🌏
+        </div>
+    </section> 
+
+</div>
+<script  src="assets/index.js"></script>
+<script src="./node_modules/axios/dist/axios.min.js"></script>
+<script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
 </html>
