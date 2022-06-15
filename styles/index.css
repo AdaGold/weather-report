@@ -1,0 +1,54 @@
+* {background-color:cornsilk ;
+font-size: large;}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    height: 50vh;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 20%;
+    min-width: 300px;
+    border-radius: 10%;
+    /* padding:70 px 0; */
+    text-align: center;
+    overflow-x: auto;
+    border: 1px solid saddlebrown;
+    box-sizing: border-box;
+    background-color: salmon;
+    
+  }
+  
+
+.header{margin:25%;
+    background-color: grey;
+    padding: 2%;
+  }
+ 
+
+button{margin: 20%;
+    padding: 10px;
+}
+  
+
+/* #tempreture{background-color: aquamarine;
+}
+
+#garden-sky{background-color: yellow;    
+}
+
+#garden-landscape{background-color: blue;}
+  
+#city{background-color: violet;}
+
+#sky{background-color: bisque;} */
+
+img{
+    display:block;
+    margin:auto;
+    height: 100%;
+}
+
