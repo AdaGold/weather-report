@@ -1,0 +1,72 @@
+html {
+    font-size: min(max(2rem, 4vw), 30px);
+    padding: calc(8px + 1.5625vw);
+    text-align: center;
+}
+
+header {
+    padding: calc(8px + 1.5625vw);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 1rem;
+    row-gap: 0rem;
+    justify-content: center;
+}
+
+figure {
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    row-gap: 0rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    flex: 25%;
+}
+
+#weather_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: 
+    radial-gradient(rgba(100, 110, 10, 0.5), rgba(0, 0, 0, 0));
+}
+
+.ascii_art {
+    font-family: monospace;
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    max-width: 32ch;
+    text-overflow: clip;
+}
+
+#location_text {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+}
+
+
+#weather_display {
+    display: flex;   
+}
+
+#numeric_temperature {
+    font-size: 8rem;
+    line-height: 90%;
+}
+
+#units_div {
+    align-self: flex-start;
+    flex-shrink: 2;
+}
+
+#change_temperature {
+    gap: 1rem;
+}
