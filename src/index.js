@@ -153,6 +153,7 @@ const searchLocation = () => {
       console.log('success!' + JSON.stringify(response.data[0]));
       state.lat = response.data[0].lat;
       state.lon = response.data[0].lon;
+      changeCity();
       searchTemperature();
     })
     .catch((error) => {
