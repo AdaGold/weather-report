@@ -1,0 +1,130 @@
+    body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: #EDD4FD;
+    }
+    
+    .input_field {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .input_container {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-radius: 5px;
+    }
+    
+    h1 {
+        display: flex;
+        align-items: left;
+        justify-content: left;
+    }
+    
+    .subheader {
+        display: flex;
+        font-size: 1rem;
+        color: #D193FA;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+    
+    .main_area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border: thin;
+    }
+    
+    .temperature_area {
+        background-color: rgba(81, 0, 179, 0.415);
+        display: flex;
+        align-items: center;
+        padding: 0px 10px 5px 10px;
+        border-radius: 5px;
+    }
+    
+    #temp_value {
+        font-size: 33px;
+        margin-right: 1rem;
+        justify-content: center;
+    }
+    
+    .temp_wheel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 3rem;
+        font-size: 18px;
+    }
+    
+    .temp_txt {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 28px;
+    }
+    
+    .skyArea {
+        background-color: rgba(81, 0, 179, 0.415);
+        padding: 0px 60px 0px 60px;
+        border-radius: 5px;
+        flex-direction: column;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    #skySelect {
+        align-content: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .city_section {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: rgba(81, 0, 179, 0.415);
+        ;
+        padding: 0px 20px 0px 20px;
+        border-radius: 5px;
+        flex-direction: column;
+    }
+    
+    #cityNameInput,
+    #cityNameReset {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    #temperatureCaption,
+    #skyCaption,
+    #cityCaption {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: 10px;
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    .gardenArea {
+        background-color: rgba(81, 0, 179, 0.415);
+        ;
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: center;
+        padding: 0px 20px 0px 20px;
+        margin-top: 40px;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        border-radius: 5px;
+    }
+    
+    #gardenCaption {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    .garden {
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        justify-content: space-between;
+    }
+    
+    #sky,
+    #landscape {
+        font-size: 30px;
+    }

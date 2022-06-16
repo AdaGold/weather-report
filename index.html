@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link rel="stylesheet" href="styles/index.css" />
 </head>
+
 <body>
-    
+
+    <header class="header_section">
+        <h1>Ashley's Weather Report</h1>
+        <span class="subheader">
+            <span id="headerCityName" class="header_city"></span>
+        </span>
+    </header>
+
+    <div class="input_container">
+        <i class="fa-thin fa-magnifying-glass"></i>
+        <input class="input_field" type="text" placeholder="Search City" name="city search" />
+    </div>
+
+    <div class="main_area">
+        <button id="realTime" class="realTimeButton">Real Time</button>
+        <section class="temperature_area">
+            <h2 id="temp_caption">Temperature</h2>
+            <div class="temp_txt"></div>
+            <div class="temp_wheel"></div>
+            <span id="increase_temp">⬆️</span>
+            <span id="decrease_temp">⬇️</span>
+            <div>
+                <span id="temp_value"></span>
+            </div>
+
+        </section>
+        <section class="skyArea">
+            <h2 id="skyCaption">Sky</h2>
+            <select id="skySelect">
+                <option value="none" selected disabled hidden>select sky</option>
+                <option value="sun">Sunshine</option>
+                <option value="overcast">Overcast</option>
+                <option value="rain">Rain Storm</option>
+                <option value="snow">Snow Storm</option>
+            </select>
+        </section>
+        <section class="city_section">
+            <h2 id="cityTitle">City Name</h2>
+            <input type="text" id="cityNameInput" value="Seattle 🌧" />
+            <button id="cityNameReset" class="resetButton">Reset</button>
+        </section>
+        <section class="gardenArea">
+            <h2 id="gardenCaption">Weather Garden</h2>
+            <div id="gardenStuff" class="garden">
+                <div id="sky"></div>
+                <div id="landscape"></div>
+            </div>
+        </section>
+    </div>
+    <script src="src/index.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+
 </body>
+
 </html>
