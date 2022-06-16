@@ -203,11 +203,11 @@ const changeSky = () => {
 };
 
 const registerEventHandlers = () => {
-  changeCity();
+  // changeCity();
   const changeLocationOnInput = document.querySelector('#location_text');
   changeLocationOnInput.addEventListener('change', searchLocation);
 
-  changeCity();
+  // changeCity();
   const changeLocation = document.querySelector('#refresh_weather');
   changeLocation.addEventListener('click', searchLocation);
 
