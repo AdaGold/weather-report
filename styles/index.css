@@ -55,6 +55,11 @@
         font-size: 18px;
     }
     
+    .temp_txt {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 28px;
+    }
+    
     .skyArea {
         background-color: rgba(81, 0, 179, 0.415);
         padding: 0px 60px 0px 60px;

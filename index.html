@@ -24,23 +24,26 @@
     </div>
 
     <div class="main_area">
+        <button id="realTime" class="realTimeButton">Real Time</button>
         <section class="temperature_area">
             <h2 id="temp_caption">Temperature</h2>
             <div class="temp_txt"></div>
             <div class="temp_wheel"></div>
-            <span id="increase_temp">⬆</span>
-            <span id="decrease_temp">⬇</span>
+            <span id="increase_temp">⬆️</span>
+            <span id="decrease_temp">⬇️</span>
             <div>
                 <span id="temp_value"></span>
             </div>
+
         </section>
         <section class="skyArea">
             <h2 id="skyCaption">Sky</h2>
             <select id="skySelect">
-                <option>Sunshine</option>
-                <option>Overcast</option>
-                <option>Rain Storm</option>
-                <option>Snow Storm</option>
+                <option value="none" selected disabled hidden>select sky</option>
+                <option value="sun">Sunshine</option>
+                <option value="overcast">Overcast</option>
+                <option value="rain">Rain Storm</option>
+                <option value="snow">Snow Storm</option>
             </select>
         </section>
         <section class="city_section">
