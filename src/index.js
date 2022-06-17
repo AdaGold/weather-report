@@ -64,18 +64,18 @@ document.addEventListener("DOMContentLoaded", registerEventHandlers);
 const alterTextColor = () => {
     if (state.temp > 80){
         console.log('changing to red')
-        seasonalEmoji.textContent = '🔥'
+        seasonalEmoji.textContent = '🔥🔥🔥🔥🔥🔥🔥'
         return currentTemp.style.color = 'red'
     } else if (state.temp >= 70){
         console.log('changing to orange')
-        seasonalEmoji.textContent = '🌻'
+        seasonalEmoji.textContent = '🌻🌻🌻🌻🌻🌻🌻'
         return currentTemp.style.color = 'orange'
     } else if (state.temp >= 60){
         console.log('changing to yellow')
-        seasonalEmoji.textContent = '🍄'
+        seasonalEmoji.textContent = '🍄🍄🍄🍄🍄🍄🍄'
         return currentTemp.style.color = 'yellow'
     } else if (state.temp >= 50){
-        seasonalEmoji.textContent = '🍁'
+        seasonalEmoji.textContent = '🍁🍁🍁🍁🍁🍁🍁'
         console.log('changing to green')
         return currentTemp.style.color = 'green'
     } else if (state.temp <= 49){
@@ -132,8 +132,12 @@ let locationDisplay = document.getElementById('location')
 
 // WAVE 6
 // need to work on this..... buggy
-const defaultDisplayName = () => {
+const defaultDisplayName = (event) => {
+    // nathaniel's magic
+    event.preventDefault()
     locationDisplay.textContent = "New York City"
+    currentTemp.textContent = '80'
+    console.log('strugglez')
 }
 
 const getLatLon = () => {
