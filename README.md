@@ -1,5 +1,21 @@
 # Weather Report
 
+##Pair Plan of Action
+1. Access needs
+   1. Open to working together until 6 PM after class
+   2. Prefer in-person
+   3. Communication via text and Slack
+2. Learning styles
+   1. Prepare and process individually before meeting and planning
+   2. Refer to examples
+3. How you prefer to receive feedback
+   1. Nicely and politely
+   2. Immediately if there is an issue
+   3. Open to constructive criticism
+4. Communication skills to improve
+   1. Taking turns driving and navigating
+   2. Communicate code more efficiently
+
 ## Skills Assessed
 
 - Following directions and reading comprehension
