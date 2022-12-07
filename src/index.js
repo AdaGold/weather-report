@@ -1,5 +1,8 @@
 // Solution adapted from Simon de Sal
 
+const BASE_URL = 'https://weather-report-proxy-server.herokuapp.com';
+// const BASE_URL = 'http://localhost:5000';
+
 const state = {
   city: 'Seattle',
   lat: 47.6038321,
@@ -14,7 +17,7 @@ const convertKtoF = (temp) => {
 const findLatAndLong = () => {
   //let lat, long;
   axios
-    .get('https://weather-report-proxy-server.herokuapp.com/location', {
+    .get(`${BASE_URL}/location`, {
       params: {
         q: state.city,
       },
@@ -32,7 +35,7 @@ const findLatAndLong = () => {
 
 const getWeather = () => {
   axios
-    .get('https://weather-report-proxy-server.herokuapp.com/weather', {
+    .get(`${BASE_URL}/weather`, {
       params: {
         lat: state.lat,
         lon: state.long,
@@ -40,7 +43,7 @@ const getWeather = () => {
     })
     .then((response) => {
       const weather = response.data;
-      state.temp = Math.round(convertKtoF(weather.current.temp));
+      state.temp = Math.round(convertKtoF(weather.main.temp));
       formatTempAndGarden();
     })
     .catch((error) => {
