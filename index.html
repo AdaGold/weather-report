@@ -5,8 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link href="../styles/index.css" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <h1>WEATHER REPORT</h1>
+    </header>
+    <section>
+        <div class="left-column" id="temp-input">
+            <h2>TEMPERATURE</h2>
+            <button type="button" id="increase-temp">U+FE0F</button>
+            <p>72</p>
+            <button type="button" id="decrease-temp">U+2B07</button>
+            <button type="button" id="realtime-temp">Get Realtime Temperature</button>
+        </div>
+        <div class="left-column" id="sky-input">
+            <h2>SKY</h2>
+            <!-- dropdown source: https://www.w3schools.com/howto/howto_js_cascading_dropdown.asp -->
+            <form id="dropdown"> <!-- Not sure what this is supposed to look like -->
+                <select name="sky" id="sky">
+                <option value="" selected="selected">Sunny</option>
+                <option value="" selected="selected">Cloudy</option>
+                <option value="" selected="selected">Rainy</option>
+                <option value="" selected="selected">Snowy</option>
+                <br><br>
+        </div>
+        <div class="left-column" id="city-input">
+            <h2>CITY NAME</h2>
+            <!-- blank field source: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_form_target-->
+            <form action="/action_page.php" method="get" target="_blank">
+                <input type="text" id="fname" name="fname">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+        <div class="right-column" id="city-display">
+            <h2>Seattle</h2>
+        </div>
+        <div>
+            <h2>WEATHER GARDEN</h2>
+        </div>
+        <div class="right-column" id="emoji-display">
+            <p id="sky-emojis"></p>
+            <p id="ground-emojis"></p>
+        </div>
+    </section>
+    <script src="src/index.js" type="text/javascript"></script>
 </body>
 </html>
+
+<!-- ./node_modules/axios/dist/axios.min.js -->
+
