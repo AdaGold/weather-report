@@ -14,9 +14,10 @@
     <section>
         <div class="left-column" id="temp-input">
             <h2>TEMPERATURE</h2>
-            <button type="button" id="increase-temp">U+FE0F</button>
-            <p>72</p>
-            <button type="button" id="decrease-temp">U+2B07</button>
+
+            <button type="button" id="increase-temp">UP</button>
+            <p id="temp">72</p>
+            <button type="button" id="decrease-temp">DOWN</button>
             <button type="button" id="realtime-temp">Get Realtime Temperature</button>
         </div>
         <div class="left-column" id="sky-input">
@@ -24,10 +25,10 @@
             <!-- dropdown source: https://www.w3schools.com/howto/howto_js_cascading_dropdown.asp -->
             <form id="dropdown"> <!-- Not sure what this is supposed to look like -->
                 <select name="sky" id="sky">
-                <option value="" selected="selected">Sunny</option>
-                <option value="" selected="selected">Cloudy</option>
-                <option value="" selected="selected">Rainy</option>
-                <option value="" selected="selected">Snowy</option>
+                <option selected="selected">Sunny</option>
+                <option selected="selected">Cloudy</option>
+                <option selected="selected">Rainy</option>
+                <option selected="selected">Snowy</option>
                 <br><br>
         </div>
         <div class="left-column" id="city-input">
@@ -50,8 +51,9 @@
         </div>
     </section>
     <script src="src/index.js" type="text/javascript"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
 </html>
 
-<!-- ./node_modules/axios/dist/axios.min.js -->
+<!--  -->
 
