@@ -50,12 +50,21 @@ const landscapeChange = (temp) => {
   return landscape;
 };
 
+const displayCityName = () => {
+  const inputCity = document.getElementById('city-name-input').value;
+  const displayCityContainer = document.getElementById('city-display');
+
+  displayCityContainer.textContent = '✨ ' + inputCity + ' ✨';
+};
+
 const registerEventHandlers = () => {
   const increaseButton = document.getElementById('increase-temp');
   const decreaseButton = document.getElementById('decrease-temp');
+  const cityInputForm = document.getElementById('city-name-input');
 
   increaseButton.addEventListener('click', increaseTemp);
   decreaseButton.addEventListener('click', decreaseTemp);
+  cityInputForm.addEventListener('input', displayCityName);
 };
 
 // const registerEventHandlers = () => {
