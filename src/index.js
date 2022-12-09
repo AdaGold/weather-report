@@ -1,5 +1,30 @@
 'use strict';
 
+//eevent happens (clicking on the get realtime temp)
+const realtimeTempButton = document.getElementById('realtime-temp');
+//take in city from city-input
+const cityInput = document.getElementById('city-name-input').value;
+//request location api to return lat and lon, using city name
+//using the returned lat and lon, request weather api to return temperature
+//convert temp from kelvin to farhenheit
+//set that value as temp display
+
+const get_location = () => {
+  axios
+    .get('http://127.0.0.1:5000/location', {
+      params: {
+        q: 'Seattle, Washington, USA',
+      },
+    })
+    .then((response) => {
+      console.log('success!', response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      console.log('error!', error.response.data);
+    });
+};
+
 const increaseTemp = () => {
   const currentTemp = document.getElementById('temp');
   currentTemp.textContent = parseInt(currentTemp.textContent) + 1;
@@ -50,6 +75,29 @@ const landscapeChange = (temp) => {
   return landscape;
 };
 
+const skyChangeOnSelect = () => {
+  const selectedSky = document.getElementById('sky-select')[0].innerHTML;
+  const skyContainer = document.getElementById('sky-container');
+  const skyEmojiDisplay = skyChange(selectedSky);
+  skyContainer.textContent = skyEmojiDisplay;
+  console.log(skyEmojiDisplay);
+  console.log(selectedSky);
+};
+
+const skyChange = (skySelect) => {
+  let skyEmoji = '';
+  if (skySelect === 'Sunny') {
+    skyEmoji = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';
+  } else if (skySelect === 'Cloudy') {
+    skyEmoji = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';
+  } else if (skySelect === 'Rainy') {
+    skyEmoji = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';
+  } else if (skySelect === 'Snowy') {
+    skyEmoji = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';
+  }
+  return skyEmoji;
+};
+
 const displayCityName = () => {
   const inputCity = document.getElementById('city-name-input').value;
   const displayCityContainer = document.getElementById('city-display');
@@ -57,19 +105,20 @@ const displayCityName = () => {
   displayCityContainer.textContent = '✨ ' + inputCity + ' ✨';
 };
 
+// const response = get_location();
+// const long = response[0]['lat'];
+
 const registerEventHandlers = () => {
   const increaseButton = document.getElementById('increase-temp');
   const decreaseButton = document.getElementById('decrease-temp');
   const cityInputForm = document.getElementById('city-name-input');
+  const selectedSky = document.getElementById('sky-select');
+  get_location();
 
   increaseButton.addEventListener('click', increaseTemp);
   decreaseButton.addEventListener('click', decreaseTemp);
   cityInputForm.addEventListener('input', displayCityName);
+  selectedSky.addEventListener('change', skyChangeOnSelect);
 };
-
-// const registerEventHandlers = () => {
-//   const increaseButton = document.getElementById('-temp');
-//   increaseButton.addEventListener('click', increaseTemp);
-// };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);
