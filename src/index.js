@@ -17,23 +17,36 @@ const getTempFromCoordinates = () => {
     })
     .then((response) => {
       console.log('success', response);
-      return_obj = {
-        lat: response['data'][0].lat,
-        lon: response['data'][0].lon,
+      const return_obj = {
+        lat: response.data[0].lat,
+        lon: response.data[0].lon,
       };
       axios
         .get('http://127.0.0.1:5000/weather', {
           params: {
-            lat: response['data'][0].lat,
-            lon: response['data'][0].lon,
+            lat: return_obj['lat'],
+            lon: return_obj['lon'],
           },
         })
         .then((weatherResponse) => {
           console.log(weatherResponse);
+          const cityTemp = weatherResponse.data['main']['temp'];
+          let tempDisplay = document.getElementById('temp');
+          console.log(cityTemp);
+          const tempFahrenheit =
+            (parseInt(cityTemp) - parseInt(273.15)) * 1.8 + 32;
+          console.log(tempFahrenheit);
+          tempDisplay.textContent = tempFahrenheit;
+
+          const landscapeContainer = document.getElementById('landscape');
+          const landscape = landscapeChange(tempFahrenheit);
+          landscapeContainer.textContent = landscape;
+          console.log(landscapeChange(tempFahrenheit));
         });
     })
     .catch((error) => {
       console.log('error!');
+      console.log(error);
     });
 };
 
