@@ -13,7 +13,7 @@ const get_location = () => {
   axios
     .get('http://127.0.0.1:5000/location', {
       params: {
-        q: 'Seattle, Washington, USA',
+        q: cityInput,
       },
     })
     .then((response) => {
@@ -24,6 +24,12 @@ const get_location = () => {
       console.log('error!', error.response.data);
     });
 };
+
+// const get_temperature = () => {
+//   axios.get('http://127.0.0.1:5000/location', {
+//     params: {},
+//   });
+// };
 
 const increaseTemp = () => {
   const currentTemp = document.getElementById('temp');
@@ -76,23 +82,24 @@ const landscapeChange = (temp) => {
 };
 
 const skyChangeOnSelect = () => {
-  const selectedSky = document.getElementById('sky-select')[0].innerHTML;
+  const selectedSky = document.getElementById('sky-select').value;
   const skyContainer = document.getElementById('sky-container');
   const skyEmojiDisplay = skyChange(selectedSky);
   skyContainer.textContent = skyEmojiDisplay;
+  console.log(document.getElementById('sky-select'));
   console.log(skyEmojiDisplay);
   console.log(selectedSky);
 };
 
 const skyChange = (skySelect) => {
   let skyEmoji = '';
-  if (skySelect === 'Sunny') {
+  if (skySelect === 'sunny') {
     skyEmoji = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';
-  } else if (skySelect === 'Cloudy') {
+  } else if (skySelect === 'cloudy') {
     skyEmoji = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';
-  } else if (skySelect === 'Rainy') {
+  } else if (skySelect === 'rainy') {
     skyEmoji = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';
-  } else if (skySelect === 'Snowy') {
+  } else if (skySelect === 'snowy') {
     skyEmoji = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';
   }
   return skyEmoji;
