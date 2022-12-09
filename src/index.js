@@ -100,7 +100,7 @@ const skyChange = (skySelect) => {
   } else if (skySelect === 'rainy') {
     skyEmoji = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';
   } else if (skySelect === 'snowy') {
-    skyEmoji = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';
+    skyEmoji = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';
   }
   return skyEmoji;
 };
