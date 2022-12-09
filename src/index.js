@@ -38,10 +38,10 @@ const getTempFromCoordinates = () => {
           console.log(tempFahrenheit);
           tempDisplay.textContent = tempFahrenheit;
 
-          const landscapeContainer = document.getElementById('landscape');
-          const landscape = landscapeChange(tempFahrenheit);
-          landscapeContainer.textContent = landscape;
-          console.log(landscapeChange(tempFahrenheit));
+          // const landscapeContainer = document.getElementById('landscape');
+          // const landscape = landscapeChange(tempFahrenheit);
+          // landscapeContainer.textContent = landscape;
+          // console.log(landscapeChange(tempFahrenheit));
         });
     })
     .catch((error) => {
@@ -131,6 +131,15 @@ const displayCityName = () => {
   displayCityContainer.textContent = '✨ ' + inputCity + ' ✨';
 };
 
+const resetCityName = () => {
+  const inputCity = document.getElementById('city-name-input');
+  const cityNameDisplay = document.getElementById('city-display');
+  inputCity.value = 'Seattle';
+  cityNameDisplay.textContent = 'Seattle';
+  console.log(inputCity);
+  console.log(inputCity.value);
+};
+
 // const response = get_location();
 // const long = response[0]['lat'];
 
@@ -140,12 +149,16 @@ const registerEventHandlers = () => {
   const cityInputForm = document.getElementById('city-name-input');
   const selectedSky = document.getElementById('sky-select');
   const realtimeTempButton = document.getElementById('realtime-temp');
+  const resetButton = document.getElementById('reset-city-name-2');
+  // const cityNameDisplay = document.getElementById('city-display');
 
   increaseButton.addEventListener('click', increaseTemp);
   decreaseButton.addEventListener('click', decreaseTemp);
   cityInputForm.addEventListener('input', displayCityName);
   selectedSky.addEventListener('change', skyChangeOnSelect);
   realtimeTempButton.addEventListener('click', getTempFromCoordinates);
+  resetButton.addEventListener('click', resetCityName);
+  // cityNameDisplay.addEventListener('change', resetCityName);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);
