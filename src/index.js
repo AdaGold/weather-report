@@ -1,15 +1,14 @@
 'use strict';
 
 //eevent happens (clicking on the get realtime temp)
-const realtimeTempButton = document.getElementById('realtime-temp');
 //take in city from city-input
-const cityInput = document.getElementById('city-name-input').value;
 //request location api to return lat and lon, using city name
 //using the returned lat and lon, request weather api to return temperature
 //convert temp from kelvin to farhenheit
 //set that value as temp display
-
-const get_location = () => {
+const getTempFromCoordinates = () => {
+  const cityInput = document.getElementById('city-display').textContent;
+  console.log(cityInput);
   axios
     .get('http://127.0.0.1:5000/location', {
       params: {
@@ -17,19 +16,26 @@ const get_location = () => {
       },
     })
     .then((response) => {
-      console.log('success!', response.data);
-      return response.data;
+      console.log('success', response);
+      return_obj = {
+        lat: response['data'][0].lat,
+        lon: response['data'][0].lon,
+      };
+      axios
+        .get('http://127.0.0.1:5000/weather', {
+          params: {
+            lat: response['data'][0].lat,
+            lon: response['data'][0].lon,
+          },
+        })
+        .then((weatherResponse) => {
+          console.log(weatherResponse);
+        });
     })
     .catch((error) => {
-      console.log('error!', error.response.data);
+      console.log('error!');
     });
 };
-
-// const get_temperature = () => {
-//   axios.get('http://127.0.0.1:5000/location', {
-//     params: {},
-//   });
-// };
 
 const increaseTemp = () => {
   const currentTemp = document.getElementById('temp');
@@ -120,12 +126,13 @@ const registerEventHandlers = () => {
   const decreaseButton = document.getElementById('decrease-temp');
   const cityInputForm = document.getElementById('city-name-input');
   const selectedSky = document.getElementById('sky-select');
-  get_location();
+  const realtimeTempButton = document.getElementById('realtime-temp');
 
   increaseButton.addEventListener('click', increaseTemp);
   decreaseButton.addEventListener('click', decreaseTemp);
   cityInputForm.addEventListener('input', displayCityName);
   selectedSky.addEventListener('change', skyChangeOnSelect);
+  realtimeTempButton.addEventListener('click', getTempFromCoordinates);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);
