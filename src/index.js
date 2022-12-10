@@ -37,7 +37,8 @@ const getTempFromCoordinates = () => {
             (parseInt(cityTemp) - parseInt(273.15)) * 1.8 + 32;
           console.log(tempFahrenheit);
           tempDisplay.textContent = tempFahrenheit;
-
+          colorTempChange(tempDisplay);
+          landscapeChange(tempDisplay);
           // const landscapeContainer = document.getElementById('landscape');
           // const landscape = landscapeChange(tempFahrenheit);
           // landscapeContainer.textContent = landscape;
