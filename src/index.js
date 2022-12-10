@@ -38,11 +38,10 @@ const getTempFromCoordinates = () => {
           console.log(tempFahrenheit);
           tempDisplay.textContent = tempFahrenheit;
           colorTempChange(tempDisplay);
-          landscapeChange(tempDisplay);
-          // const landscapeContainer = document.getElementById('landscape');
-          // const landscape = landscapeChange(tempFahrenheit);
-          // landscapeContainer.textContent = landscape;
-          // console.log(landscapeChange(tempFahrenheit));
+          const landscape = landscapeChange(tempDisplay);
+
+          const landscapeContainer = document.getElementById('landscape');
+          landscapeContainer.textContent = landscape;
         });
     })
     .catch((error) => {
