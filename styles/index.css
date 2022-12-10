@@ -11,6 +11,11 @@ body {
     background-color: rgb(165, 212, 243);
 }
 
+/* .box {
+    border-radius: 30px;
+    background-color: bisque;
+} */
+
 header {
     grid-row: 2 / 2;
     grid-column: 2 / 7;
@@ -27,8 +32,6 @@ header {
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
     column-gap: 10px;
-    border-radius: 30px;
-    background-color: bisque;
 }
 
 #decrease-temp {
