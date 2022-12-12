@@ -58,7 +58,7 @@ The only extra JavaScript library we should load is [`Axios`](https://axios-http
 
 To download the `axios` node module, run `yarn install`
 
-To include axios in your project, include the following script tag below the script tag linking `index.js`:
+To include axios in your project, include the following script tag above the script tag linking `index.js`:
 - `<script src="./node_modules/axios/dist/axios.min.js"></script>`
 
 This should be done during the Wave 1 initial setup of your `index.html` page.
