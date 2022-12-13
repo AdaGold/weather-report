@@ -102,7 +102,7 @@ const Update = () => {
 let city = document.getElementById("search").value;
 let lat;
 let lon;
-axios.get(`http://127.0.0.1:5000/location?q=${city}`)
+axios.get(`https://weatherapibrooke.herokuapp.com/location?q=${city}`)
 .then(function (response) {
     // handle success
     lat = response.data[0]['lat'];
@@ -119,7 +119,7 @@ axios.get(`http://127.0.0.1:5000/location?q=${city}`)
 
 const callWeather = (lat,lon) => {
 
-axios.get(`http://127.0.0.1:5000/weather?lat=${lat}&lon=${lon}&units=imperial`)
+axios.get(`https://weatherapibrooke.herokuapp.com/weather?lat=${lat}&lon=${lon}&units=imperial`)
 .then(function(response) {
 
     let temp = document.querySelector('#temp')
