@@ -1,4 +1,5 @@
-
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
 const temp_max = 105 
 const temp_min = -1
 
