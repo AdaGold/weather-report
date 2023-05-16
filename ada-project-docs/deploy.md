@@ -2,7 +2,7 @@
 
 Follow the steps below to deploy to GitHub Pages using `parcel-bundler`
 
-1. Create a new branch called `deployed-solution` and switch to it.
+1. Create a new branch called `deployed-version` and switch to it.
 1. Install `parcel-bundler`
     ```bash
     yarn add --dev parcel-bundler@1.12.5
