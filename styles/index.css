@@ -1,0 +1,164 @@
+h2 {
+    margin: 0 auto 2rem auto;
+}
+  
+body {
+display: grid;
+grid-template-columns: 1fr 2fr;
+grid-template-rows: auto auto auto auto;
+grid-gap: 1rem;
+
+font-family: "Rubik", sans-serif;
+font-size: 18px;
+background-color: #1b69f9;
+margin: 2rem;
+}
+
+.header__header {
+color: white;
+grid-column: span 3;
+display: flex;
+align-items: center;
+margin: 2rem auto 3rem 0;
+}
+
+.header__header > h1 {
+margin-right: 2rem;
+font-size: 3em;
+}
+
+.header__city-name {
+font-style: oblique;
+font-size: 2rem;
+}
+
+.header__city-name::before,
+.header__city-name::after {
+content: "✨";
+}
+
+.temperature__section,
+.sky__section,
+.city-name__section {
+border-radius: 8px;
+padding: 2rem;
+background-color: white;
+}
+
+.temperature__section {
+grid-row: 2;
+}
+
+.temperature__section button {
+    background-color: #1b69f9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px
+}
+
+.sky__section {
+grid-row: 3;
+}
+
+.city-name__section {
+grid-row: 4;
+}
+
+.garden__section {
+grid-row: 2 / span 3;
+grid-column: 2;
+text-align: center;
+align-self: center;
+}
+
+.temperature__content {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+/* justify-content: center; */
+}
+
+#tempValue {
+font-size: 3rem;
+margin-left: 1.5rem;
+/* padding-right: 1rem; */
+/* margin-right: 1.5rem; */
+}
+
+.temperature__controls {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.garden__section > h2 {
+color: white;
+}
+
+.garden__content {
+min-height: 200px;
+max-width: fit-content;
+margin: auto;
+padding: 2rem;
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+border-radius: 8px;
+font-size: 2em;
+}
+
+.city-name__reset-btn {
+border: 0;
+background-color: #1655cc;
+color: white;
+border-radius: 8px;
+padding: 1rem;
+font-family: "Rubik", sans-serif;
+}
+
+.red {
+color: red;
+}
+
+.orange {
+color: orange;
+}
+
+.yellow {
+color: gold;
+}
+
+.yellow-green {
+color: yellowgreen;
+}
+
+.green {
+color: green;
+}
+
+.teal {
+color: teal;
+}
+
+.cloudy {
+background-color: lightgrey;
+}
+
+.sunny {
+background-color: rgb(221, 255, 255);
+}
+
+.rainy {
+background-color: lightblue;
+}
+
+.snowy {
+background-color: lightsteelblue;
+}
