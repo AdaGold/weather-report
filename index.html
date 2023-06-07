@@ -17,6 +17,10 @@
     </header>
     <section class="temperature__section">
         <h2>Temperature</h2>
+        <hr>
+        <button onclick="myFunction()">Click me</button>
+        <p id="demo"></p>
+        <hr>
         <div class="temperature__content">
             <div class="temperature__controls">
                 <span id="increaseTempControl">⬆️</span>
@@ -29,13 +33,16 @@
     <section class="sky__section">
         <h2>Sky</h2>
         <select id="skySelect">
-            <!-- sky options here -->
+            <option>Sunny</option>
+            <option>Cloudy</option>
+            <option>Rainy</option>
+            <option>Snowy</option>
         </select>
     </section>
 
     <section class="city-name__section">
         <h2>City Name</h2>
-        <input type="text" id="cityNameInput">
+        <input type="text" id="cityNameInput" value="Seattle">
         <button id="cityNameReset" class="city-name__reset-btn">Reset</button>
     </section>
 
