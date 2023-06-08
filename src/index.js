@@ -11,13 +11,20 @@ const increaseTemp = () => {
     tempText.innerHTML = `${state.temperature}`;
     if (state.temperature >= 80) {
         landscapeText.innerHTML = '🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂';
+        tempText.style.color = "red";
     } else if (state.temperature <= 79 && state.temperature > 69) {
         landscapeText.innerHTML = '"🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷"';
+        tempText.style.color = "orange";
     } else if (state.temperature <=69 && state.temperature > 59) {
-        landscapeText.innerHTML = "🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃";        
-    } else if (state.temperature <=59) {
-        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲"; 
-    }    
+        landscapeText.innerHTML = "🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃"; 
+        tempText.style.color = "yellow";       
+    } else if (state.temperature <=59 && state.temperature > 49) {
+        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲";
+        tempText.style.color = "green"; 
+    } else if (state.temperature <=49) {
+        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲";
+        tempText.style.color = "teal";
+    }  
 };
 
 const decreaseTemp = () => {
@@ -25,12 +32,19 @@ const decreaseTemp = () => {
     tempText.innerHTML = `${state.temperature}`;
     if (state.temperature >= 80) {
         landscapeText.innerHTML = "🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂";
+        tempText.style.color = "red";
     }else if (state.temperature <= 79 && state.temperature > 69) {
         landscapeText.innerHTML = "🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷";
+        tempText.style.color = "orange";
     } else if (state.temperature <=69 && state.temperature > 59) {
-        landscapeText.innerHTML = "🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃";        
-    } else if (state.temperature <=59) {
-        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲"; 
+        landscapeText.innerHTML = "🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃";
+        tempText.style.color = "yellow";        
+    } else if (state.temperature <=59 && state.temperature > 49) {
+        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲";
+        tempText.style.color = "green"; 
+    } else if (state.temperature <=49) {
+        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲";
+        tempText.style.color = "teal";
     }    
 };
 
