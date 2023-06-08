@@ -48,19 +48,37 @@ const decreaseTemp = () => {
     }    
 };
 
+const updateCityHeader = () => {
+    const cityText = document.querySelector("#cityNameInput");
+    let currentCityInput = cityText.value;
+    const cityHeader = document.querySelector("#headerCityName");
+    cityHeader.innerHTML = `${currentCityInput}`;
+};
+
+const resetCityName = () => {
+    const cityText = document.querySelector("#cityNameInput");
+    cityText.value = ''
+};
+
 const registerEventHandlers = () => {
     const increaseTempButton = document.querySelector("#increaseTempControl");
     increaseTempButton.addEventListener("click", increaseTemp);
 
     const decreaseTempButton = document.querySelector("#decreaseTempControl");
     decreaseTempButton.addEventListener("click", decreaseTemp);
+
+    const updateCity = document.querySelector("#cityNameInput");
+    updateCity.addEventListener("input", updateCityHeader);
+
+    const cityReset = document.querySelector("#cityNameReset");
+    cityReset.addEventListener("click", resetCityName);
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
 
-const getCurrentTime = () => {
-    const currentDate = new Date();
-    console.log("getCurrentTime");
-    return currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
-}
-console.log(`The current time is ${getCurrentTime()}.`);
+// const getCurrentTime = () => {
+//     const currentDate = new Date();
+//     console.log("getCurrentTime");
+//     return currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+// }
+// console.log(`The current time is ${getCurrentTime()}.`);
