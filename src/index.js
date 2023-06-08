@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const state = {
     temperature: 40
 };
@@ -60,6 +62,36 @@ const resetCityName = () => {
     cityText.value = ''
 };
 
+const findLatitudeAndLongitude = () => {
+    axios.get('localhost:5000/location', {
+        params: {
+        q: cityText.value,
+        },
+    })
+    .then((response) => {
+        const latitude = response.data[0].lat;
+        const longitude = response.data[0].lon;
+        console.log('success in finding Latitude And Longitude!', latitude, longitude);
+    })
+    .catch((error) => {
+        console.log('error!', error.response.data);
+    });
+}
+
+const findLocationTemp = () => {
+    axios.get('localhost:5000/weather', {
+        params: {
+            lat: latitude,
+            lon: longitude
+        },
+    })
+    .then((response) => {
+        const tempInKelvin = response.data.main.temp;
+        // const tempInFahrenheit = (tempinKelvin − 273) * 9/5 + 32 
+    })
+}
+
+
 const registerEventHandlers = () => {
     const increaseTempButton = document.querySelector("#increaseTempControl");
     increaseTempButton.addEventListener("click", increaseTemp);
@@ -72,13 +104,9 @@ const registerEventHandlers = () => {
 
     const cityReset = document.querySelector("#cityNameReset");
     cityReset.addEventListener("click", resetCityName);
+
+    // const updateTemp = document.querySelector("#currentTempButton");
+    // updateTemp.addEventListener("click", updateCurrentTemp)
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
-
-// const getCurrentTime = () => {
-//     const currentDate = new Date();
-//     console.log("getCurrentTime");
-//     return currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
-// }
-// console.log(`The current time is ${getCurrentTime()}.`);
