@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const state = {
     temperature: 40
 };
@@ -76,9 +74,14 @@ const findLatitudeAndLongitude = () => {
     .catch((error) => {
         console.log('error!', error.response.data);
     });
+
+    return {
+        cityLat: latitude,
+        cityLon: longitude
+    }
 }
 
-const findLocationTemp = () => {
+const findLocationTemp = (latitude, longitude) => {
     axios.get('localhost:5000/weather', {
         params: {
             lat: latitude,
@@ -87,9 +90,11 @@ const findLocationTemp = () => {
     })
     .then((response) => {
         const tempInKelvin = response.data.main.temp;
-        // const tempInFahrenheit = (tempinKelvin − 273) * 9/5 + 32 
+        const tempInFahrenheit = (tempInKelvin - 273) * 9/5 + 32;
+        tempInFahrenheit = Math.floor(tempInFahrenheit);
+        console.log(tempInFahrenheit); 
     })
-}
+};
 
 
 const registerEventHandlers = () => {
