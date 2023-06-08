@@ -1,0 +1,25 @@
+.weather-header {
+    display: flex;
+    flex-direction: column;
+    grid-column: auto / span 2;
+    color: white;
+
+}
+body {
+    background-color: rgb(136, 195, 241);
+}
+
+  .orange {
+    color: rgb(255, 145, 49);
+  }
+#temperatureDisplay{
+  display: flex;
+  font-size: xx-large;
+  flex-direction: column;
+  grid-column: 4;
+};
+
+.headerCityName::before,
+.headerCityName::after{
+  content: "✨";
+};
