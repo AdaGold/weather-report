@@ -62,7 +62,8 @@ const updateCityHeader = () => {
 
 const resetCityName = () => {
     const cityText = document.querySelector("#cityNameInput");
-    cityText.value = ''
+    cityText.value = 'Seattle'
+    updateCityHeader();
 };
 
 const updateCurrentTemp = () => {
