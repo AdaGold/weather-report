@@ -2,9 +2,26 @@ const state = {
     temperature: 40
 };
 
+// let sky = document.getElementById("sky").textContent;
+// console.log(sky);
+// const skyText = document.getElementById("#sky");
+// const skySelect = document.getElementById("#skySelect").value;
 
-const tempText = document.querySelector("#tempValue")
-const landscapeText = document.querySelector("#landscape")
+// const updateSky = () => {
+//     skyText.innerHTML = `${sky.skySelect}`;
+//     if (sky === sunny) {
+//         skySelect.innerHTML = "☁️ ☁️ ☁️ ☀️ ☁️ ☁️";
+//     } else if (sky === cloudy) {
+//         skySelect.innerHTML = "☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️";
+//     } else if (sky === rainy) {
+//         skySelect.innerHTML = "🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧";
+//     } else if (sky === snowy) {
+//         skySelect.innerHTML = "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨";
+//     }
+// };
+
+const tempText = document.querySelector("#tempValue");
+const landscapeText = document.querySelector("#landscape");
 
 const increaseTemp = () => {
     state.temperature += 1;
@@ -14,10 +31,10 @@ const increaseTemp = () => {
 const updateTempUi = () => {
     tempText.innerHTML = `${state.temperature}`;
     if (state.temperature >= 80) {
-        landscapeText.innerHTML = '🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂';
+        landscapeText.innerHTML = "🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂";
         tempText.style.color = "red";
     } else if (state.temperature <= 79 && state.temperature > 69) {
-        landscapeText.innerHTML = '"🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷"';
+        landscapeText.innerHTML = "🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷";
         tempText.style.color = "orange";
     } else if (state.temperature <=69 && state.temperature > 59) {
         landscapeText.innerHTML = "🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃"; 
@@ -103,6 +120,9 @@ const registerEventHandlers = () => {
 
     const updateTemp = document.querySelector("#currentTempButton");
     updateTemp.addEventListener("click", updateCurrentTemp)
+
+    // const updateSkySelection = document.querySelector("#skySelect");
+    // updateSkySelection.addEventListener("change", updateSky);
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
