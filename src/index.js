@@ -2,23 +2,23 @@ const state = {
     temperature: 40
 };
 
-// let sky = document.getElementById("sky").textContent;
-// console.log(sky);
-// const skyText = document.getElementById("#sky");
-// const skySelect = document.getElementById("#skySelect").value;
+const changeSky = (sky) => {
+    const skyText = document.querySelector("#sky");
+    if (sky === "sunny") {
+        skyText.innerHTML = "☁️ ☁️ ☁️ ☀️ ☁️ ☁️"
+    } else if (sky === "cloudy") {
+        skyText.innerHTML = "☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️"
+    } else if (sky === "rainy") {
+        skyText.innerHTML = "🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧"
+    } else if (sky === "snowy") {
+        skyText.innerHTML = "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨"
+    }
+};
 
-// const updateSky = () => {
-//     skyText.innerHTML = `${sky.skySelect}`;
-//     if (sky === sunny) {
-//         skySelect.innerHTML = "☁️ ☁️ ☁️ ☀️ ☁️ ☁️";
-//     } else if (sky === cloudy) {
-//         skySelect.innerHTML = "☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️";
-//     } else if (sky === rainy) {
-//         skySelect.innerHTML = "🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧";
-//     } else if (sky === snowy) {
-//         skySelect.innerHTML = "🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨";
-//     }
-// };
+const changeSkyValue = () => {
+    const skyValue = document.getElementById('skySelect').value;
+    changeSky(skyValue);
+};
 
 const tempText = document.querySelector("#tempValue");
 const landscapeText = document.querySelector("#landscape");
@@ -119,10 +119,10 @@ const registerEventHandlers = () => {
     cityReset.addEventListener("click", resetCityName);
 
     const updateTemp = document.querySelector("#currentTempButton");
-    updateTemp.addEventListener("click", updateCurrentTemp)
+    updateTemp.addEventListener("click", updateCurrentTemp);
 
-    // const updateSkySelection = document.querySelector("#skySelect");
-    // updateSkySelection.addEventListener("change", updateSky);
+    const updateSky = document.querySelector("#skySelect");
+    updateSky.addEventListener("change", changeSkyValue);
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
