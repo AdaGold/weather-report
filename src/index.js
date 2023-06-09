@@ -5,6 +5,8 @@ const increaseTempButton = document.querySelector('#increaseTempControl');
 const decreaseTempButton = document.querySelector('#decreaseTempControl');
 const tempValue = document.querySelector('#tempValue');
 const landscape = document.querySelector('#landscape');
+const textInput = document.querySelector('#cityNameInput');
+const cityName = document.querySelector('#headerCityName');
 
 // Makes functions to run when events occur
 const state = {
@@ -57,6 +59,11 @@ const decreaseTemp = () => {
 	updateLandscape();
 };
 
+const updateCityName = () => {
+	cityName.textContent = textInput.value;
+};
+
 // Registers functions as 'event listeners'
 increaseTempButton.addEventListener('click', increaseTemp);
 decreaseTempButton.addEventListener('click', decreaseTemp);
+textInput.addEventListener('input', updateCityName);
