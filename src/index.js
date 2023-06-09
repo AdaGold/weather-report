@@ -8,6 +8,10 @@ const landscapeText = document.querySelector("#landscape")
 
 const increaseTemp = () => {
     state.temperature += 1;
+    updateTempUi();
+};
+
+const updateTempUi = () => {
     tempText.innerHTML = `${state.temperature}`;
     if (state.temperature >= 80) {
         landscapeText.innerHTML = '🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂';
@@ -29,23 +33,7 @@ const increaseTemp = () => {
 
 const decreaseTemp = () => {
     state.temperature -= 1;
-    tempText.innerHTML = `${state.temperature}`;
-    if (state.temperature >= 80) {
-        landscapeText.innerHTML = "🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂";
-        tempText.style.color = "red";
-    }else if (state.temperature <= 79 && state.temperature > 69) {
-        landscapeText.innerHTML = "🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷";
-        tempText.style.color = "orange";
-    } else if (state.temperature <=69 && state.temperature > 59) {
-        landscapeText.innerHTML = "🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃";
-        tempText.style.color = "yellow";        
-    } else if (state.temperature <=59 && state.temperature > 49) {
-        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲";
-        tempText.style.color = "green"; 
-    } else if (state.temperature <=49) {
-        landscapeText.innerHTML = "🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲";
-        tempText.style.color = "teal";
-    }    
+    updateTempUi();
 };
 
 const updateCityHeader = () => {
@@ -95,8 +83,10 @@ const findLocationTemp = (latitude, longitude) => {
         const tempInKelvin = response.data.main.temp;
         let tempInFahrenheit = (tempInKelvin - 273) * 9/5 + 32;
         tempInFahrenheit = Math.floor(tempInFahrenheit);
+        state.temperature = tempInFahrenheit;
+        updateTempUi();
         console.log(tempInFahrenheit); 
-    })
+    });
 };
 
 
