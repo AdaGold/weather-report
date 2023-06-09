@@ -60,29 +60,32 @@ const resetCityName = () => {
     cityText.value = ''
 };
 
-const findLatitudeAndLongitude = () => {
-    axios.get('localhost:5000/location', {
+const updateCurrentTemp = () => {
+    const cityText = document.querySelector("#cityNameInput");
+    findLatitudeAndLongitude(cityText.value);
+    // const updateTemp = document.querySelector("#currentTempButton");
+    // let updateTempButton = cityText.value
+};
+
+const findLatitudeAndLongitude = (cityName) => {
+    axios.get('http://localhost:5000/location', {
         params: {
-        q: cityText.value,
+        q: cityName,
         },
     })
     .then((response) => {
         const latitude = response.data[0].lat;
         const longitude = response.data[0].lon;
+        findLocationTemp(latitude, longitude)
         console.log('success in finding Latitude And Longitude!', latitude, longitude);
     })
     .catch((error) => {
         console.log('error!', error.response.data);
     });
-
-    return {
-        cityLat: latitude,
-        cityLon: longitude
-    }
-}
+};
 
 const findLocationTemp = (latitude, longitude) => {
-    axios.get('localhost:5000/weather', {
+    axios.get('http://localhost:5000/weather', {
         params: {
             lat: latitude,
             lon: longitude
@@ -90,7 +93,7 @@ const findLocationTemp = (latitude, longitude) => {
     })
     .then((response) => {
         const tempInKelvin = response.data.main.temp;
-        const tempInFahrenheit = (tempInKelvin - 273) * 9/5 + 32;
+        let tempInFahrenheit = (tempInKelvin - 273) * 9/5 + 32;
         tempInFahrenheit = Math.floor(tempInFahrenheit);
         console.log(tempInFahrenheit); 
     })
@@ -110,8 +113,8 @@ const registerEventHandlers = () => {
     const cityReset = document.querySelector("#cityNameReset");
     cityReset.addEventListener("click", resetCityName);
 
-    // const updateTemp = document.querySelector("#currentTempButton");
-    // updateTemp.addEventListener("click", updateCurrentTemp)
+    const updateTemp = document.querySelector("#currentTempButton");
+    updateTemp.addEventListener("click", updateCurrentTemp)
 };
 
 document.addEventListener("DOMContentLoaded", registerEventHandlers);
