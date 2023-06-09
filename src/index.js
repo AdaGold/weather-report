@@ -51,8 +51,6 @@ const resetCityName = () => {
 const updateCurrentTemp = () => {
     const cityText = document.querySelector("#cityNameInput");
     findLatitudeAndLongitude(cityText.value);
-    // const updateTemp = document.querySelector("#currentTempButton");
-    // let updateTempButton = cityText.value
 };
 
 const findLatitudeAndLongitude = (cityName) => {
