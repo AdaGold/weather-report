@@ -4,6 +4,7 @@
 const increaseTempButton = document.querySelector('#increaseTempControl');
 const decreaseTempButton = document.querySelector('#decreaseTempControl');
 const tempValue = document.querySelector('#tempValue');
+const landscape = document.querySelector('#landscape');
 
 // Makes functions to run when events occur
 const state = {
@@ -30,16 +31,30 @@ const tempColor = () => {
 	}
 };
 
+const updateLandscape = () => {
+	if (state.temp >= 80) {
+		landscape.textContent = '🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂';
+	} else if (state.temp >= 70 && state.temp <= 79) {
+		landscape.textContent = '🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷';
+	} else if (state.temp >= 60 && state.temp <= 69) {
+		landscape.textContent = '🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃';
+	} else if (state.temp < 59) {
+		landscape.textContent = '🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲';
+	}
+};
+
 const increaseTemp = () => {
 	state.temp += 1;
 	updateTemp();
 	tempColor();
+	updateLandscape();
 };
 
 const decreaseTemp = () => {
 	state.temp -= 1;
 	updateTemp();
 	tempColor();
+	updateLandscape();
 };
 
 // Registers functions as 'event listeners'
