@@ -1,7 +1,6 @@
 const state = {
     temperature: 40
 };
-
 const tempText = document.querySelector("#tempValue");
 const landscapeText = document.querySelector("#landscape");
 const cityText = document.querySelector("#cityNameInput");
@@ -55,20 +54,17 @@ const decreaseTemp = () => {
 };
 
 const updateCityHeader = () => {
-    // const cityText = document.querySelector("#cityNameInput");
     let currentCityInput = cityText.value;
     const cityHeader = document.querySelector("#headerCityName");
     cityHeader.innerHTML = `${currentCityInput}`;
 };
 
 const resetCityName = () => {
-    // const cityText = document.querySelector("#cityNameInput");
     cityText.value = 'Seattle'
     updateCityHeader();
 };
 
 const updateCurrentTemp = () => {
-    // const cityText = document.querySelector("#cityNameInput");
     findLatitudeAndLongitude(cityText.value);
 };
 
