@@ -72,7 +72,7 @@ const updateCurrentTemp = () => {
 };
 
 const findLatitudeAndLongitude = (cityName) => {
-    axios.get('http://localhost:5000/location', {
+    axios.get('https://weather-proxy-s44a.onrender.com/location', {
         params: {
         q: cityName,
         },
@@ -89,7 +89,7 @@ const findLatitudeAndLongitude = (cityName) => {
 };
 
 const findLocationTemp = (latitude, longitude) => {
-    axios.get('http://localhost:5000/weather', {
+    axios.get('https://weather-proxy-s44a.onrender.com/weather', {
         params: {
             lat: latitude,
             lon: longitude
