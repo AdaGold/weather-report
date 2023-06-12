@@ -5,9 +5,9 @@ const increaseTempButton = document.querySelector('#increaseTempControl');
 const decreaseTempButton = document.querySelector('#decreaseTempControl');
 const tempValue = document.querySelector('#tempValue');
 const landscape = document.querySelector('#landscape');
-const cityNameInput = document.querySelector('#cityNameInput');
-const cityName = document.querySelector('#headerCityName');
+const headerCityName = document.querySelector('#headerCityName');
 const currentTempButton = document.querySelector('#currentTempButton');
+const cityNameInput = document.querySelector('#cityNameInput');
 const BASE_URL = 'http://127.0.0.1:5000';
 
 // Makes functions to run when events occur
@@ -18,19 +18,44 @@ const state = {
 	temp: 60,
 };
 
+const convertKtoF = (temp) => {
+	return (temp - 273.15) * (9 / 5) + 32;
+};
+
 const getLatAndLong = () => {
 	axios
 		.get(`${BASE_URL}/location`, {
 			params: {
 				// key: process.env['LOCATION_KEY'],
 				// q: 'Seattle, Washington, USA',
-				q: 'South Lake Tahoe',
+				q: state.city,
 			},
 		})
 		.then((response) => {
 			// console.log('success!', response.data);
 			state.lat = response.data[0].lat;
 			state.lon = response.data[0].lon;
+			getWeather();
+		})
+		.catch((error) => {
+			console.log('error!', error.response.data);
+		});
+};
+
+const getWeather = () => {
+	axios
+		.get(`${BASE_URL}/weather`, {
+			params: {
+				lat: state.lat,
+				lon: state.lon,
+			},
+		})
+		.then((response) => {
+			// console.log(response.data.main.temp);
+			state.temp = Math.round(convertKtoF(response.data.main.temp));
+			updateTemp();
+			updateTempColor();
+			updateLandscape();
 		})
 		.catch((error) => {
 			console.log('error!', error.response.data);
@@ -42,7 +67,12 @@ const updateTemp = () => {
 	tempValue.textContent = `${state.temp}`;
 };
 
-const tempColor = () => {
+const updateCityName = () => {
+	const headerCityName = document.querySelector('#headerCityName');
+	state.city = cityNameInput.value;
+	headerCityName.textContent = state.city;
+};
+const updateTempColor = () => {
 	tempValue.classList.remove('red', 'orange', 'yellow', 'green', 'blue');
 	if (state.temp >= 80) {
 		tempValue.classList.add('red');
@@ -83,8 +113,8 @@ const decreaseTemp = () => {
 	updateLandscape();
 };
 
-const updateCityName = () => {
-	cityName.textContent = cityNameInput.value;
+const updateHeaderCityName = () => {
+	headerCityName.textContent = cityNameInput.value;
 };
 
 // Registers functions as 'event listeners'
