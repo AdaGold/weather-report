@@ -1,5 +1,5 @@
-// import 'regenerator-runtime/runtime';
-// import axios from 'axios';
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
 
 const state = {
     temperature: 40
