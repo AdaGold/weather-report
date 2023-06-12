@@ -4,6 +4,7 @@ import axios from 'axios';
 const state = {
     temperature: 40
 };
+
 const tempText = document.querySelector("#tempValue");
 const landscapeText = document.querySelector("#landscape");
 const cityText = document.querySelector("#cityNameInput");
