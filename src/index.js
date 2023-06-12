@@ -5,12 +5,36 @@ const increaseTempButton = document.querySelector('#increaseTempControl');
 const decreaseTempButton = document.querySelector('#decreaseTempControl');
 const tempValue = document.querySelector('#tempValue');
 const landscape = document.querySelector('#landscape');
-const textInput = document.querySelector('#cityNameInput');
+const cityNameInput = document.querySelector('#cityNameInput');
 const cityName = document.querySelector('#headerCityName');
+const currentTempButton = document.querySelector('#currentTempButton');
+const BASE_URL = 'http://127.0.0.1:5000';
 
 // Makes functions to run when events occur
 const state = {
-	temp: 0,
+	city: 'South Lake Tahoe',
+	lat: 38.9332411,
+	lon: -119.9843482,
+	temp: 60,
+};
+
+const getLatAndLong = () => {
+	axios
+		.get(`${BASE_URL}/location`, {
+			params: {
+				// key: process.env['LOCATION_KEY'],
+				// q: 'Seattle, Washington, USA',
+				q: 'South Lake Tahoe',
+			},
+		})
+		.then((response) => {
+			// console.log('success!', response.data);
+			state.lat = response.data[0].lat;
+			state.lon = response.data[0].lon;
+		})
+		.catch((error) => {
+			console.log('error!', error.response.data);
+		});
 };
 
 // Sets the temperate value to state
@@ -60,10 +84,11 @@ const decreaseTemp = () => {
 };
 
 const updateCityName = () => {
-	cityName.textContent = textInput.value;
+	cityName.textContent = cityNameInput.value;
 };
 
 // Registers functions as 'event listeners'
 increaseTempButton.addEventListener('click', increaseTemp);
 decreaseTempButton.addEventListener('click', decreaseTemp);
-textInput.addEventListener('input', updateCityName);
+cityNameInput.addEventListener('input', updateCityName);
+currentTempButton.addEventListener('click', getLatAndLong);
