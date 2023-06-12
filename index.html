@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Report</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/index.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather Report</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
 
-<body>
-    <header class="header__header">
-        <h1>Weather Report</h1>
-        <span>For the lovely city of 
-            <span id="headerCityName" class="header__city-name"></span></span>
-    </header>
-    <section class="temperature__section">
-        <h2>Temperature</h2>
-        <div class="temperature__content">
-            <div class="temperature__controls">
-                <span id="increaseTempControl">⬆️</span>
-                <span id="tempValue"></span>
-                <span id="decreaseTempControl">⬇️</span>
+    <body>
+        <header class="header__header">
+            <h1>Weather Report</h1>
+            <span>For the lovely city of
+                <span id="headerCityName" class="header__city-name"></span></span>
+        </header>
+        <section class="temperature__section">
+            <h2>Temperature</h2>
+            <div class="temperature__content">
+                <div class="temperature__controls">
+                    <span id="increaseTempControl">⬆️</span>
+                    <span id="tempValue">0</span>
+                    <span id="decreaseTempControl">⬇️</span>
+                </div>
+                <button id="currentTempButton">Get Realtime Temperature</button>
             </div>
-            <button id="currentTempButton">Get Realtime Temperature</button>
-        </div>
-    </section>
-    <section class="sky__section">
-        <h2>Sky</h2>
-        <select id="skySelect">
-            <!-- sky options here -->
-        </select>
-    </section>
+        </section>
+        <section class="sky__section">
+            <h2>Sky</h2>
+            <select id="skySelect">
+                <!-- sky options here -->
+                <option>Sunny</option>
+                <option>Cloudy</option>
+                <option>Rainy</option>
+                <option>Snowy</option>
+            </select>
+        </section>
 
-    <section class="city-name__section">
-        <h2>City Name</h2>
-        <input type="text" id="cityNameInput">
-        <button id="cityNameReset" class="city-name__reset-btn">Reset</button>
-    </section>
+        <section class="city-name__section">
+            <h2>City Name</h2>
+            <input type="text" id="cityNameInput" value="South Lake Tahoe">
+            <button id="cityNameReset" class="city-name__reset-btn">Reset</button>
+        </section>
 
-    <section class="garden__section">
-        <h2>Weather Garden</h2>
-        <div id="gardenContent" class="garden__content">
-            <div id="sky"></div>
-            <div id="landscape"></div>
-        </div>
-    </section>
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="./src/index.js"></script>
-</body>
+        <section class="garden__section">
+            <h2>Weather Garden</h2>
+            <div id="gardenContent" class="garden__content">
+                <div id="sky"></div>
+                <div id="landscape"></div>
+            </div>
+        </section>
+        <script src="./node_modules/axios/dist/axios.min.js"></script>
+        <script src="./src/index.js"></script>
+    </body>
+
 </html>
