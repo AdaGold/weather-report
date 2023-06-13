@@ -127,14 +127,14 @@ const updateSky = () => {
 const increaseTemp = () => {
 	state.temp += 1;
 	updateTemp();
-	tempColor();
+	updateTempColor();
 	updateLandscape();
 };
 
 const decreaseTemp = () => {
 	state.temp -= 1;
 	updateTemp();
-	tempColor();
+	updateTempColor();
 	updateLandscape();
 };
 
@@ -150,4 +150,4 @@ increaseTempButton.addEventListener('click', increaseTemp);
 decreaseTempButton.addEventListener('click', decreaseTemp);
 cityNameInput.addEventListener('input', updateCityName);
 currentTempButton.addEventListener('click', getLatAndLong);
-updateSky();
+skySelect.addEventListener('change', updateSky);
