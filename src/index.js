@@ -141,6 +141,13 @@ const updateHeaderCityName = () => {
 	headerCityName.textContent = cityNameInput.value;
 };
 
+const resetCityName = () => {
+	const cityNameResetButton = document.querySelector('#cityNameReset');
+	cityNameInput.value = 'South Lake Tahoe';
+	updateCityName();
+};
+
+updateCityName();
 // Registers functions as 'event listeners'
 increaseTempButton.addEventListener('click', increaseTemp);
 decreaseTempButton.addEventListener('click', decreaseTemp);
