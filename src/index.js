@@ -63,15 +63,15 @@ const getWeather = () => {
 };
 
 // Sets the temperate value to state
-const updateTemp = () => {
-	tempValue.textContent = `${state.temp}`;
-};
-
 const updateCityName = () => {
 	const headerCityName = document.querySelector('#headerCityName');
 	state.city = cityNameInput.value;
 	headerCityName.textContent = state.city;
 };
+const updateTemp = () => {
+	tempValue.textContent = `${state.temp}`;
+};
+
 const updateTempColor = () => {
 	tempValue.classList.remove('red', 'orange', 'yellow', 'green', 'blue');
 	if (state.temp >= 80) {
@@ -99,6 +99,30 @@ const updateLandscape = () => {
 	}
 };
 
+const updateSky = () => {
+	const skySelect = document.querySelector('#skySelect').value;
+	const skyContainer = document.querySelector('#sky');
+	let sky = '';
+	let skyColor = '';
+
+	if (skySelect === 'Sunny') {
+		sky = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';
+		skyColor = 'sunny';
+	} else if (skySelect === 'Cloudy') {
+		sky = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';
+		skyColor = 'cloudy';
+	} else if (skySelect === 'Rainy') {
+		sky = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';
+		skyColor = 'rainy';
+	} else if (skySelect === 'Snowy') {
+		sky = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';
+		skyColor = 'snowy';
+	}
+	skyContainer.textContent = sky;
+	const gardenContent = document.querySelector('#gardenContent');
+	gardenContent.classList = `garden__content ${skyColor}`;
+};
+
 const increaseTemp = () => {
 	state.temp += 1;
 	updateTemp();
@@ -122,3 +146,4 @@ increaseTempButton.addEventListener('click', increaseTemp);
 decreaseTempButton.addEventListener('click', decreaseTemp);
 cityNameInput.addEventListener('input', updateCityName);
 currentTempButton.addEventListener('click', getLatAndLong);
+updateSky();
