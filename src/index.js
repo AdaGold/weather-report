@@ -68,6 +68,7 @@ const updateCityName = () => {
 	state.city = cityNameInput.value;
 	headerCityName.textContent = state.city;
 };
+
 const updateTemp = () => {
 	tempValue.textContent = `${state.temp}`;
 };
@@ -135,10 +136,6 @@ const decreaseTemp = () => {
 	updateTemp();
 	tempColor();
 	updateLandscape();
-};
-
-const updateHeaderCityName = () => {
-	headerCityName.textContent = cityNameInput.value;
 };
 
 const resetCityName = () => {
