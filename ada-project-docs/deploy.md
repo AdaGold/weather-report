@@ -1,25 +1,25 @@
-# Deploying to GitHub Pages with `parcel-bundler`
+# Deploying to GitHub Pages with `parcel`
 
-Follow the steps below to deploy to GitHub Pages using `parcel-bundler`
+Follow the steps below to deploy to GitHub Pages using `parcel`
 
 1. Create a new branch called `deployed-version` and switch to it.
-1. Install `parcel-bundler`
+2. Install `parcel-bundler`
     ```bash
-    yarn add --dev parcel-bundler@1.12.5
+    npm install parcel -D
     ```
-1. Install `gh-pages`
+3. Install `gh-pages`
     ```bash
-    yarn add --dev gh-pages
-1. Remove `script` tag with `"./node_modules/axios/dist/axios.min.js"` from `index.html`
-1. Add `import` statements to `index.js` 
+    npm install gh-pages -D
+4. Remove `script` tag with `"./node_modules/axios/dist/axios.min.js"` from `index.html`
+5. Add `import` statements to `index.js` 
     ```js
     import 'regenerator-runtime/runtime';
     import axios from 'axios';
     ```
-1. Add a `"scripts"` section to your `package.json`:
+6. Add a `"scripts"` section to your `package.json`:
     ```json
     "scripts": {
-        "predeploy": "rm -rf dist && yarn run build",
+        "predeploy": "rm -rf dist && np, run build",
         "deploy": "gh-pages -d dist",
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "parcel index.html ",
@@ -30,28 +30,28 @@ Follow the steps below to deploy to GitHub Pages using `parcel-bundler`
     <summary>Complete <code>package.json</code></summary>
 
     ```json
-    {
-        "dependencies": {
-            "axios": "^0.27.2"
-        },
-        "devDependencies": {
-            "gh-pages": "^4.0.0",
-            "parcel-bundler": "^1.12.5"
-        },
+        {
         "scripts": {
-            "predeploy": "rm -rf dist && yarn run build",
+            "predeploy": "rm -rf dist && npm run build",
             "deploy": "gh-pages -d dist",
             "test": "echo \"Error: no test specified\" && exit 1",
             "dev": "parcel index.html ",
             "build": "parcel build index.html --public-url /weather-report/"
+        },
+        "dependencies": {
+            "axios": "^1.7.7"
+        },
+        "devDependencies": {
+            "gh-pages": "^6.2.0",
+            "parcel": "^2.12.0"
         }
-    }
+        }
     ```
 
     </details>
-1. Run `yarn run deploy`
-1. Confirm that the GitHub Pages branch is set to `gh-pages` in the GitHub UI by going to **Settings** --> **Pages** --> **Source**
-1. Navigate to `https://{your-user-name}.github.io/weather-report/` to see your deployed site.
+7. Run `npm run deploy`
+8. Confirm that the GitHub Pages branch is set to `gh-pages` in the GitHub UI by going to **Settings** --> **Pages** --> **Source**
+9. Navigate to `https://{your-user-name}.github.io/weather-report/` to see your deployed site.
 
 ## Resources
 - [How to Use Axios with Javascript](https://www.digitalocean.com/community/tutorials/js-axios-vanilla-js)
