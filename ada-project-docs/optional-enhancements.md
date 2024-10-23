@@ -18,4 +18,4 @@ It is more important and more valuable to do good work with the requirements, an
 - Deploy/host your project onto the Internet
     - If you deploy your *Weather Report web app*, you will also need to deploy the *Weather Report proxy server*.
     - We recommend deploying to GitHub Pages.
-    - We encourage you to do some of your own research and then review [our resource on deploying to GitHub Pages using `parcel-bundler`](./deploy.md) as needed.
+    - We encourage you to do some of your own research and then review [our resource on deploying to GitHub Pages using `parcel`](./deploy.md) as needed.

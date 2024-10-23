@@ -56,7 +56,7 @@ You are required to use vanilla JavaScript for all parts of this project, includ
 ## Axios
 The only extra JavaScript library we should load is [`Axios`](https://axios-http.com/docs/intro).
 
-To download the `axios` node module, run `yarn install`
+To download the `axios` node module, run `npm install`
 
 To include axios in your project, include the following script tag above the script tag linking `index.js`:
 - `<script src="./node_modules/axios/dist/axios.min.js"></script>`
