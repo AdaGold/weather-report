@@ -17,7 +17,7 @@ We recommend you get started by writing the HTML in `index.html`.
 You will need to link:
 - `index.css` 
 - `index.js`   
-- `./node_modules/axios/dist/axios.min.js` 
+- `https://unpkg.com/axios/dist/axios.min.js` 
 
 ## Tips
 
