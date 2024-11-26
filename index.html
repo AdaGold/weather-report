@@ -10,6 +10,65 @@
     <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
+    <header class="weather-header">
+    <h1>Weather Report</h1>
+    
+</header>
+
+<section class="temperature_section">
+    <h1>Temperature</h1>
+    <div class="temperature_content">
+        <button id ="increase_temperature">↑</button>
+        <button id="decrease_temperature">↓</button>
+        <button type="button" id="realtime-temp">Get Realtime Temperature</button>
+    </div>
+    <span id="temperatureDisplay" class="orange">72</span>
+</section>
+
+ <section class="sky_section">
+    <h2>Sky selection</h2>
+    
+    <select id="selectSky">
+        <option >Sunny</option>
+                <option >Cloudy</option>
+                <option >Rainy</option>
+<option >Snowy</option>
+    </select> 
+
+    
+</section> 
+
+<div>
+    <h2> Weather Garden</h2>
+</div>
+<div>
+    <p id ="sky">☁️ ☁️ ☁️ ☀️ ☁️ ☁️
+
+    </p>
+   <p
+    id ="garden_section"> 🌸🌿🌼🌷🌻🌿☘️🌱🌻🌷
+   </p> 
+
+
+
+<section class="city-section">
+    <h1>City Name</h1>
+    <form action="/action_page.php" method="get" target="_blank">
+        <input type="text" id="city-name-input" name="city-name-input">
+        <input type="reset" value="Clear" id="reset-city-name">
+    </form>
+    <button id="reset-city-name-2">Reset</button>
+        
+
+<div >
+    <h2 id="city-display">✨Atlanta✨</h2>
+</div>
+
+
+</section>
+
+
+</header>
     <script src="./src/index.js"></script>
 </body>
 </html>
