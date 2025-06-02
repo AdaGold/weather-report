@@ -1,3 +1,6 @@
+"use strict";
+
+
 // wave 2: 
 // changing temperature using increase/decrease buttons
 
