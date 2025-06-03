@@ -1,8 +1,7 @@
 "use strict";
 
+// wave 2
 
-// wave 2: 
-// changing temperature using increase/decrease buttons
 let temp = 72;
 const tempValue = document.getElementById('tempValue');
 const increaseBtn = document.getElementById('increaseTemp');
@@ -10,7 +9,7 @@ const decreaseBtn = document.getElementById('decreaseTemp');
 const weatherApp = document.getElementById('weather-app');
 const skyDisplay = document.getElementById('skyDisplay');
 
-
+// update background & landscape
 const updateDisplay = () => {
     tempValue.textContent = `${temp} °F`;
 
@@ -32,22 +31,15 @@ const updateDisplay = () => {
     }
 };
 
-increaseBtn.addEventListener('click', () => {
+// update temp with buttons
+increaseBtn.onclick = () => {
     temp += 1;
     updateDisplay();
-});
+};
 
-decreaseBtn.addEventListener('click', () => {
+decreaseBtn.onclick = () => {
     temp -= 1;
     updateDisplay();
-});
+};
 
 updateDisplay();
-
-//smoother transition in CSS: 
-// #weather-app {
-//     transition: background 0.5s ease;
-//   }
-
-
-// at least 4 landscapes that change based on temp ranges (make it coincide with background colors?)
