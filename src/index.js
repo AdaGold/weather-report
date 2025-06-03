@@ -24,6 +24,16 @@ const skyImages = {
 
 
 // update background color, landscape & sky image
+
+// helper function for sky changes 
+const setSky = (skyType) => {
+    if (skyImage) {
+        skyImage.src = skyImages[skyType];
+        skyImage.alt = skyType;
+    }
+    if (skySelect) skySelect.value = skyType;
+};
+
 const updateDisplay = () => {
     if (isCelsius) {
         // convert F to C
@@ -38,43 +48,23 @@ const updateDisplay = () => {
     if (temp >= 80) {
         weatherApp.style.background = 'linear-gradient(to right, #ff512f, #dd2476)';
         landscape.style.fill = '#D2691E';
-        if (skyImage) {
-            skyImage.src = skyImages.sunny;
-            skyImage.alt = 'sunny';
-        }
-        if (skySelect) skySelect.value = 'sunny';
+        setSky('sunny');
     } else if (temp >= 70) {
         weatherApp.style.background = 'linear-gradient(to right, #f7971e, #ffd200)';
         landscape.style.fill = '#9ACD32';
-        if (skyImage) {
-            skyImage.src = skyImages.sunny;
-            skyImage.alt = 'sunny';
-        }
-        if (skySelect) skySelect.value = 'sunny';
+        setSky('sunny');
     } else if (temp >= 60) {
         weatherApp.style.background = 'linear-gradient(to right,rgb(243, 181, 37),rgb(207, 228, 48))';
         landscape.style.fill = '#8FBC8F';
-        if (skyImage) {
-            skyImage.src = skyImages.cloudy;
-            skyImage.alt = 'cloudy';
-        }
-        if (skySelect) skySelect.value = 'cloudy';
+        setSky('cloudy');
     } else if (temp >= 50) {
         weatherApp.style.background = 'linear-gradient(to right, #a8e063, #56ab2f)';
         landscape.style.fill = '#708090';
-        if (skyImage) {
-            skyImage.src = skyImages.cloudy;
-            skyImage.alt = 'cloudy';
-        }
-        if (skySelect) skySelect.value = 'cloudy';
+        setSky('rainy');
     } else {
         weatherApp.style.background = 'linear-gradient(to right, #43cea2, #185a9d)';
         landscape.style.fill = '#E6E6FA';
-        if (skyImage) {
-            skyImage.src = skyImages.snowy;
-            skyImage.alt = 'snowy';
-        }
-        if (skySelect) skySelect.value = 'snowy';
+        setSky('snowy');
     }
 };
 
@@ -139,8 +129,7 @@ fetchBtn.onclick = fetchRealTimeTemperature;
 
 skySelect.addEventListener('change', () => {
     const selected = skySelect.value;
-    skyImage.src = skyImages[selected];
-    skyImage.alt = selected;
+    setSky(selected);
 });
 
 // wave 6 // reset city functionality
