@@ -9,6 +9,11 @@ body {
     min-height: 100vh;
     padding: 1rem 0;
     box-sizing: border-box;
+/* for background image change */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image .8s ease;
 }
 
 #weather-app {
