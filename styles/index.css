@@ -2,7 +2,6 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to top, #b2ebf2, #e0f7fa);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -18,7 +17,6 @@ body {
 
 #weather-app {
     width: 100%;
-    max-width: 500px;
     padding: 1rem;
     text-align: center;
     position: relative;
@@ -61,12 +59,12 @@ body {
     margin-top: 1rem;
 }
 
-.skyDisplay {
+.skySmiley {
     font-size: 3rem;
     margin-bottom: 0.25rem;
 }
 
-.skyDisplay img {
+.skySmiley img {
     width: 125px;
     height: 125px;
 }
@@ -113,8 +111,11 @@ button.decrease:hover {
 }
 
 /* Dropdown for sky type */
-#skySelect {
+.skySelectConainer {
     margin-top: 1.5rem;
+}
+
+#skySelector {
     padding: .75rem 1rem;
     border: none;
     border-radius: .75rem;
