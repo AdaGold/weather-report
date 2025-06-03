@@ -22,9 +22,6 @@ const skyImages = {
     snowy: 'assets/images/sky/Snowing.png',
 };
 
-
-// update background color, landscape & sky image
-
 // helper function for sky changes 
 const setSky = (skyType) => {
     if (skyImage) {
@@ -34,6 +31,7 @@ const setSky = (skyType) => {
     if (skySelect) skySelect.value = skyType;
 };
 
+// update background color, landscape & sky image
 const updateDisplay = () => {
     if (isCelsius) {
         // convert F to C
