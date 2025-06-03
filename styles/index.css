@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     box-sizing: border-box;
 /* for background image change */
     background-size: cover;
@@ -59,12 +59,12 @@ body {
     margin-top: 1rem;
 }
 
-.skySmiley {
+.skyDisplay {
     font-size: 3rem;
     margin-bottom: 0.25rem;
 }
 
-.skySmiley img {
+.skyDisplay img {
     width: 125px;
     height: 125px;
 }
@@ -111,11 +111,8 @@ button.decrease:hover {
 }
 
 /* Dropdown for sky type */
-.skySelectConainer {
-    margin-top: 1.5rem;
-}
-
 #skySelector {
+    margin-top: 1.5rem;
     padding: .75rem 1rem;
     border: none;
     border-radius: .75rem;
