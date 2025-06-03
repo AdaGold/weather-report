@@ -3,6 +3,8 @@
 // wave 2
 
 let temp = 72;
+let isCelsius = false;
+
 const tempValue = document.getElementById('tempValue');
 const increaseBtn = document.getElementById('increaseTemp');
 const decreaseBtn = document.getElementById('decreaseTemp');
@@ -11,6 +13,7 @@ const landscape = document.querySelector('.landscape');
 const body = document.body;
 const skySelect = document.getElementById('skySelector');
 const skyImage = document.querySelector('#skySmiley img');
+const toggleBtn = document.getElementById('toggleBtn');
 
 const skyImages = {
     sunny: 'assets/images/sky/Sunny.png',
@@ -22,7 +25,15 @@ const skyImages = {
 
 // update background color, landscape & sky image
 const updateDisplay = () => {
-    tempValue.textContent = `${temp} °F`;
+    if (isCelsius) {
+        // convert F to C
+        const tempC = Math.round((temp - 32) * 5 / 9);
+        tempValue.textContent = `${tempC} °C`;
+        toggleBtn.textContent = 'Show °F';
+    } else {
+        tempValue.textContent = `${temp} °F`;
+        toggleBtn.textContent = 'Show °C';
+    }
 
     if (temp >= 80) {
         weatherApp.style.background = 'linear-gradient(to right, #ff512f, #dd2476)';
@@ -79,6 +90,12 @@ decreaseBtn.onclick = () => {
 };
 
 updateDisplay();
+
+// toggle between F & C
+toggleBtn.onclick = () => {
+    isCelsius = !isCelsius;
+    updateDisplay();
+}
 
 // wave 3 // update city name from text input
 
