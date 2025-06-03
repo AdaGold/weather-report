@@ -43,3 +43,13 @@ decreaseBtn.onclick = () => {
 };
 
 updateDisplay();
+
+// wave 3
+
+// update city name based on text input
+const cityName = document.getElementById('cityName');
+const cityInput = document.getElementById('cityInput');
+
+cityInput.addEventListener('input', () => {
+    cityName.textContent = cityInput.value;
+})
