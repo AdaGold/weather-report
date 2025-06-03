@@ -19,38 +19,6 @@ const skyImages = {
     snowy: 'assets/images/sky/Snowing.png',
 };
 
-// create dynamic gradients for landscape
-const createLandscapeGradient = (id, color1, color2) => {
-    const svg = landscape.closest('svg');
-    let defs = svg.querySelector('defs');
-    if (!defs) {
-        defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-        svg.appendChild(defs);
-    }
-    
-    // remove existing gradient if it exists
-    const existing = defs.querySelector(`#${id}`);
-    if (existing) existing.remove();
-    
-    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-    gradient.setAttribute('id', id);
-    gradient.setAttribute('x1', '0%');
-    gradient.setAttribute('y1', '0%');
-    gradient.setAttribute('x2', '0%');
-    gradient.setAttribute('y2', '100%');
-    
-    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-    stop1.setAttribute('offset', '0%');
-    stop1.setAttribute('style', `stop-color:${color1};stop-opacity:1`);
-    
-    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-    stop2.setAttribute('offset', '100%');
-    stop2.setAttribute('style', `stop-color:${color2};stop-opacity:1`);
-    
-    gradient.appendChild(stop1);
-    gradient.appendChild(stop2);
-    defs.appendChild(gradient);
-};
 
 // update background color, landscape & sky image
 const updateDisplay = () => {
@@ -58,8 +26,7 @@ const updateDisplay = () => {
 
     if (temp >= 80) {
         weatherApp.style.background = 'linear-gradient(to right, #ff512f, #dd2476)';
-        createLandscapeGradient('hotGradient', '#8B4513', '#D2691E');
-        landscape.style.fill = 'url(#hotGradient)';
+        landscape.style.fill = '#D2691E';
         if (skyImage) {
             skyImage.src = skyImages.sunny;
             skyImage.alt = 'sunny';
@@ -67,8 +34,7 @@ const updateDisplay = () => {
         if (skySelect) skySelect.value = 'sunny';
     } else if (temp >= 70) {
         weatherApp.style.background = 'linear-gradient(to right, #f7971e, #ffd200)';
-        createLandscapeGradient('warmGradient', '#228B22', '#9ACD32');
-        landscape.style.fill = 'url(#warmGradient)';
+        landscape.style.fill = '#9ACD32';
         if (skyImage) {
             skyImage.src = skyImages.sunny;
             skyImage.alt = 'sunny';
@@ -76,8 +42,7 @@ const updateDisplay = () => {
         if (skySelect) skySelect.value = 'sunny';
     } else if (temp >= 60) {
         weatherApp.style.background = 'linear-gradient(to right,rgb(243, 181, 37),rgb(207, 228, 48))';
-        createLandscapeGradient('coolGradient', '#556B2F', '#8FBC8F');
-        landscape.style.fill = 'url(#coolGradient)';
+        landscape.style.fill = '#8FBC8F';
         if (skyImage) {
             skyImage.src = skyImages.cloudy;
             skyImage.alt = 'cloudy';
@@ -85,8 +50,7 @@ const updateDisplay = () => {
         if (skySelect) skySelect.value = 'cloudy';
     } else if (temp >= 50) {
         weatherApp.style.background = 'linear-gradient(to right, #a8e063, #56ab2f)';
-        createLandscapeGradient('coldGradient', '#2F4F4F', '#708090');
-        landscape.style.fill = 'url(#coldGradient)';
+        landscape.style.fill = '#708090';
         if (skyImage) {
             skyImage.src = skyImages.cloudy;
             skyImage.alt = 'cloudy';
@@ -94,8 +58,7 @@ const updateDisplay = () => {
         if (skySelect) skySelect.value = 'cloudy';
     } else {
         weatherApp.style.background = 'linear-gradient(to right, #43cea2, #185a9d)';
-        createLandscapeGradient('freezingGradient', '#4682B4', '#E6E6FA');
-        landscape.style.fill = 'url(#freezingGradient)';
+        landscape.style.fill = '#E6E6FA';
         if (skyImage) {
             skyImage.src = skyImages.snowy;
             skyImage.alt = 'snowy';
