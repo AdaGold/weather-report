@@ -164,3 +164,9 @@ skySelect.addEventListener('change', () => {
 });
 
 // wave 6 // reset city functionality
+clearBtn.onclick = () => {
+    cityInput.value = '';
+    cityName.textContent = 'Seattle';
+    temp = 72;
+    updateDisplay();
+};
