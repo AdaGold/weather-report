@@ -5,14 +5,16 @@ body {
     background: linear-gradient(to top, #b2ebf2, #e0f7fa);
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 1rem 0;
+    box-sizing: border-box;
 }
 
 #weather-app {
     width: 100%;
     max-width: 500px;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -28,6 +30,17 @@ body {
     z-index: -1;
 }
 
+.sky-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    transition: opacity 0.5s ease;
+}
+
 .landscape {
     position: fixed;
     bottom: 0;
@@ -40,31 +53,37 @@ body {
 }
 
 .weatherContainer {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .skyDisplay {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.skyDisplay img {
+    width: 125px;
+    height: 125px;
 }
 
 .city {
     font-size: 2.5rem;
     color: #341980;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
 }
 
 .tempControls {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .temp {
     font-size: 6em;
     font-weight: 900;
+    line-height: 0em;
     color: #341980;
     padding: 0.4rem 1.5rem;
 }
@@ -102,7 +121,7 @@ button.decrease:hover {
 
 /* City input and fetch */
 .inputContainer {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .cityInput {
