@@ -22,38 +22,6 @@ const skyImages = {
     snowy: 'assets/images/sky/Snowing.png',
 };
 
-const temperatureRanges = [
-    {
-        min: 80,
-        background: 'linear-gradient(to right, #ff512f, #dd2476)',
-        landscapeColor: '#D2691E',
-        sky: 'sunny'
-    },
-    {
-        min: 70,
-        background: 'linear-gradient(to right, #f7971e, #ffd200)',
-        landscapeColor: '#9ACD32',
-        sky: 'sunny'
-    },
-    {
-        min: 60,
-        background: 'linear-gradient(to right,rgb(243, 181, 37),rgb(207, 228, 48))',
-        landscapeColor: '#8FBC8F',
-        sky: 'cloudy'
-    },
-    {
-        min: 50,
-        background: 'linear-gradient(to right, #a8e063, #56ab2f)',
-        landscapeColor: '#708090',
-        sky: 'rainy'
-    },
-    {
-        min: -100,
-        background: 'linear-gradient(to right, #43cea2, #185a9d)',
-        landscapeColor: '#E6E6FA',
-        sky: 'snowy'
-    }
-];
 
 // helper function for sky changes 
 const setSky = (skyType) => {
