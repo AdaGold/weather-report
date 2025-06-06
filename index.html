@@ -2,14 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+    <main id="weather-app">
+        <div class="backgroundImages">
+            <svg class="landscape" viewBox="0 0 512 457" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M0,90 C85,110 170,100 256,120 C341,140 426,80 512,120 L512,457 L0,457 Z" />
+            </svg>
+        </div>
+        <div class="contentContainer">
+            <section class="skySelectConainer">
+                <select id="skySelector">
+                    <option value="sunny">Sunny</option>
+                    <option value="cloudy">Cloudy</option>
+                    <option value="rainy">Rainy</option>
+                    <option value="snowy">Snowy</option>
+                </select>
+                <button id="toggleBtn">Show °C</button>
+            </section>
+            <section class="weatherDetails">
+                <div class="skySmiley" id="skySmiley"><img src="assets/images/sky/Sunny.png" alt="sunny weather icon"></div>
+                <h1 class="city" id="cityName">Seattle</h1>
+                <div class="tempControls">
+                    <button type="button" class="decrease" id="decreaseTemp" aria-label="Decrease temperature">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg>
+                    </button>
+                    <h2 class="temp" id="tempValue">72°F</h2>
+                    <button type="button" class="increase" id="increaseTemp" aria-label="Increase temperature">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-7-7h14"/></svg>
+                    </button>
+                </div>
+            </section>
+            
+            <section class="inputContainer">
+                <div class="cityInput">
+                    <input type="text" id="cityInput" placeholder="Enter any city in the world">
+                    <button type="button" id="fetchBtn">Get realtime temperature</button>
+                </div>
+                <button type="button" id="clearBtn">Clear/Reset</button>
+            </section>
+        </div>
+    </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./src/index.js"></script>
 </body>
 </html>

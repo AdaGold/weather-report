@@ -1,0 +1,215 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.8s ease;
+}
+
+#weather-app {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.backgroundImages {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.sky-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    transition: opacity 0.5s ease;
+}
+
+.landscape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 200px;
+    z-index: 0;
+    fill: #0edaa4;
+    transition: fill 0.3s ease;
+}
+
+.contentContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skySelectConainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#skySelector {
+    padding: .75em 2.5em .75em 1em;
+    border: none;
+    border-radius: .75rem;
+    font-size: 1rem;
+    background-color: white;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 9 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    background-size: 1em;
+}
+
+#toggleBtn {
+    background-color: white;
+    color: black;
+    padding: 1em 1em;
+    border: none;
+    border-radius: .75rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+#toggleBtn:hover {
+    background-color: #42A0F0;
+    transform: translateY(-1px);
+}
+.weatherDetails {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+.skySmiley img {
+    width: 175px;
+    height: 175px;
+    margin: 2rem 0;;
+}
+
+.city {
+    font-size: 2.5rem;
+    color: #341980;
+    margin: 0.25rem 0;
+    font-weight: 600;
+}
+
+.tempControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.temp {
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 0em;
+    color: #341980;
+    padding: 0.4rem 1.5rem;
+}
+
+button.increase,
+button.decrease {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+button.increase:hover,
+button.decrease:hover {
+    background-color: #341980;
+    color: #fff;
+}
+
+
+
+
+/* City input and fetch */
+.inputContainer {
+    margin-top: 1rem;
+}
+
+.cityInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#cityInput {
+    padding: .75rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #000;
+    border-radius: 2rem;
+}
+
+#clearBtn,
+#fetchBtn {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#clearBtn {
+    background-color: #42A0F0;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+#clearBtn:hover {
+    background-color: #2b87d8;
+    transform: translateY(-1px);
+}
+
+#fetchBtn {
+    background-color: #6B38FC;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+}
+
+#fetchBtn:hover {
+    background-color: #5929de;
+    transform: translateY(-1px);
+}
+
