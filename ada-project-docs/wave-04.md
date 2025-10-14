@@ -21,14 +21,16 @@ The OpenWeather API will return temperatures in Kelvin units rather than Farenhe
 The formula for converting Kelvin into Celcius is:
 ```
 C = K - 273.15
+- `C` is the result in Celcius
+- `K` is the original temperature in Kelvin
 ```
-where `C` is the result in Celcius and `K` is the temperature in Kelvin
 
 The formula for converting Kelvin into Farenheit is:
 ```
 F = (K - 273.15) * (9 / 5) + 32
+- `F` is the result in Farenheit
+- `K` is the original temperature in Kelvin
 ```
-where `F` is the result in Farenheit and `K` is the temperature in Kelvin
 
 **Resources**
 - [Wikipedia - Kelvin (Temperature Unit)](https://en.wikipedia.org/wiki/Kelvin)
