@@ -6,9 +6,33 @@ We should add a `<button>` element that when clicked updates and displays the re
 
 ## LocationIQ and OpenWeather
 
-In order to get the weather of the city, we will need to get the latitude and longitude of the city using the [`LocationIQ`](https://locationiq.com/docs) API. We can then use the latitude and longitude with the [`OpenWeather`](https://openweathermap.org/api/one-call-api) API to get current weather data. 
+In order to get the weather of the city, we will need to:
+1. Get the latitude and longitude of the city using the [`LocationIQ`](https://locationiq.com/docs) API. 
+2. Use the latitude and longitude response with the [`OpenWeather`](https://openweathermap.org/api/one-call-api) API to get current weather data. 
 
 To get started and generate API tokens, create accounts and log into `LocationIQ` and `OpenWeather`.
+
+### OpenWeather Response Format
+
+3rd party APIs don't always provide data in a format that we can use directly. Since we can't control the formats that others provide, we'll often need to convert data from outside API responses.
+
+The OpenWeather API will return temperatures in Kelvin units rather than Farenheit or Celcius, which means we need to convert that temperature value ourselves. 
+
+The formula for converting Kelvin into Celcius is:
+```
+C = K - 273.15
+```
+where `C` is the result in Celcius and `K` is the temperature in Kelvin
+
+The formula for converting Kelvin into Farenheit is:
+```
+F = (K - 273.15) * (9 / 5) + 32
+```
+where `F` is the result in Farenheit and `K` is the temperature in Kelvin
+
+**Resources**
+(Wikipedia - Kelvin (Temperature Unit))[https://en.wikipedia.org/wiki/Kelvin]
+(Cue Math - Temperature Conversion Formulas)[https://www.cuemath.com/temperature-conversion-formulas/]
 
 ## Weather Report Proxy Server
 
