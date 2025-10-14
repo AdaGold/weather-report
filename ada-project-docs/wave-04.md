@@ -31,8 +31,8 @@ F = (K - 273.15) * (9 / 5) + 32
 where `F` is the result in Farenheit and `K` is the temperature in Kelvin
 
 **Resources**
-(Wikipedia - Kelvin (Temperature Unit))[https://en.wikipedia.org/wiki/Kelvin]
-(Cue Math - Temperature Conversion Formulas)[https://www.cuemath.com/temperature-conversion-formulas/]
+- [Wikipedia - Kelvin (Temperature Unit)](https://en.wikipedia.org/wiki/Kelvin)
+- [Cue Math - Temperature Conversion Formulas](https://www.cuemath.com/temperature-conversion-formulas/)
 
 ## Weather Report Proxy Server
 
