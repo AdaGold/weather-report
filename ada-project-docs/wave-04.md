@@ -16,19 +16,19 @@ To get started and generate API tokens, create accounts and log into `LocationI
 
 3rd party APIs don't always provide data in a format that we can use directly. Since we can't control the formats that others provide, we'll often need to convert data from outside API responses.
 
-The OpenWeather API will return temperatures in Kelvin units rather than Farenheit or Celcius, which means we need to convert that temperature value ourselves. 
+The OpenWeather API will return temperatures in Kelvin units rather than Fahrenheit or Celsius, which means we need to convert that temperature value ourselves. 
 
-The formula for converting Kelvin into Celcius is:
+The formula for converting Kelvin into Celsius is:
 ```
 C = K - 273.15
-- `C` is the result in Celcius
+- `C` is the result in Celsius
 - `K` is the original temperature in Kelvin
 ```
 
-The formula for converting Kelvin into Farenheit is:
+The formula for converting Kelvin into Fahrenheit is:
 ```
 F = (K - 273.15) * (9 / 5) + 32
-- `F` is the result in Farenheit
+- `F` is the result in Fahrenheit
 - `K` is the original temperature in Kelvin
 ```
 
