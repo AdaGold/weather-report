@@ -9,7 +9,8 @@
         "build:js": "uglifyjs src/*.js -m -c -o dist/src/index.min.js",
         "build:html": "node build.js",
         "build:css": "cp -R styles ./dist",
-        "build:prod": "npm run build:dep && npm run build:js && npm run build:css && npm run build:html"
+        "build:prod": "npm run build:dep && npm run build:js && npm run build:css && npm run build:html",
+        "build:detach": "rm index.html styles/index.css src/index.js"
     },
     "keywords": [],
     "author": "",
