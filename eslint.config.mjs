@@ -1,58 +1,45 @@
-import jest from "eslint-plugin-jest";
-import react from "eslint-plugin-react";
 import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import stylistic from "@stylistic/eslint-plugin";
+import pluginPromise from "eslint-plugin-promise";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
-
-export default [...compat.extends("plugin:react/recommended", "standard"), {
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  js.configs.recommended,
+  pluginPromise.configs['flat/recommended'],
+  { ignores: ["*.config.*"] },
+  {
     plugins: {
-        jest,
-        react,
+        '@stylistic': stylistic
     },
-
     languageOptions: {
-        globals: {
-            ...globals.browser,
-        },
-
-        ecmaVersion: "latest",
-        sourceType: "module",
-
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
-            },
-        },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        "axios": "readonly",
+      },
+      ecmaVersion: "latest",
+      sourceType: "module",   
     },
-
-    settings: {
-        react: {
-            version: "detect",
-        },
-    },
-
     rules: {
-        "max-len": [1, 120, 2, {
-            ignoreComments: true,
-        }],
-
-        "no-console": "off",
-        quotes: ["warn", "single"],
-
-        camelcase: ["error", {
-            properties: "always",
-        }],
-
-        semi: ["warn", "always"],
+      "@stylistic/array-bracket-spacing": "warn",
+      "@stylistic/comma-dangle": ["warn", "only-multiline"],
+      "@stylistic/indent": ["warn", 2],
+      "@stylistic/max-len": [1, 120, 2, { "ignoreComments": true }],
+      "@stylistic/no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+      "@stylistic/no-trailing-spaces": "warn",
+      "@stylistic/padded-blocks": "off",
+      "@stylistic/quotes": [2, "single", {
+        allowTemplateLiterals: true,
+        avoidEscape: true,
+      },],
+      "@stylistic/semi": ["warn", "always"],
+      "@stylistic/space-before-function-paren": "off",
+      "camelcase": ["error", { "properties": "always" }],
+      "dot-notation": "warn",
+      "no-console": "off",
+      "no-unused-vars": "warn",
+      "no-var": "error",
     },
-}];
+  },
+];
