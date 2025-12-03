@@ -2,6 +2,15 @@
 
 This document describes how to prepare and deploy the `weather-report` project using the npm scripts defined in `package.json`.
 
+### Preparation
+
+Merge any changes that should be included in the deployed project into this branch.
+
+The deployment process assumes that the only files that are needed to build the deployed site are:
+- Source JavaScript files in `src/`
+- CSS files in `styles/`
+- The `index.html` base file
+
 ### Build scripts (what each script does)
 
 - `npm run build:dep`
@@ -15,6 +24,7 @@ This document describes how to prepare and deploy the `weather-report` project u
 - `npm run build:html`
   - Builds HTML output using the repository's `build.js` script.
   - Internally runs: `node build.js`
+  - The scipt tags that should be replaced by `build.js` must be enclosed in `<!-- DEV_SCRIPTS_START -->` and `<!-- DEV_SCRIPTS_END -->` comments in `index.html`.
 
 - `npm run build:css`
   - Copies the `styles` directory into `dist` so CSS is included in the distribution.
@@ -57,7 +67,7 @@ npm run build:prod
 5. (Optional) Publish `dist/` as a subtree branch:
 
 ```
-npm run build:detach
+npm run build:deploy
 ```
 
 This pushes the contents of `dist/` to the `solution` branch on the `gold` remote. Change the script or the remote/branch as needed for your workflow.
@@ -65,7 +75,7 @@ This pushes the contents of `dist/` to the `solution` branch on the `gold` remot
 ### Notes & Troubleshooting
 
 - If `npm run build:js` fails, ensure `uglify-js` is installed (`npm install`) and that your `src/` JS is valid for Uglify (ES5). If code uses newer JS features, consider a different minifier/transpilation step.
-- If `build:detach` errors about `gold` remote, add a remote, for example:
+- If `build:deploy` errors about `gold` remote, add a remote, for example:
 
 ```
 git remote add gold <git-url-for-deploy-target>
