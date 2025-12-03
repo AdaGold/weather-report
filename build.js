@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const DEV_HTML_PATH = './index.html';
 const PROD_HTML_PATH = './dist/index.html';
-const PROD_SCRIPT_TAG = '<script defer src="./src/index.min.js" type="text/javascript"></script>';
+const PROD_SCRIPT_TAG = '<script defer src="./src/index.min.js"></script>';
 
 // A regular expression to find the block of script tags in your HTML.
 // This matches everything between <!-- DEV_SCRIPTS_START --> and <!-- DEV_SCRIPTS_END -->
