@@ -10,7 +10,7 @@
         "build:html": "node build.js",
         "build:css": "cp -R styles ./dist",
         "build:prod": "npm run build:dep && npm run build:js && npm run build:css && npm run build:html",
-        "build:detach": "git subtree push --prefix dist gold solution"
+        "build:deploy": "chmod 755 ./deploy.sh && ./deploy.sh"
     },
     "keywords": [],
     "author": "",

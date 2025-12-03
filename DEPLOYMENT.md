@@ -28,9 +28,8 @@ This document describes how to prepare and deploy the `weather-report` project u
     4. `npm run build:html`
   - Result: a `dist/` folder containing the compiled/minified assets and built HTML.
 
-- `npm run build:detach`
+- `npm run build:deploy`
   - Pushes the `dist` directory as a git subtree to a remote named `gold` on the `solution` branch.
-  - Internally runs: `git subtree push --prefix dist gold solution`
   - Notes: this requires that you have a git remote named `gold` configured and that you want to publish the `dist` folder in this manner. If you don't have a `gold` remote, either add one or modify the script to the remote/branch you want.
 
 ### Common deploy sequence
