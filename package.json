@@ -1,0 +1,23 @@
+{
+    "name": "weather-report",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "echo 'Not a node project. View in browser to run or debug.\nnpm present only for linting. (`npm run lint` after running `npm i`)'",
+        "lint": "eslint ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.3.0",
+        "@eslint/js": "^9.22.0",
+        "@stylistic/eslint-plugin": "^4.2.0",
+        "eslint": "^9.22.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^7.2.1",
+        "globals": "^16.0.0"
+    }
+}
