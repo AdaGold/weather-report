@@ -10,7 +10,7 @@
         "build:html": "node build.js",
         "build:css": "cp -R styles ./dist",
         "build:prod": "npm run build:dep && npm run build:js && npm run build:css && npm run build:html",
-        "build:detach": "rm index.html styles/index.css src/index.js"
+        "build:detach": "git subtree push --prefix dist origin solution"
     },
     "keywords": [],
     "author": "",
