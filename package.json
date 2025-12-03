@@ -4,7 +4,12 @@
     "main": "index.js",
     "scripts": {
         "start": "echo 'Not a node project. View in browser to run or debug.\nnpm present only for linting. (`npm run lint` after running `npm i`)'",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "build:dep": "mkdir -p ./dist/src",
+        "build:js": "uglifyjs src/*.js -m -c -o dist/src/index.min.js",
+        "build:html": "node build.js",
+        "build:css": "cp -R styles ./dist",
+        "build:prod": "npm run build:dep && npm run build:js && npm run build:css && npm run build:html"
     },
     "keywords": [],
     "author": "",
@@ -18,6 +23,7 @@
         "eslint-plugin-import": "^2.31.0",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-promise": "^7.2.1",
-        "globals": "^16.0.0"
+        "globals": "^16.0.0",
+        "uglify-js": "^3.19.3"
     }
 }
