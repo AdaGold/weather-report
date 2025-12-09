@@ -8,7 +8,7 @@ We should add a `<button>` element that when clicked updates and displays the re
 
 In order to get the weather of the city, we will need to:
 1. Get the latitude and longitude of the city using the [`LocationIQ`](https://locationiq.com/docs) API. 
-2. Use the latitude and longitude response with the [`OpenWeather`](https://openweathermap.org/api/one-call-api) API to get current weather data. 
+2. Use the latitude and longitude response with the [`OpenWeather`](https://openweathermap.org/current) API to get current weather data. 
 
 To get started and generate API tokens, create accounts and log into `LocationIQ` and `OpenWeather`.
 
@@ -44,7 +44,7 @@ As such, the *Weather Report web app* we are building should make `axios` calls 
 
 For details on how to run the Weather Report proxy server, see the [Weather Report Proxy Server README](https://github.com/adaGold/weather-report-proxy-server). No changes need to be made to the source code of the proxy server. The only work that needs to be done is adding a `.env` file with your API keys.
 
-While the `GET` requests to `LocationIQ` and `OpenWeather` are already implemented in the proxy server, we should still read the [`LocationIQ`](https://locationiq.com/docs) and [`OpenWeather`](https://openweathermap.org/api/one-call-api) docs to learn how to build the request and parse the response.
+While the `GET` requests to `LocationIQ` and `OpenWeather` are already implemented in the proxy server, we should still read the [`LocationIQ`](https://locationiq.com/docs) and [`OpenWeather`](https://openweathermap.org/current) docs to learn how to build the request and parse the response.
 
 *Note: VSCode may try to be "helpful" and add a `require` call: `const { default: axios } = require("axios");` This will cause an error and should be removed.*
 
