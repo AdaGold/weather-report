@@ -86,20 +86,97 @@ registerEventHandlers();
 updateCityName();
 registerCityNameEventHandlers();
 };
-onLoad();
 
 // wave 3 display and update city name//
 
 const updateCityName = () => {
     const cityInput = document.getElementById('cityNameInput');
-    const cityDisplay = document.getElementById('cityNameDisplay');
-    const cityNameElement = document.getElementById('cityNameElement');
+    const cityDisplay = document.getElementById('headerCityName');
+    
     cityDisplay.textContent = cityInput.value;
-    cityNameElement.textContent = cityInput.value;
+    //cityNameElement.textContent = state.defaultCity;
+    
 };
 
 const registerCityNameEventHandlers = () => {
     const cityInput = document.getElementById('cityNameInput');
     cityInput.addEventListener('input', updateCityName);  
+    const currentTempButton = document.getElementById('currentTempButton');
+    currentTempButton.addEventListener('click', getRealtimeTemperature);
 };
 
+
+//wave 4 
+const getRealtimeTemperature = () => {
+    const cityInput = document.getElementById('cityNameInput');
+    //const currentTempButton = document.getElementById('currentTempButton');
+    const city = cityInput.value.trim();
+    if (!city) {
+        alert('Enter a city name.');
+            return;  
+    }
+    
+
+    findLatitudeAndLongitude(city)
+    .then((coordinates) => {
+        const latitude = coordinates.latitude;
+        const longitude = coordinates.longitude;
+
+        return getWeather(latitude, longitude);
+    })
+    .then((response) => {
+        const kelvin = response.data.main.temp;
+        const fahrenheit = (kelvin - 273.15) * 9 / 5 + 32;
+
+        state.temperature = Math.round(fahrenheit);
+        updateTemperature();
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+};
+const baseURL = 'https://ada-weather-report-proxy-server.onrender.com';
+const findLatitudeAndLongitude = (city) => {
+    return axios.get(`${baseURL}/location`, {
+        params: { q: city }
+    })
+    .then((response) => {
+        const latitude = response.data[0].lat;
+        const longitude = response.data[0].lon;
+
+        console.log('Latitude:', latitude);
+        console.log('Longitude:', longitude);
+        console.log('Successfully found latitude and longitude:', latitude, longitude);
+        return { latitude, longitude };
+    })
+    .catch((error) => {
+        console.error('Error finding latitude and longitude:', error);
+        throw error;
+    });
+};
+
+const getWeather = (latitude, longitude) => {
+    return axios.get(`${baseURL}/weather`, {
+        params: { lat: latitude, lon: longitude }
+    })
+    .then((response) => {
+        console.log('Successfully found weather for city:', response.data);
+        return response;
+    })
+    .catch((error) => {
+        console.error('Error finding weather for city:', error);
+        throw error;
+    });
+};
+;
+console.log('JavaScript is running!');
+// const updateSky = () => {
+//     const skySelect = document.getElemyId('skySelect');
+//     const skyDisplay = document.getElementById('skyDisplay');
+
+//     const selectedSky = skySelect.value;
+
+
+onLoad();
+    
+    

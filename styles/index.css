@@ -12,12 +12,14 @@ grid-gap: 1rem;
 
 font-family: "Rubik", sans-serif;
 font-size: 18px;
-background-color: #1b69f9;
+background-color: hsl(188, 42%, 14%);
+background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2Vhc2NhcGV8ZW58MHx8MHx8&w=1000&q=80");
+background-size: cover;
 margin: 2rem;
 }
 /* */
 .header__header {
-color: white;
+color: rgb(15, 44, 93);
 grid-column: span 3;
 display: flex;
 align-items: center;
@@ -52,7 +54,7 @@ grid-row: 2;
 }
 
 .temperature__section button {
-    background-color: #1b69f9;
+    background-color: #1c6a7c;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -99,7 +101,7 @@ align-items: center;
 }
 
 .garden__section > h2 {
-color: white;
+color: rgb(19, 39, 119);
 }
 
 .garden__content {
@@ -118,7 +120,7 @@ font-size: 2em;
 
 .city-name__reset-btn {
 border: 0;
-background-color: #1655cc;
+background-color: #1c6a7c;
 color: white;
 border-radius: 8px;
 padding: 1rem;
