@@ -78,30 +78,28 @@ tempDownButton.addEventListener('click', decreaseTemperature);
 
 // Initialize the application
 const onLoad = () => {
-  // Wave 2
-  updateTemperature();
-  registerEventHandlers();
+  // Wave 2 //
+updateTemperature();
+registerEventHandlers();
 
-  // Wave 3
-  updateCityName();
-  registerCityNameEventHandlers();
+  // Wave 3//
+updateCityName();
+registerCityNameEventHandlers();
 };
 onLoad();
 
 // wave 3 display and update city name//
 
-// 
 const updateCityName = () => {
     const cityInput = document.getElementById('cityNameInput');
     const cityDisplay = document.getElementById('cityNameDisplay');
     const cityNameElement = document.getElementById('cityNameElement');
-
     cityDisplay.textContent = cityInput.value;
     cityNameElement.textContent = cityInput.value;
 };
 
 const registerCityNameEventHandlers = () => {
     const cityInput = document.getElementById('cityNameInput');
-    cityInput.addEventListener('input', updateCityName);
-    
+    cityInput.addEventListener('input', updateCityName);  
 };
+
