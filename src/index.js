@@ -92,9 +92,7 @@ registerCityNameEventHandlers();
 const updateCityName = () => {
     const cityInput = document.getElementById('cityNameInput');
     const cityDisplay = document.getElementById('headerCityName');
-    
     cityDisplay.textContent = cityInput.value;
-    //cityNameElement.textContent = state.defaultCity;
     
 };
 
@@ -103,6 +101,9 @@ const registerCityNameEventHandlers = () => {
     cityInput.addEventListener('input', updateCityName);  
     const currentTempButton = document.getElementById('currentTempButton');
     currentTempButton.addEventListener('click', getRealtimeTemperature);
+    //wave 6 reset city button
+    const resetCityButton = document.getElementById('cityNameReset');
+    resetCityButton.addEventListener('click', resetCity);   
 };
 
 
@@ -168,15 +169,21 @@ const getWeather = (latitude, longitude) => {
         throw error;
     });
 };
-;
-console.log('JavaScript is running!');
+
+// //wave 5
 // const updateSky = () => {
-//     const skySelect = document.getElemyId('skySelect');
+//     const skySelect = document.getElementById('skySelect');
 //     const skyDisplay = document.getElementById('skyDisplay');
-
 //     const selectedSky = skySelect.value;
+//     skyDisplay.textContent = selectedSky;
+// }
+
+// Wave 6: Reset city name
+const resetCity = () => {
+    const cityInput = document.getElementById('cityNameInput');
+    cityInput.value = state.defaultCity;
+    updateCityName();
+};
 
 
-onLoad();
-    
-    
+onLoad();   
